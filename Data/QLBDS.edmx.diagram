@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="765e0566c4ad4d72b88db4110e13afa4" Name="Diagram1">
+        <EntityTypeShape EntityType="data_BDSModel.CHUCVU" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.KHACHHANG" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.KINHDOANH" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.LOAIHINH" Width="1.5" PointX="6.875" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.LOAISANPHAM" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.LOAITRANGTHAI" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.NHANVIEN" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.TAIKHOAN" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="data_BDSModel.THANHTOAN" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <AssociationConnector Association="data_BDSModel.FK_NV_CV" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.FK_KH_TK" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_CT" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_CTSP" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_TK" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.FK_TT_KD" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.FK_NV_TK" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.CHITIETSANPHAM" ManuallyRouted="false" />
+        <AssociationConnector Association="data_BDSModel.CHITIETTRANGTHAI" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
