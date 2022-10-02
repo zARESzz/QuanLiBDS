@@ -28,6 +28,7 @@ namespace QuanLy
             _kh = new cls_KhachHang();
             ShowHide(true);
             loadData();
+            splitContainer1.Panel1Collapsed = true;
         }
 
         void ShowHide(bool kt)
@@ -51,14 +52,20 @@ namespace QuanLy
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            txtHoTen.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            txtSDT.Text = "";
             ShowHide(false);
             _tt = true;
+            splitContainer1.Panel1Collapsed = false;
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _tt = false;
             ShowHide(false);
+            splitContainer1.Panel1Collapsed = false;
         }
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -66,8 +73,11 @@ namespace QuanLy
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _kh.Delete(id);
+                txtHoTen.Text = "";
+                txtDiaChi.Text = "";
+                txtEmail.Text = "";
+                txtSDT.Text = "";
                 loadData();
-
             }
         }
 
@@ -77,12 +87,14 @@ namespace QuanLy
             loadData();
             _tt = false;
             ShowHide(true);
+            splitContainer1.Panel1Collapsed = true;
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _tt = false;
             ShowHide(true);
+            splitContainer1.Panel1Collapsed = true;
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -95,7 +107,7 @@ namespace QuanLy
             {
                 KHACHHANG kh = new KHACHHANG();
                 data_BDSEntities db = new data_BDSEntities();
-                var list = db.P_MAKH(db.KHACHHANGs).ToList();
+                var list = db.P_MAKH().ToList();
                 foreach (var item in list)
                 {
                     kh.MaKH = item;
@@ -105,7 +117,6 @@ namespace QuanLy
                 kh.DiaChi = txtDiaChi.Text;
                 kh.Emaill = txtEmail.Text;
                 _kh.Add(kh);
-                i++;
             }
             else
             {

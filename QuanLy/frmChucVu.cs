@@ -30,6 +30,7 @@ namespace QuanLy
             _cv = new cls_ChucVu();
             ShowHide(true);
             loadData();
+            splitContainer1.Panel1Collapsed = true;
         }
 
         void ShowHide(bool kt)
@@ -53,12 +54,14 @@ namespace QuanLy
             txtTen.Text = "";
             ShowHide(false);
             _tt = true;
+            splitContainer1.Panel1Collapsed = false;
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _tt = false;
             ShowHide(false);
+            splitContainer1.Panel1Collapsed = false;
         }
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -66,6 +69,7 @@ namespace QuanLy
             if(MessageBox.Show("Bạn có chắc chắn muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
             {
                 _cv.Delete(id);
+                txtTen.Text = "";
                 loadData();
 
             }    
@@ -77,12 +81,14 @@ namespace QuanLy
             loadData();
             _tt = false;
             ShowHide(true);
+            splitContainer1.Panel1Collapsed = true;
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _tt = false;
             ShowHide(true);
+            splitContainer1.Panel1Collapsed = true;
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -96,7 +102,7 @@ namespace QuanLy
             {
                 CHUCVU cv = new CHUCVU();
                 data_BDSEntities db = new data_BDSEntities();
-                var list =  db.P_MACV(db.CHUCVUs).ToList();
+                var list =  db.P_MACV().ToList();
                 foreach (var item in list)
                 {
                     cv.MaCV = item;

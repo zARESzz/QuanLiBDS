@@ -284,6 +284,7 @@
         </Association>
         <Function Name="P_MACV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MAKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MATK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="data_BDSModelStoreContainer">
           <EntitySet Name="BATDONGSAN" EntityType="Self.BATDONGSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIETNHUCAU" EntityType="Self.CHITIETNHUCAU" Schema="dbo" store:Type="Tables" />
@@ -427,6 +428,7 @@
           </AssociationSet>
           <FunctionImport Name="P_MACV" ReturnType="Collection(String)" />
           <FunctionImport Name="P_MAKH" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MATK" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="BATDONGSAN">
           <Key>
@@ -860,6 +862,7 @@
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="P_MACV" FunctionName="data_BDSModel.Store.P_MACV" />
           <FunctionImportMapping FunctionImportName="P_MAKH" FunctionName="data_BDSModel.Store.P_MAKH" />
+          <FunctionImportMapping FunctionImportName="P_MATK" FunctionName="data_BDSModel.Store.P_MATK" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

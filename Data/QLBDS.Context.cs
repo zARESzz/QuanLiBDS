@@ -44,9 +44,14 @@ namespace Data
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MACV");
         }
     
-        public virtual ObjectResult<string> P_MAKH(DbSet<KHACHHANG> kHACHHANGs)
+        public virtual ObjectResult<string> P_MAKH()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MAKH");
+        }
+    
+        public virtual ObjectResult<string> P_MATK()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MATK");
         }
     }
 }
