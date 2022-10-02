@@ -50,26 +50,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BATDONGSAN.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CHITIETNHUCAU.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
     <Compile Include="CHUCVU.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="HOPDONG.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
     <Compile Include="KHACHHANG.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
-    <Compile Include="KINHDOANH.cs">
-      <DependentUpon>QLBDS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAIHINH.cs">
-      <DependentUpon>QLBDS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAISANPHAM.cs">
-      <DependentUpon>QLBDS.tt</DependentUpon>
-    </Compile>
-    <Compile Include="LOAITRANGTHAI.cs">
+    <Compile Include="LOAIBD.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
     <Compile Include="NHANVIEN.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NHUCAU.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUDENBU.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,10 +93,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBDS.edmx</DependentUpon>
     </Compile>
-    <Compile Include="TAIKHOAN.cs">
+    <Compile Include="THANHTOAN.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
-    <Compile Include="THANHTOAN.cs">
+    <Compile Include="TINHTRANG.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
   </ItemGroup>

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main;
 using Data;
+using System.Data.Entity;
 
 namespace QuanLy
 {
@@ -33,6 +34,7 @@ namespace QuanLy
 
         void ShowHide(bool kt)
         {
+            txtTen.Enabled = !kt;
             btnThem.Enabled = kt;
             btnEdit.Enabled = kt;
             btnDele.Enabled = kt;
@@ -47,7 +49,8 @@ namespace QuanLy
             gvChucVu.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {            
+        {
+            txtTen.Text = "";
             ShowHide(false);
             _tt = true;
         }
@@ -86,23 +89,27 @@ namespace QuanLy
         {
             this.Close();
         }
-        int i = 4;
+        
         void SaveData()
         {
-            if(_tt)
+            if (_tt)
             {
                 CHUCVU cv = new CHUCVU();
-                cv.MaCV = "CV" + i;
+                data_BDSEntities db = new data_BDSEntities();
+                var list =  db.P_MACV(db.CHUCVUs).ToList();
+                foreach (var item in list)
+                {
+                    cv.MaCV = item;
+                }
                 cv.TenCV = txtTen.Text;
                 _cv.Add(cv);
-                i++;
             }
             else
             {
                 var cv = _cv.getItem(id);
                 cv.TenCV = txtTen.Text;
                 _cv.Updata(cv);
-            }    
+            }
         }
 
         private void gvChucVu_Click(object sender, EventArgs e)

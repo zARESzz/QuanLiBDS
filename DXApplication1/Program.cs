@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace QuanLiBDS
+namespace DXApplication1
 {
     internal static class Program
     {
@@ -17,7 +17,7 @@ namespace QuanLiBDS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmNguoiDung());
+            Application.Run(new Form1());
         }
     }
 }

@@ -60,40 +60,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreAcc.cs">
+    <Compile Include="frmCreAcc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreAcc.Designer.cs">
-      <DependentUpon>CreAcc.cs</DependentUpon>
+    <Compile Include="frmCreAcc.Designer.cs">
+      <DependentUpon>frmCreAcc.cs</DependentUpon>
     </Compile>
-    <Compile Include="GiaoDien.cs">
+    <Compile Include="frmNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GiaoDien.Designer.cs">
-      <DependentUpon>GiaoDien.cs</DependentUpon>
+    <Compile Include="frmNguoiDung.Designer.cs">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResetPass.cs">
+    <Compile Include="frmResetPass.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ResetPass.Designer.cs">
-      <DependentUpon>ResetPass.cs</DependentUpon>
+    <Compile Include="frmResetPass.Designer.cs">
+      <DependentUpon>frmResetPass.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CreAcc.resx">
-      <DependentUpon>CreAcc.cs</DependentUpon>
+    <EmbeddedResource Include="frmCreAcc.resx">
+      <DependentUpon>frmCreAcc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GiaoDien.resx">
-      <DependentUpon>GiaoDien.cs</DependentUpon>
+    <EmbeddedResource Include="frmNguoiDung.resx">
+      <DependentUpon>frmNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -106,8 +106,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="ResetPass.resx">
-      <DependentUpon>ResetPass.cs</DependentUpon>
+    <EmbeddedResource Include="frmResetPass.resx">
+      <DependentUpon>frmResetPass.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -135,6 +135,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2022-09-23 195314.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Data\Data.csproj">
+      <Project>{1e560617-ffa0-4cf1-b410-b4a2ffac36f8}</Project>
+      <Name>Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Main\Main.csproj">
+      <Project>{07cd51d1-e938-47ce-b3d1-849495ac449a}</Project>
+      <Name>Main</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\QuanLy\QuanLy.csproj">
+      <Project>{eee50708-d3a9-441d-9b67-daa3d2418d9b}</Project>
+      <Name>QuanLy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

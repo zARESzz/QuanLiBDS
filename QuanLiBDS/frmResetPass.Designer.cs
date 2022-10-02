@@ -1,6 +1,6 @@
 ﻿namespace QuanLiBDS
 {
-    partial class ResetPass
+    partial class frmResetPass
     {
         /// <summary>
         /// Required designer variable.

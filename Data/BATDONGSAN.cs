@@ -12,21 +12,31 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class LOAIHINH
+    public partial class BATDONGSAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAIHINH()
+        public BATDONGSAN()
         {
-            this.KINHDOANHs = new HashSet<KINHDOANH>();
-            this.LOAISANPHAMs = new HashSet<LOAISANPHAM>();
+            this.CHITIETNHUCAUs = new HashSet<CHITIETNHUCAU>();
+            this.HOPDONGs = new HashSet<HOPDONG>();
         }
     
-        public string MaLH { get; set; }
-        public string TenLH { get; set; }
+        public string MaBDS { get; set; }
+        public string TenBDS { get; set; }
+        public string MaKH { get; set; }
+        public string MaLoai { get; set; }
+        public string MaTT { get; set; }
+        public string DiaChi { get; set; }
+        public Nullable<long> DienTich { get; set; }
+        public string GioiThieu { get; set; }
+        public string HinhAnh { get; set; }
     
+        public virtual KHACHHANG KHACHHANG { get; set; }
+        public virtual LOAIBD LOAIBD { get; set; }
+        public virtual TINHTRANG TINHTRANG { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KINHDOANH> KINHDOANHs { get; set; }
+        public virtual ICollection<CHITIETNHUCAU> CHITIETNHUCAUs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOAISANPHAM> LOAISANPHAMs { get; set; }
+        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
     }
 }

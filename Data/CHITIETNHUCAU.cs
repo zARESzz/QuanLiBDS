@@ -12,13 +12,14 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class THANHTOAN
+    public partial class CHITIETNHUCAU
     {
-        public string MATT { get; set; }
-        public string MaHD { get; set; }
-        public Nullable<long> TongTien { get; set; }
-        public Nullable<System.DateTime> NgayTT { get; set; }
+        public string MaNC { get; set; }
+        public string MaBDS { get; set; }
+        public Nullable<long> DinhGia { get; set; }
+        public string DieuKien { get; set; }
     
-        public virtual HOPDONG HOPDONG { get; set; }
+        public virtual BATDONGSAN BATDONGSAN { get; set; }
+        public virtual NHUCAU NHUCAU { get; set; }
     }
 }

@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QuanLiBDS
 {
-    public partial class Login : DevExpress.XtraEditors.XtraForm
+    public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        public Login()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -25,7 +25,7 @@ namespace QuanLiBDS
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CreAcc creAcc = new CreAcc();
+            frmCreAcc creAcc = new frmCreAcc();
             this.Hide();
             creAcc.ShowDialog();
             this.Show();
@@ -44,7 +44,7 @@ namespace QuanLiBDS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ResetPass resetPass=new ResetPass();
+            frmResetPass resetPass=new frmResetPass();
             this.Hide();
             resetPass.ShowDialog();
             this.Show();

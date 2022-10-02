@@ -12,6 +12,8 @@ namespace Data
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class data_BDSEntities : DbContext
     {
@@ -25,14 +27,26 @@ namespace Data
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<BATDONGSAN> BATDONGSANs { get; set; }
+        public virtual DbSet<CHITIETNHUCAU> CHITIETNHUCAUs { get; set; }
         public virtual DbSet<CHUCVU> CHUCVUs { get; set; }
+        public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
-        public virtual DbSet<KINHDOANH> KINHDOANHs { get; set; }
-        public virtual DbSet<LOAIHINH> LOAIHINHs { get; set; }
-        public virtual DbSet<LOAISANPHAM> LOAISANPHAMs { get; set; }
-        public virtual DbSet<LOAITRANGTHAI> LOAITRANGTHAIs { get; set; }
+        public virtual DbSet<LOAIBD> LOAIBDS { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
-        public virtual DbSet<TAIKHOAN> TAIKHOANs { get; set; }
+        public virtual DbSet<NHUCAU> NHUCAUs { get; set; }
+        public virtual DbSet<PHIEUDENBU> PHIEUDENBUs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
+        public virtual DbSet<TINHTRANG> TINHTRANGs { get; set; }
+    
+        public virtual ObjectResult<string> P_MACV()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MACV");
+        }
+    
+        public virtual ObjectResult<string> P_MAKH(DbSet<KHACHHANG> kHACHHANGs)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MAKH");
+        }
     }
 }

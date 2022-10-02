@@ -12,26 +12,21 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class TAIKHOAN
+    public partial class NHUCAU
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TAIKHOAN()
+        public NHUCAU()
         {
-            this.KHACHHANGs = new HashSet<KHACHHANG>();
-            this.KINHDOANHs = new HashSet<KINHDOANH>();
-            this.NHANVIENs = new HashSet<NHANVIEN>();
+            this.CHITIETNHUCAUs = new HashSet<CHITIETNHUCAU>();
+            this.HOPDONGs = new HashSet<HOPDONG>();
         }
     
-        public string MaTK { get; set; }
-        public string TK { get; set; }
-        public string MK { get; set; }
-        public string Quyen { get; set; }
+        public string MaNC { get; set; }
+        public string TenNC { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual ICollection<CHITIETNHUCAU> CHITIETNHUCAUs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KINHDOANH> KINHDOANHs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<NHANVIEN> NHANVIENs { get; set; }
+        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
     }
 }

@@ -5,24 +5,31 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="765e0566c4ad4d72b88db4110e13afa4" Name="Diagram1">
-        <EntityTypeShape EntityType="data_BDSModel.CHUCVU" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.KHACHHANG" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.KINHDOANH" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.LOAIHINH" Width="1.5" PointX="6.875" PointY="11" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.LOAISANPHAM" Width="1.5" PointX="3.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.LOAITRANGTHAI" Width="1.5" PointX="8.25" PointY="5.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.NHANVIEN" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.TAIKHOAN" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="data_BDSModel.THANHTOAN" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
-        <AssociationConnector Association="data_BDSModel.FK_NV_CV" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.FK_KH_TK" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.FK_KD_CT" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.FK_KD_CTSP" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.FK_KD_TK" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.FK_TT_KD" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.FK_NV_TK" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.CHITIETSANPHAM" ManuallyRouted="false" />
-        <AssociationConnector Association="data_BDSModel.CHITIETTRANGTHAI" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="data_BDSModel.BATDONGSAN" Width="1.5" PointX="3" PointY="3.75" />
+        <EntityTypeShape EntityType="data_BDSModel.CHITIETNHUCAU" Width="1.5" PointX="5.25" PointY="4.5" />
+        <EntityTypeShape EntityType="data_BDSModel.CHUCVU" Width="1.5" PointX="3.75" PointY="9.875" />
+        <EntityTypeShape EntityType="data_BDSModel.HOPDONG" Width="1.5" PointX="8.25" PointY="3.75" />
+        <EntityTypeShape EntityType="data_BDSModel.KHACHHANG" Width="1.5" PointX="0.75" PointY="7.625" />
+        <EntityTypeShape EntityType="data_BDSModel.LOAIBD" Width="1.5" PointX="0.75" PointY="2.25" />
+        <EntityTypeShape EntityType="data_BDSModel.NHANVIEN" Width="1.5" PointX="6" PointY="9" />
+        <EntityTypeShape EntityType="data_BDSModel.NHUCAU" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="data_BDSModel.PHIEUDENBU" Width="1.5" PointX="10.5" PointY="4.375" />
+        <EntityTypeShape EntityType="data_BDSModel.THANHTOAN" Width="1.5" PointX="10.5" PointY="8" />
+        <EntityTypeShape EntityType="data_BDSModel.TINHTRANG" Width="1.5" PointX="0.75" PointY="4.75" />
+        <AssociationConnector Association="data_BDSModel.FK_BDS_KH" />
+        <AssociationConnector Association="data_BDSModel.FK_BDS_Loai" />
+        <AssociationConnector Association="data_BDSModel.FK_BDS_TT" />
+        <AssociationConnector Association="data_BDSModel.FK_CT_BDS" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_BDS" />
+        <AssociationConnector Association="data_BDSModel.FK_CT_NC" />
+        <AssociationConnector Association="data_BDSModel.FK_NV_CV" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_KH" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_NC" />
+        <AssociationConnector Association="data_BDSModel.FK_KD_TK" />
+        <AssociationConnector Association="data_BDSModel.FK_PDB_HD" />
+        <AssociationConnector Association="data_BDSModel.FK_TT_HD" />
+        <AssociationConnector Association="data_BDSModel.FK_PDB_TK" />
+        <AssociationConnector Association="data_BDSModel.FK_PDB_TT" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

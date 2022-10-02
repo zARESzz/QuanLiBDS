@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChucVu));
-            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barManagerCV = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
             this.btnEdit = new DevExpress.XtraBars.BarButtonItem();
@@ -50,7 +50,7 @@
             this.gvChucVu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.MaCV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenCV = new DevExpress.XtraGrid.Columns.GridColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,25 +60,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvChucVu)).BeginInit();
             this.SuspendLayout();
             // 
-            // barManager1
+            // barManagerCV
             // 
-            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.barManagerCV.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
             this.bar1,
             this.bar3});
-            this.barManager1.DockControls.Add(this.barDockControlTop);
-            this.barManager1.DockControls.Add(this.barDockControlBottom);
-            this.barManager1.DockControls.Add(this.barDockControlLeft);
-            this.barManager1.DockControls.Add(this.barDockControlRight);
-            this.barManager1.Form = this;
-            this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barManagerCV.DockControls.Add(this.barDockControlTop);
+            this.barManagerCV.DockControls.Add(this.barDockControlBottom);
+            this.barManagerCV.DockControls.Add(this.barDockControlLeft);
+            this.barManagerCV.DockControls.Add(this.barDockControlRight);
+            this.barManagerCV.Form = this;
+            this.barManagerCV.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.btnThem,
             this.btnEdit,
             this.btnDele,
             this.btnSave,
             this.btnHuy,
             this.btnDong});
-            this.barManager1.MaxItemId = 6;
-            this.barManager1.StatusBar = this.bar3;
+            this.barManagerCV.MaxItemId = 6;
+            this.barManagerCV.StatusBar = this.bar3;
             // 
             // bar1
             // 
@@ -163,7 +163,7 @@
             this.barDockControlTop.CausesValidation = false;
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barManager1;
+            this.barDockControlTop.Manager = this.barManagerCV;
             this.barDockControlTop.Size = new System.Drawing.Size(892, 30);
             // 
             // barDockControlBottom
@@ -171,7 +171,7 @@
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 717);
-            this.barDockControlBottom.Manager = this.barManager1;
+            this.barDockControlBottom.Manager = this.barManagerCV;
             this.barDockControlBottom.Size = new System.Drawing.Size(892, 20);
             // 
             // barDockControlLeft
@@ -179,7 +179,7 @@
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 30);
-            this.barDockControlLeft.Manager = this.barManager1;
+            this.barDockControlLeft.Manager = this.barManagerCV;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 687);
             // 
             // barDockControlRight
@@ -187,7 +187,7 @@
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
             this.barDockControlRight.Location = new System.Drawing.Point(892, 30);
-            this.barDockControlRight.Manager = this.barManager1;
+            this.barDockControlRight.Manager = this.barManagerCV;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
             // 
             // splitContainer1
@@ -212,7 +212,7 @@
             // txtTen
             // 
             this.txtTen.Location = new System.Drawing.Point(120, 39);
-            this.txtTen.MenuManager = this.barManager1;
+            this.txtTen.MenuManager = this.barManagerCV;
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Properties.Appearance.Options.UseFont = true;
@@ -234,7 +234,7 @@
             this.gcChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gcChucVu.Location = new System.Drawing.Point(0, 0);
             this.gcChucVu.MainView = this.gvChucVu;
-            this.gcChucVu.MenuManager = this.barManager1;
+            this.gcChucVu.MenuManager = this.barManagerCV;
             this.gcChucVu.Name = "gcChucVu";
             this.gcChucVu.Size = new System.Drawing.Size(892, 556);
             this.gcChucVu.TabIndex = 0;
@@ -290,7 +290,7 @@
             this.Name = "frmChucVu";
             this.Text = "Chức Vụ";
             this.Load += new System.EventHandler(this.frmChucVu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -320,7 +320,7 @@
         private DevExpress.XtraEditors.TextEdit txtTen;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraBars.Bar bar1;
-        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.BarManager barManagerCV;
         private DevExpress.XtraGrid.GridControl gcChucVu;
         private DevExpress.XtraGrid.Views.Grid.GridView gvChucVu;
         private DevExpress.XtraGrid.Columns.GridColumn MaCV;

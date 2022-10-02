@@ -1,6 +1,6 @@
 ﻿namespace QuanLiBDS
 {
-    partial class CreAcc
+    partial class frmCreAcc
     {
         /// <summary>
         /// Required designer variable.

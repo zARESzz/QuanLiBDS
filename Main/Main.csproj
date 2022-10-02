@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cls_ChucVu.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="cls_KhachHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

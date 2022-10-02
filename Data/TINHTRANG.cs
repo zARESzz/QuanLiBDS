@@ -12,21 +12,21 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class LOAISANPHAM
+    public partial class TINHTRANG
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAISANPHAM()
+        public TINHTRANG()
         {
-            this.KINHDOANHs = new HashSet<KINHDOANH>();
-            this.LOAIHINHs = new HashSet<LOAIHINH>();
+            this.BATDONGSANs = new HashSet<BATDONGSAN>();
+            this.PHIEUDENBUs = new HashSet<PHIEUDENBU>();
         }
     
-        public string MaLSP { get; set; }
-        public string TenLSP { get; set; }
+        public string MaTT { get; set; }
+        public string TenTT { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<KINHDOANH> KINHDOANHs { get; set; }
+        public virtual ICollection<BATDONGSAN> BATDONGSANs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOAIHINH> LOAIHINHs { get; set; }
+        public virtual ICollection<PHIEUDENBU> PHIEUDENBUs { get; set; }
     }
 }

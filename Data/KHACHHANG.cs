@@ -14,14 +14,22 @@ namespace Data
     
     public partial class KHACHHANG
     {
-        public string MaKH { get; set; }
-        public string MaTK { get; set; }
-        public string TenKH { get; set; }
-        public System.DateTime NS { get; set; }
-        public string SDT { get; set; }
-        public string Emaill { get; set; }
-        public string DiaChi { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public KHACHHANG()
+        {
+            this.BATDONGSANs = new HashSet<BATDONGSAN>();
+            this.HOPDONGs = new HashSet<HOPDONG>();
+        }
     
-        public virtual TAIKHOAN TAIKHOAN { get; set; }
+        public string MaKH { get; set; }
+        public string HoTenKH { get; set; }
+        public string SDT { get; set; }
+        public string DiaChi { get; set; }
+        public string Emaill { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<BATDONGSAN> BATDONGSANs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
     }
 }

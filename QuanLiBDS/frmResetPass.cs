@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace QuanLiBDS
 {
-    public partial class ResetPass : DevExpress.XtraEditors.XtraForm
+    public partial class frmResetPass : DevExpress.XtraEditors.XtraForm
     {
-        public ResetPass()
+        public frmResetPass()
         {
             InitializeComponent();
         }
