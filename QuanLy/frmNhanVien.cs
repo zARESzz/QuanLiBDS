@@ -21,6 +21,7 @@ namespace QuanLy
         }
         cls_NhanVien _nv;
         cls_ChucVu _cv;
+        cls_MatKhau _mk = new cls_MatKhau();
         bool _tt;
         string id;
         private void frmNHANVIEN_Load(object sender, EventArgs e)
@@ -55,7 +56,7 @@ namespace QuanLy
 
         void loadData()
         {
-            gcNHANVIEN.DataSource = _nv.getList();
+            gcNHANVIEN.DataSource = _nv.getListFull();
             gvNHANVIEN.OptionsBehavior.Editable = false;
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -124,8 +125,8 @@ namespace QuanLy
                 kh.HoTenNV = txtHoTen.Text;
                 kh.GioiTinh = chkGioiTinh.Checked?"Nam":"Nữ";
                 kh.NgaySinh = dtNgaySinh.Value;
-                kh.MK = txtMatKhau.Text;
-                kh.MaCV = cbxChucVu.SelectedValue.ToString(); 
+                kh.MK =  _mk.MaHoa(txtMatKhau.Text);
+                kh.MaCV = cbxChucVu.SelectedValue.ToString();
                 kh.SDT = txtSDT.Text;
                 kh.DiaChi = txtDiaChi.Text;
                 kh.Email = txtEmail.Text;
@@ -137,7 +138,7 @@ namespace QuanLy
                 kh.HoTenNV = txtHoTen.Text;
                 kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
                 kh.NgaySinh = dtNgaySinh.Value;
-                kh.MK = txtMatKhau.Text;
+                kh.MK = _mk.MaHoa(txtMatKhau.Text);
                 kh.MaCV = cbxChucVu.SelectedValue.ToString();
                 kh.SDT = txtSDT.Text;
                 kh.DiaChi = txtDiaChi.Text;
@@ -151,7 +152,7 @@ namespace QuanLy
             id = gvNHANVIEN.GetFocusedRowCellValue("MaTK").ToString();
             var nv = _nv.getItem(id);
             txtHoTen.Text = nv.HoTenNV;
-            txtMatKhau.Text = nv.MK;
+            txtMatKhau.Text =_mk.GiaiMa(nv.MK);
             txtDiaChi.Text = nv.DiaChi;
             txtEmail.Text = nv.Email;
             txtSDT.Text = nv.SDT;
@@ -160,6 +161,16 @@ namespace QuanLy
             else
                 chkGioiTinh.Checked = false;
             cbxChucVu.SelectedValue = nv.MaCV;
+        }
+
+        private void txtMatKhau_MouseMove(object sender, MouseEventArgs e)
+        {
+            txtMatKhau.Properties.UseSystemPasswordChar = false;
+        }
+
+        private void txtMatKhau_MouseLeave(object sender, EventArgs e)
+        {
+            txtMatKhau.Properties.UseSystemPasswordChar = true;
         }
     }
 }

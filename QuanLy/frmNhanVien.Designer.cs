@@ -71,6 +71,7 @@
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerNV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -83,6 +84,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNHANVIEN)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNHANVIEN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // barManagerNV
@@ -311,8 +313,11 @@
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMatKhau.Properties.Appearance.Options.UseFont = true;
+            this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(231, 34);
             this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.MouseLeave += new System.EventHandler(this.txtMatKhau_MouseLeave);
+            this.txtMatKhau.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseMove);
             // 
             // labelControl3
             // 
@@ -431,7 +436,7 @@
             this.MaTK.Name = "MaTK";
             this.MaTK.Visible = true;
             this.MaTK.VisibleIndex = 0;
-            this.MaTK.Width = 83;
+            this.MaTK.Width = 100;
             // 
             // MK
             // 
@@ -439,12 +444,12 @@
             this.MK.AppearanceCell.Options.UseFont = true;
             this.MK.Caption = "Mật Khẩu";
             this.MK.FieldName = "MK";
-            this.MK.MaxWidth = 50;
+            this.MK.MaxWidth = 200;
             this.MK.MinWidth = 50;
             this.MK.Name = "MK";
             this.MK.Visible = true;
             this.MK.VisibleIndex = 1;
-            this.MK.Width = 50;
+            this.MK.Width = 100;
             // 
             // HoTenNV
             // 
@@ -465,8 +470,6 @@
             this.MaCV.FieldName = "MaCV";
             this.MaCV.MinWidth = 25;
             this.MaCV.Name = "MaCV";
-            this.MaCV.Visible = true;
-            this.MaCV.VisibleIndex = 3;
             this.MaCV.Width = 104;
             // 
             // TenCV
@@ -475,6 +478,8 @@
             this.TenCV.FieldName = "TenCV";
             this.TenCV.MinWidth = 25;
             this.TenCV.Name = "TenCV";
+            this.TenCV.Visible = true;
+            this.TenCV.VisibleIndex = 7;
             this.TenCV.Width = 94;
             // 
             // GioiTinh
@@ -484,7 +489,7 @@
             this.GioiTinh.MinWidth = 25;
             this.GioiTinh.Name = "GioiTinh";
             this.GioiTinh.Visible = true;
-            this.GioiTinh.VisibleIndex = 4;
+            this.GioiTinh.VisibleIndex = 3;
             this.GioiTinh.Width = 104;
             // 
             // NgaySinh
@@ -494,7 +499,7 @@
             this.NgaySinh.MinWidth = 25;
             this.NgaySinh.Name = "NgaySinh";
             this.NgaySinh.Visible = true;
-            this.NgaySinh.VisibleIndex = 5;
+            this.NgaySinh.VisibleIndex = 4;
             this.NgaySinh.Width = 104;
             // 
             // SDT
@@ -512,7 +517,7 @@
             this.Email.MinWidth = 25;
             this.Email.Name = "Email";
             this.Email.Visible = true;
-            this.Email.VisibleIndex = 6;
+            this.Email.VisibleIndex = 5;
             this.Email.Width = 104;
             // 
             // DiaChi
@@ -522,7 +527,7 @@
             this.DiaChi.MinWidth = 25;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 7;
+            this.DiaChi.VisibleIndex = 6;
             this.DiaChi.Width = 140;
             // 
             // frmNhanVien
@@ -536,7 +541,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmNhanVien";
-            this.Text = "Khách hàng";
+            this.Text = "Nhân viên";
             this.Load += new System.EventHandler(this.frmNHANVIEN_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerNV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -551,6 +556,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcNHANVIEN)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvNHANVIEN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,5 +604,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn TenCV;
         private DevExpress.XtraGrid.Columns.GridColumn GioiTinh;
         private DevExpress.XtraGrid.Columns.GridColumn NgaySinh;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
     }
 }

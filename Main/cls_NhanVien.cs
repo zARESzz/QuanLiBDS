@@ -1,4 +1,5 @@
 ﻿using Data;
+using Main.Full;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,29 @@ namespace Main
         public List<NHANVIEN> getList()
         {
             return db.NHANVIENs.ToList();
+        }
+        public List<cls_NhanVien_Full> getListFull()
+        {
+            var listNV = db.NHANVIENs.ToList();
+            List<cls_NhanVien_Full> ListFull = new List<cls_NhanVien_Full>();
+            cls_NhanVien_Full nvFull;
+            foreach (var item in listNV)
+            {
+                nvFull = new cls_NhanVien_Full();
+                nvFull.MaTK = item.MaTK;
+                nvFull.MK = item.MK;
+                nvFull.HoTenNV = item.HoTenNV;
+                nvFull.GioiTinh = item.GioiTinh;
+                nvFull.NgaySinh = item.NgaySinh;
+                nvFull.SDT = item.SDT;
+                nvFull.DiaChi = item.DiaChi;
+                nvFull.Email = item.Email;
+                nvFull.MaCV =  item.MaCV;
+                var cv = db.CHUCVUs.FirstOrDefault(p => p.MaCV == item.MaCV);
+                nvFull.TenCV = cv.TenCV;
+                ListFull.Add(nvFull);
+            }
+            return ListFull;
         }
         public NHANVIEN Add(NHANVIEN nv)
         {
