@@ -1,6 +1,6 @@
 ﻿namespace QuanLy
 {
-    partial class frmChucVu
+    partial class frmNhuCau
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChucVu));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhuCau));
             this.barManagerCV = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -46,18 +46,18 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.txtTen = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.gcChucVu = new DevExpress.XtraGrid.GridControl();
-            this.gvChucVu = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MaCV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.TenCV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcNhuCau = new DevExpress.XtraGrid.GridControl();
+            this.gvNhuCau = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaNC = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenNC = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcChucVu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvChucVu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhuCau)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNhuCau)).BeginInit();
             this.SuspendLayout();
             // 
             // barManagerCV
@@ -126,7 +126,8 @@
             // 
             this.btnSave.Caption = "Lưu";
             this.btnSave.Id = 3;
-            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
@@ -204,7 +205,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.gcChucVu);
+            this.splitContainer1.Panel2.Controls.Add(this.gcNhuCau);
             this.splitContainer1.Size = new System.Drawing.Size(892, 687);
             this.splitContainer1.SplitterDistance = 127;
             this.splitContainer1.TabIndex = 4;
@@ -229,55 +230,55 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "Tên :";
             // 
-            // gcChucVu
+            // gcNhuCau
             // 
-            this.gcChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcChucVu.Location = new System.Drawing.Point(0, 0);
-            this.gcChucVu.MainView = this.gvChucVu;
-            this.gcChucVu.MenuManager = this.barManagerCV;
-            this.gcChucVu.Name = "gcChucVu";
-            this.gcChucVu.Size = new System.Drawing.Size(892, 556);
-            this.gcChucVu.TabIndex = 0;
-            this.gcChucVu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvChucVu});
+            this.gcNhuCau.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcNhuCau.Location = new System.Drawing.Point(0, 0);
+            this.gcNhuCau.MainView = this.gvNhuCau;
+            this.gcNhuCau.MenuManager = this.barManagerCV;
+            this.gcNhuCau.Name = "gcNhuCau";
+            this.gcNhuCau.Size = new System.Drawing.Size(892, 556);
+            this.gcNhuCau.TabIndex = 0;
+            this.gcNhuCau.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvNhuCau});
             // 
-            // gvChucVu
+            // gvNhuCau
             // 
-            this.gvChucVu.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaCV,
-            this.TenCV});
-            this.gvChucVu.GridControl = this.gcChucVu;
-            this.gvChucVu.Name = "gvChucVu";
-            this.gvChucVu.OptionsView.ShowGroupPanel = false;
-            this.gvChucVu.Click += new System.EventHandler(this.gvChucVu_Click);
+            this.gvNhuCau.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MaNC,
+            this.TenNC});
+            this.gvNhuCau.GridControl = this.gcNhuCau;
+            this.gvNhuCau.Name = "gvNhuCau";
+            this.gvNhuCau.OptionsView.ShowGroupPanel = false;
+            this.gvNhuCau.Click += new System.EventHandler(this.gvChucVu_Click);
             // 
-            // MaCV
+            // MaNC
             // 
-            this.MaCV.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.MaCV.AppearanceCell.Options.UseFont = true;
-            this.MaCV.Caption = "ID";
-            this.MaCV.FieldName = "MaCV";
-            this.MaCV.MaxWidth = 50;
-            this.MaCV.MinWidth = 50;
-            this.MaCV.Name = "MaCV";
-            this.MaCV.Visible = true;
-            this.MaCV.VisibleIndex = 0;
-            this.MaCV.Width = 50;
+            this.MaNC.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.MaNC.AppearanceCell.Options.UseFont = true;
+            this.MaNC.Caption = "ID";
+            this.MaNC.FieldName = "MaNC";
+            this.MaNC.MaxWidth = 50;
+            this.MaNC.MinWidth = 50;
+            this.MaNC.Name = "MaNC";
+            this.MaNC.Visible = true;
+            this.MaNC.VisibleIndex = 0;
+            this.MaNC.Width = 50;
             // 
-            // TenCV
+            // TenNC
             // 
-            this.TenCV.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.TenCV.AppearanceCell.Options.UseFont = true;
-            this.TenCV.Caption = "Tên ";
-            this.TenCV.FieldName = "TenCV";
-            this.TenCV.MaxWidth = 200;
-            this.TenCV.MinWidth = 200;
-            this.TenCV.Name = "TenCV";
-            this.TenCV.Visible = true;
-            this.TenCV.VisibleIndex = 1;
-            this.TenCV.Width = 200;
+            this.TenNC.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TenNC.AppearanceCell.Options.UseFont = true;
+            this.TenNC.Caption = "Tên ";
+            this.TenNC.FieldName = "TenNC";
+            this.TenNC.MaxWidth = 200;
+            this.TenNC.MinWidth = 200;
+            this.TenNC.Name = "TenNC";
+            this.TenNC.Visible = true;
+            this.TenNC.VisibleIndex = 1;
+            this.TenNC.Width = 200;
             // 
-            // frmChucVu
+            // frmNhuCau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,9 +288,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmChucVu";
-            this.Text = "Chức Vụ";
-            this.Load += new System.EventHandler(this.frmChucVu_Load);
+            this.Name = "frmNhuCau";
+            this.Text = "Nhu Cầu";
+            this.Load += new System.EventHandler(this.frmNhuCau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -297,8 +298,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcChucVu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvChucVu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcNhuCau)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvNhuCau)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,9 +322,9 @@
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager barManagerCV;
-        private DevExpress.XtraGrid.GridControl gcChucVu;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvChucVu;
-        private DevExpress.XtraGrid.Columns.GridColumn MaCV;
-        private DevExpress.XtraGrid.Columns.GridColumn TenCV;
+        private DevExpress.XtraGrid.GridControl gcNhuCau;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvNhuCau;
+        private DevExpress.XtraGrid.Columns.GridColumn MaNC;
+        private DevExpress.XtraGrid.Columns.GridColumn TenNC;
     }
 }

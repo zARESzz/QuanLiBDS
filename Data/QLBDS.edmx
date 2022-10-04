@@ -17,7 +17,7 @@
           <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
           <Property Name="DienTich" Type="bigint" />
           <Property Name="GioiThieu" Type="nvarchar" MaxLength="1000" />
-          <Property Name="HinhAnh" Type="varchar" MaxLength="255" />
+          <Property Name="HinhAnh" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="CHITIETNHUCAU">
           <Key>
@@ -282,9 +282,16 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="P_MaBDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MACV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MaHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MAKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MaLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MaNC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MaPhieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MATK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MaTT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MATToan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="data_BDSModelStoreContainer">
           <EntitySet Name="BATDONGSAN" EntityType="Self.BATDONGSAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CHITIETNHUCAU" EntityType="Self.CHITIETNHUCAU" Schema="dbo" store:Type="Tables" />
@@ -359,6 +366,16 @@
     <edmx:ConceptualModels>
       <Schema Namespace="data_BDSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="data_BDSEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="P_MACV" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MAKH" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MATK" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MaBDS" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MaHD" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MaLoai" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MaNC" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MaPhieu" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MaTT" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MATToan" ReturnType="Collection(String)" />
           <EntitySet Name="BATDONGSANs" EntityType="data_BDSModel.BATDONGSAN" />
           <EntitySet Name="CHITIETNHUCAUs" EntityType="data_BDSModel.CHITIETNHUCAU" />
           <EntitySet Name="CHUCVUs" EntityType="data_BDSModel.CHUCVU" />
@@ -426,9 +443,6 @@
             <End Role="TINHTRANG" EntitySet="TINHTRANGs" />
             <End Role="PHIEUDENBU" EntitySet="PHIEUDENBUs" />
           </AssociationSet>
-          <FunctionImport Name="P_MACV" ReturnType="Collection(String)" />
-          <FunctionImport Name="P_MAKH" ReturnType="Collection(String)" />
-          <FunctionImport Name="P_MATK" ReturnType="Collection(String)" />
         </EntityContainer>
         <EntityType Name="BATDONGSAN">
           <Key>
@@ -442,7 +456,7 @@
           <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="DienTich" Type="Int64" />
           <Property Name="GioiThieu" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="HinhAnh" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="HinhAnh" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="KHACHHANG" Relationship="data_BDSModel.FK_BDS_KH" FromRole="BATDONGSAN" ToRole="KHACHHANG" />
           <NavigationProperty Name="LOAIBD" Relationship="data_BDSModel.FK_BDS_Loai" FromRole="BATDONGSAN" ToRole="LOAIBD" />
           <NavigationProperty Name="TINHTRANG" Relationship="data_BDSModel.FK_BDS_TT" FromRole="BATDONGSAN" ToRole="TINHTRANG" />
@@ -735,12 +749,22 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="data_BDSModelStoreContainer" CdmEntityContainer="data_BDSEntities">
+          <FunctionImportMapping FunctionImportName="P_MACV" FunctionName="data_BDSModel.Store.P_MACV" />
+          <FunctionImportMapping FunctionImportName="P_MAKH" FunctionName="data_BDSModel.Store.P_MAKH" />
+          <FunctionImportMapping FunctionImportName="P_MATK" FunctionName="data_BDSModel.Store.P_MATK" />
+          <FunctionImportMapping FunctionImportName="P_MaBDS" FunctionName="data_BDSModel.Store.P_MaBDS" />
+          <FunctionImportMapping FunctionImportName="P_MaHD" FunctionName="data_BDSModel.Store.P_MaHD" />
+          <FunctionImportMapping FunctionImportName="P_MaLoai" FunctionName="data_BDSModel.Store.P_MaLoai" />
+          <FunctionImportMapping FunctionImportName="P_MaNC" FunctionName="data_BDSModel.Store.P_MaNC" />
+          <FunctionImportMapping FunctionImportName="P_MaPhieu" FunctionName="data_BDSModel.Store.P_MaPhieu" />
+          <FunctionImportMapping FunctionImportName="P_MaTT" FunctionName="data_BDSModel.Store.P_MaTT" />
+          <FunctionImportMapping FunctionImportName="P_MATToan" FunctionName="data_BDSModel.Store.P_MATToan" />
           <EntitySetMapping Name="BATDONGSANs">
             <EntityTypeMapping TypeName="data_BDSModel.BATDONGSAN">
               <MappingFragment StoreEntitySet="BATDONGSAN">
@@ -860,9 +884,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="P_MACV" FunctionName="data_BDSModel.Store.P_MACV" />
-          <FunctionImportMapping FunctionImportName="P_MAKH" FunctionName="data_BDSModel.Store.P_MAKH" />
-          <FunctionImportMapping FunctionImportName="P_MATK" FunctionName="data_BDSModel.Store.P_MATK" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

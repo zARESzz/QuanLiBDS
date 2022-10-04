@@ -29,7 +29,7 @@ namespace Data
         public string DiaChi { get; set; }
         public Nullable<long> DienTich { get; set; }
         public string GioiThieu { get; set; }
-        public string HinhAnh { get; set; }
+        public byte[] HinhAnh { get; set; }
     
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual LOAIBD LOAIBD { get; set; }

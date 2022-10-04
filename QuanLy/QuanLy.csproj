@@ -74,6 +74,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmBDS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBDS.Designer.cs">
+      <DependentUpon>frmBDS.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,17 +92,29 @@
     <Compile Include="frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLoaiBD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLoaiBD.Designer.cs">
+      <DependentUpon>frmLoaiBD.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmNhanVien.Designer.cs">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTaiKhoan.cs">
+    <Compile Include="frmNhuCau.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTaiKhoan.Designer.cs">
-      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    <Compile Include="frmNhuCau.Designer.cs">
+      <DependentUpon>frmNhuCau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTinhTrang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTinhTrang.Designer.cs">
+      <DependentUpon>frmTinhTrang.cs</DependentUpon>
     </Compile>
     <Compile Include="QuanLy.cs">
       <SubType>Form</SubType>
@@ -118,17 +136,26 @@
     <Compile Include="Reports\rptNhanVien.Designer.cs">
       <DependentUpon>rptNhanVien.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBDS.resx">
+      <DependentUpon>frmBDS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChucVu.resx">
       <DependentUpon>frmChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLoaiBD.resx">
+      <DependentUpon>frmLoaiBD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmNhanVien.resx">
       <DependentUpon>frmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTaiKhoan.resx">
-      <DependentUpon>frmTaiKhoan.cs</DependentUpon>
+    <EmbeddedResource Include="frmNhuCau.resx">
+      <DependentUpon>frmNhuCau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTinhTrang.resx">
+      <DependentUpon>frmTinhTrang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuanLy.resx">
       <DependentUpon>QuanLy.cs</DependentUpon>
@@ -142,6 +169,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Reports\rptKhachHang.resx">
       <DependentUpon>rptKhachHang.cs</DependentUpon>
@@ -170,6 +198,9 @@
       <Project>{07cd51d1-e938-47ce-b3d1-849495ac449a}</Project>
       <Name>Main</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\th.jfif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
