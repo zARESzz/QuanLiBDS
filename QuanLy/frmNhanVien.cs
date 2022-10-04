@@ -1,6 +1,7 @@
 ﻿using Data;
 using DevExpress.XtraEditors;
 using Main;
+using Main.Full;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
+using QuanLy.Reports;
 
 namespace QuanLy
 {
@@ -19,6 +22,7 @@ namespace QuanLy
         {
             InitializeComponent();
         }
+        List<cls_NhanVien_Full> _listNV;
         cls_NhanVien _nv;
         cls_ChucVu _cv;
         cls_MatKhau _mk = new cls_MatKhau();
@@ -58,6 +62,7 @@ namespace QuanLy
         {
             gcNHANVIEN.DataSource = _nv.getListFull();
             gvNHANVIEN.OptionsBehavior.Editable = false;
+            _listNV = _nv.getListFull();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -171,6 +176,12 @@ namespace QuanLy
         private void txtMatKhau_MouseLeave(object sender, EventArgs e)
         {
             txtMatKhau.Properties.UseSystemPasswordChar = true;
+        }
+
+        private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            rptNhanVien rpt = new rptNhanVien(_listNV);
+            rpt.ShowPreview();
         }
     }
 }

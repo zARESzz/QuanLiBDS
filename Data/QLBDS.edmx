@@ -75,7 +75,7 @@
           <Property Name="MK" Type="varchar" MaxLength="34" Nullable="false" />
           <Property Name="HoTenNV" Type="nvarchar" MaxLength="36" Nullable="false" />
           <Property Name="MaCV" Type="varchar" MaxLength="5" />
-          <Property Name="GioiTinh" Type="varchar" MaxLength="4" />
+          <Property Name="GioiTinh" Type="nvarchar" MaxLength="4" />
           <Property Name="NgaySinh" Type="date" />
           <Property Name="SDT" Type="varchar" MaxLength="15" />
           <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
@@ -517,7 +517,7 @@
           <Property Name="MK" Type="String" Nullable="false" MaxLength="34" FixedLength="false" Unicode="false" />
           <Property Name="HoTenNV" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
           <Property Name="MaCV" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+          <Property Name="GioiTinh" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
           <Property Name="NgaySinh" Type="DateTime" Precision="0" />
           <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
           <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />

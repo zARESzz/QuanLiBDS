@@ -1,6 +1,7 @@
 ﻿using Data;
 using DevExpress.XtraEditors;
 using Main;
+using QuanLy.Reports;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 
 namespace QuanLy
 {
@@ -19,6 +21,7 @@ namespace QuanLy
         {
             InitializeComponent();
         }
+        List<KHACHHANG> _listkh;
         cls_KhachHang _kh;
         bool _tt;
         string id;
@@ -43,12 +46,14 @@ namespace QuanLy
             btnDong.Enabled = kt;
             btnSave.Enabled = !kt;
             btnHuy.Enabled = !kt;
+            btnIn.Enabled = kt;
         }
 
         void loadData()
         {
             gcKHACHHANG.DataSource = _kh.getList();
             gvKHACHHANG.OptionsBehavior.Editable = false;
+            _listkh = _kh.getList();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -136,6 +141,13 @@ namespace QuanLy
             txtDiaChi.Text = gvKHACHHANG.GetFocusedRowCellValue("DiaChi").ToString();
             txtEmail.Text = gvKHACHHANG.GetFocusedRowCellValue("Emaill").ToString();
             txtSDT.Text = gvKHACHHANG.GetFocusedRowCellValue("SDT").ToString();
+        }
+
+        private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            rptKhachHang rpt = new rptKhachHang(_listkh);
+            rpt.ShowPreview();
+
         }
     }
 }
