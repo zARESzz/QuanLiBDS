@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace QuanLy
 {
-    public partial class QuanLy : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmQuanLy : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public QuanLy()
+        public frmQuanLy()
         {
             InitializeComponent();
         }
@@ -44,9 +44,24 @@ namespace QuanLy
             OpenForm(typeof(frmKhachHang));
         }
 
-        private void barButtonItem5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnTinhTrang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            OpenForm(typeof(frmTinhTrang));
+        }
 
+        private void btnLoai_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmLoaiBD));
+        }
+
+        private void btnNhuCau_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmNhuCau));
+        }
+
+        private void btnBatDongSan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmBDS));
         }
     }
 }
