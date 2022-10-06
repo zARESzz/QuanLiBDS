@@ -1,11 +1,12 @@
 namespace GiaoDien
 {
-    public partial class Form1 : Form
+    public partial class frmGiaoDien : Form
     {
         private Button currentButton;
         private Random random;
         private int tempIndex;
-        public Form1()
+        private Form activeForm;
+        public frmGiaoDien()
         {
             InitializeComponent();
             random = new Random();

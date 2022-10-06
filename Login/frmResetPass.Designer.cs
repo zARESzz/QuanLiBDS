@@ -1,6 +1,6 @@
 ﻿namespace Login
 {
-    partial class ResetPass
+    partial class frmResetPass
     {
         /// <summary>
         /// Required designer variable.
@@ -85,7 +85,7 @@
             this.ctButton1.UseVisualStyleBackColor = false;
             this.ctButton1.Click += new System.EventHandler(this.ctButton1_Click);
             // 
-            // ResetPass
+            // frmResetPass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -96,7 +96,8 @@
             this.Controls.Add(this.btnGuiEmail);
             this.Controls.Add(this.txtName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.Name = "ResetPass";
+            this.Name = "frmResetPass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPass";
             this.ResumeLayout(false);
             this.PerformLayout();

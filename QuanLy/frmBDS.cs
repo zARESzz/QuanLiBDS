@@ -22,7 +22,6 @@ namespace QuanLy
         {
             InitializeComponent();
         }
-        List<cls_BDS_Full> _listBDS;
         cls_TinhTrang _ttr;
         cls_KhachHang _kh;
         cls_BDS _bds;

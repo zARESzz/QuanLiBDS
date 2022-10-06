@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Login
 {
-    public partial class CreAcc : DevExpress.XtraEditors.XtraForm
+    public partial class frmCreAcc : DevExpress.XtraEditors.XtraForm
     {
-        public CreAcc()
+        public frmCreAcc()
         {
             InitializeComponent();
         }

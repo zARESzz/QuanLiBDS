@@ -1,6 +1,6 @@
 ﻿namespace Login
 {
-    partial class CreAcc
+    partial class frmCreAcc
     {
         /// <summary>
         /// Required designer variable.
@@ -117,7 +117,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // CreAcc
+            // frmCreAcc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -132,7 +132,8 @@
             this.Controls.Add(this.txtName);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "CreAcc";
+            this.Name = "frmCreAcc";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreAcc";
             this.Load += new System.EventHandler(this.CreAcc_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();

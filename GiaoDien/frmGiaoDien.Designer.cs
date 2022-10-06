@@ -1,6 +1,6 @@
 ﻿namespace GiaoDien
 {
-    partial class Form1
+    partial class frmGiaoDien
     {
         /// <summary>
         ///  Required designer variable.

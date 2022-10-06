@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Main.Custom;
+using QuanLy;
 
 namespace Login
 {
-    public partial class Form1 : DevExpress.XtraEditors.XtraForm
+    public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        public Form1()
+        public frmLogin()
         {
             InitializeComponent();
         }
@@ -24,13 +25,13 @@ namespace Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
-            
+            frmQuanLy ql = new frmQuanLy();
+            ql.ShowDialog();
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
         {
-            CreAcc creAcc = new CreAcc();
+            frmCreAcc creAcc = new frmCreAcc();
             this.Hide();
             creAcc.ShowDialog();
             this.Show();
@@ -38,7 +39,7 @@ namespace Login
 
         private void btnForgotPass_Click(object sender, EventArgs e)
         {
-            ResetPass resetPass = new ResetPass();
+            frmResetPass resetPass = new frmResetPass();
             resetPass.ShowDialog();
         }
 
