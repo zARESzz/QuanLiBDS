@@ -5,7 +5,6 @@ namespace GiaoDien
         private Button currentButton;
         private Random random;
         private int tempIndex;
-        private Form activeForm;
         public Form1()
         {
             InitializeComponent();
