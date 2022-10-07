@@ -38,7 +38,6 @@
             this.btnLoai = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhuCau = new DevExpress.XtraBars.BarButtonItem();
             this.btnBatDongSan = new DevExpress.XtraBars.BarButtonItem();
-            this.btnChiTietGia = new DevExpress.XtraBars.BarButtonItem();
             this.btnHopDong = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
@@ -51,8 +50,6 @@
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.tbBDS = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -68,6 +65,7 @@
             this.rbQuanLy.ExpandCollapseItem.Id = 0;
             this.rbQuanLy.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.rbQuanLy.ExpandCollapseItem,
+            this.rbQuanLy.SearchEditItem,
             this.btnChucVu,
             this.btnNhanVien,
             this.btnKhachHang,
@@ -75,7 +73,6 @@
             this.btnLoai,
             this.btnNhuCau,
             this.btnBatDongSan,
-            this.btnChiTietGia,
             this.btnHopDong,
             this.barButtonItem1,
             this.barButtonItem2});
@@ -88,16 +85,7 @@
             this.rbQLNS,
             this.rbQLKH,
             this.rbQLBDS,
-            this.tbBDS,
-            this.ribbonPage2});
-            // 
-            // 
-            // 
-            this.rbQuanLy.SearchEditItem.AccessibleName = "Search Item";
-            this.rbQuanLy.SearchEditItem.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Left;
-            this.rbQuanLy.SearchEditItem.EditWidth = 150;
-            this.rbQuanLy.SearchEditItem.Id = -5000;
-            this.rbQuanLy.SearchEditItem.ImageOptions.AllowGlyphSkinning = DevExpress.Utils.DefaultBoolean.True;
+            this.tbBDS});
             this.rbQuanLy.Size = new System.Drawing.Size(1141, 193);
             // 
             // btnChucVu
@@ -160,13 +148,6 @@
             this.btnBatDongSan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBatDongSan.ImageOptions.SvgImage")));
             this.btnBatDongSan.Name = "btnBatDongSan";
             this.btnBatDongSan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBatDongSan_ItemClick);
-            // 
-            // btnChiTietGia
-            // 
-            this.btnChiTietGia.Caption = "Bảng Giá";
-            this.btnChiTietGia.Id = 12;
-            this.btnChiTietGia.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChiTietGia.ImageOptions.SvgImage")));
-            this.btnChiTietGia.Name = "btnChiTietGia";
             // 
             // btnHopDong
             // 
@@ -239,7 +220,6 @@
             // 
             this.ribbonPageGroup6.AllowTextClipping = false;
             this.ribbonPageGroup6.ItemLinks.Add(this.btnBatDongSan);
-            this.ribbonPageGroup6.ItemLinks.Add(this.btnChiTietGia);
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Quản Lý";
             // 
@@ -258,18 +238,6 @@
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Danh mục hợp đồng";
-            // 
-            // ribbonPage2
-            // 
-            this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup8});
-            this.ribbonPage2.Name = "ribbonPage2";
-            this.ribbonPage2.Text = "ribbonPage2";
-            // 
-            // ribbonPageGroup8
-            // 
-            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
-            this.ribbonPageGroup8.Text = "ribbonPageGroup8";
             // 
             // documentManager1
             // 
@@ -334,15 +302,12 @@
         private DevExpress.XtraBars.BarButtonItem btnLoai;
         private DevExpress.XtraBars.BarButtonItem btnNhuCau;
         private DevExpress.XtraBars.BarButtonItem btnBatDongSan;
-        private DevExpress.XtraBars.BarButtonItem btnChiTietGia;
         private DevExpress.XtraBars.BarButtonItem btnHopDong;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraBars.Ribbon.RibbonPage tbBDS;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage2;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
     }
 }
 

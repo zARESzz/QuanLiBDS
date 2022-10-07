@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,13 @@ using System.Threading.Tasks;
 
 namespace Main.Full
 {
-    public class cls_BDS_Full
+    public class cls_CTNC_Full
     {
+        public string MaNC { get; set; }
+        public string TenNC { get; set; }
         public string MaBDS { get; set; }
+        public Nullable<long> DinhGia { get; set; }
+        public string DieuKien { get; set; }
         public string TenBDS { get; set; }
         public string MaKH { get; set; }
         public string TenKH { get; set; }

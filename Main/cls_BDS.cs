@@ -19,33 +19,6 @@ namespace Main
         {
             return db.BATDONGSANs.ToList();
         }
-        public List<cls_BDS_Full> getListFull()
-        {
-            var listBDS = db.BATDONGSANs.ToList();
-            List<cls_BDS_Full> ListFull = new List<cls_BDS_Full>();
-            cls_BDS_Full bdsFull;
-            foreach (var item in listBDS)
-            {
-                bdsFull = new cls_BDS_Full();
-                bdsFull.MaBDS = item.MaBDS;
-                bdsFull.TenBDS = item.TenBDS;
-                bdsFull.MaKH = item.MaKH;
-                var kh = db.KHACHHANGs.FirstOrDefault(p => p.MaKH == item.MaKH);
-                bdsFull.TenKH = kh.HoTenKH;
-                bdsFull.MaLoai = item.MaLoai;
-                var loai = db.LOAIBDS.FirstOrDefault(p => p.MaLoai == item.MaLoai);
-                bdsFull.TenLoai = loai.TenLoai;
-                bdsFull.MaTT = item.MaTT;
-                var tt = db.TINHTRANGs.FirstOrDefault(p => p.MaTT == item.MaTT);
-                bdsFull.TenTT = tt.TenTT;
-                bdsFull.DiaChi = item.DiaChi;
-                bdsFull.DienTich = item.DienTich;
-                bdsFull.GioiThieu = item.GioiThieu;
-                bdsFull.HinhAnh = item.HinhAnh;
-                ListFull.Add(bdsFull);
-            }
-            return ListFull;
-        }
         public BATDONGSAN Add(BATDONGSAN bds)
         {
             try
