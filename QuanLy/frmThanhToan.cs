@@ -65,7 +65,7 @@ namespace QuanLy
         void loadComboBox()
         {
             cbxHD.DataSource = _hd.getList();
-            cbxHD.DisplayMember = "MaHD";
+            cbxHD.DisplayMember = "TenBDS";
             cbxHD.ValueMember = "MaHD";
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
