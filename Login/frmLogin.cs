@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using CustomMessageBoxVB;
+//using CustomMessageBoxVB;
 using Data;
 using Main.Custom;
 using QuanLy;
@@ -36,7 +36,7 @@ namespace Login
             }
             else
             {
-                RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
+                //RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
             }
    
         }
@@ -75,13 +75,13 @@ namespace Login
             btnSignup.BackColor= Color.White;
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DialogResult dlr = RJMessageBox.Show("Bạn có muốn thoát chương trình ?",
-                                       "Thông báo",
-                                       MessageBoxButtons.OKCancel);
-            if (dlr == DialogResult.OK)
-                this.Close();
-        }
+        //private void pictureBox1_Click(object sender, EventArgs e)
+        //{
+        //    DialogResult dlr = RJMessageBox.Show("Bạn có muốn thoát chương trình ?",
+        //                               "Thông báo",
+        //                               MessageBoxButtons.OKCancel);
+        //    if (dlr == DialogResult.OK)
+        //        this.Close();
+        //}
     }
 }
