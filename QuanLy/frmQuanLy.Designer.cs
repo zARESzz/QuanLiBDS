@@ -40,7 +40,7 @@
             this.btnBatDongSan = new DevExpress.XtraBars.BarButtonItem();
             this.btnHopDong = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnThanhToan = new DevExpress.XtraBars.BarButtonItem();
             this.rbQLNS = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbQLKH = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -75,7 +75,7 @@
             this.btnBatDongSan,
             this.btnHopDong,
             this.barButtonItem1,
-            this.barButtonItem2});
+            this.btnThanhToan});
             this.rbQuanLy.Location = new System.Drawing.Point(0, 0);
             this.rbQuanLy.Margin = new System.Windows.Forms.Padding(4);
             this.rbQuanLy.MaxItemId = 16;
@@ -155,6 +155,7 @@
             this.btnHopDong.Id = 13;
             this.btnHopDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnHopDong.ImageOptions.SvgImage")));
             this.btnHopDong.Name = "btnHopDong";
+            this.btnHopDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHopDong_ItemClick);
             // 
             // barButtonItem1
             // 
@@ -163,12 +164,13 @@
             this.barButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
             this.barButtonItem1.Name = "barButtonItem1";
             // 
-            // barButtonItem2
+            // btnThanhToan
             // 
-            this.barButtonItem2.Caption = "Thanh Toán";
-            this.barButtonItem2.Id = 15;
-            this.barButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem2.ImageOptions.SvgImage")));
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.btnThanhToan.Caption = "Thanh Toán";
+            this.btnThanhToan.Id = 15;
+            this.btnThanhToan.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThanhToan.ImageOptions.SvgImage")));
+            this.btnThanhToan.Name = "btnThanhToan";
+            this.btnThanhToan.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThanhToan_ItemClick);
             // 
             // rbQLNS
             // 
@@ -234,8 +236,8 @@
             // 
             this.ribbonPageGroup7.AllowTextClipping = false;
             this.ribbonPageGroup7.ItemLinks.Add(this.btnHopDong);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnThanhToan);
             this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem2);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Danh mục hợp đồng";
             // 
@@ -307,7 +309,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage tbBDS;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem btnThanhToan;
     }
 }
 

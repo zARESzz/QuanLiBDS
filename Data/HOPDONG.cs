@@ -17,7 +17,6 @@ namespace Data
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public HOPDONG()
         {
-            this.PHIEUDENBUs = new HashSet<PHIEUDENBU>();
             this.THANHTOANs = new HashSet<THANHTOAN>();
         }
     
@@ -26,17 +25,16 @@ namespace Data
         public string MaBDS { get; set; }
         public string MaKH { get; set; }
         public string MaTK { get; set; }
+        public Nullable<long> Phi { get; set; }
         public Nullable<System.DateTime> NgayLap { get; set; }
         public string ChiTiet { get; set; }
-        public Nullable<System.DateTime> NgayThue { get; set; }
-        public Nullable<System.DateTime> NgayTra { get; set; }
+        public Nullable<System.DateTime> NgayBD { get; set; }
+        public Nullable<System.DateTime> NgayKT { get; set; }
     
         public virtual BATDONGSAN BATDONGSAN { get; set; }
         public virtual KHACHHANG KHACHHANG { get; set; }
         public virtual NHUCAU NHUCAU { get; set; }
         public virtual NHANVIEN NHANVIEN { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUDENBU> PHIEUDENBUs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<THANHTOAN> THANHTOANs { get; set; }
     }

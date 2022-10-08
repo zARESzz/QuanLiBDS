@@ -35,7 +35,6 @@ namespace Data
         public virtual DbSet<LOAIBD> LOAIBDS { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHUCAU> NHUCAUs { get; set; }
-        public virtual DbSet<PHIEUDENBU> PHIEUDENBUs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
         public virtual DbSet<TINHTRANG> TINHTRANGs { get; set; }
     

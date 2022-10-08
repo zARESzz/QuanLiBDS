@@ -53,7 +53,6 @@ namespace Main
                 ctFull.GioiThieu = bds.GioiThieu;
                 ctFull.HinhAnh = bds.HinhAnh;
                 ctFull.DinhGia = item.DinhGia;
-                ctFull.DieuKien = item.DieuKien;
                 ListFull.Add(ctFull);
             }
             return ListFull;
@@ -78,7 +77,6 @@ namespace Main
             {
                 var _ct = db.CHITIETNHUCAUs.FirstOrDefault(x => x.MaBDS == ct.MaBDS);
                 _ct.DinhGia = ct.DinhGia;
-                _ct.DieuKien = ct.DieuKien;
                 db.SaveChanges();
                 return ct;
             }

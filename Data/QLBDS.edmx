@@ -27,7 +27,6 @@
           <Property Name="MaNC" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="MaBDS" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="DinhGia" Type="bigint" />
-          <Property Name="DieuKien" Type="nvarchar" MaxLength="1000" />
         </EntityType>
         <EntityType Name="CHUCVU">
           <Key>
@@ -45,10 +44,11 @@
           <Property Name="MaBDS" Type="varchar" MaxLength="5" />
           <Property Name="MaKH" Type="varchar" MaxLength="5" />
           <Property Name="MaTK" Type="varchar" MaxLength="5" />
+          <Property Name="Phi" Type="bigint" />
           <Property Name="NgayLap" Type="date" />
           <Property Name="ChiTiet" Type="nvarchar" MaxLength="1000" />
-          <Property Name="NgayThue" Type="date" />
-          <Property Name="NgayTra" Type="date" />
+          <Property Name="NgayBD" Type="date" />
+          <Property Name="NgayKT" Type="date" />
         </EntityType>
         <EntityType Name="KHACHHANG">
           <Key>
@@ -88,16 +88,6 @@
           <Property Name="MaNC" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="TenNC" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
-        <EntityType Name="PHIEUDENBU">
-          <Key>
-            <PropertyRef Name="MaPhieu" />
-          </Key>
-          <Property Name="MaPhieu" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="MaHD" Type="varchar" MaxLength="5" />
-          <Property Name="MaTK" Type="varchar" MaxLength="5" />
-          <Property Name="MaTT" Type="varchar" MaxLength="5" />
-          <Property Name="TongTien" Type="bigint" />
-        </EntityType>
         <EntityType Name="THANHTOAN">
           <Key>
             <PropertyRef Name="MATT" />
@@ -106,6 +96,7 @@
           <Property Name="MaHD" Type="varchar" MaxLength="5" />
           <Property Name="TongTien" Type="bigint" />
           <Property Name="NgayTT" Type="date" />
+          <Property Name="NoiDung" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="TINHTRANG">
           <Key>
@@ -234,42 +225,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PDB_HD">
-          <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="0..1" />
-          <End Role="PHIEUDENBU" Type="Self.PHIEUDENBU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HOPDONG">
-              <PropertyRef Name="MaHD" />
-            </Principal>
-            <Dependent Role="PHIEUDENBU">
-              <PropertyRef Name="MaHD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PDB_TK">
-          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
-          <End Role="PHIEUDENBU" Type="Self.PHIEUDENBU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="MaTK" />
-            </Principal>
-            <Dependent Role="PHIEUDENBU">
-              <PropertyRef Name="MaTK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PDB_TT">
-          <End Role="TINHTRANG" Type="Self.TINHTRANG" Multiplicity="0..1" />
-          <End Role="PHIEUDENBU" Type="Self.PHIEUDENBU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TINHTRANG">
-              <PropertyRef Name="MaTT" />
-            </Principal>
-            <Dependent Role="PHIEUDENBU">
-              <PropertyRef Name="MaTT" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TT_HD">
           <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="0..1" />
           <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
@@ -288,7 +243,6 @@
         <Function Name="P_MAKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaNC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="P_MaPhieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MATK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaTT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MATToan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -301,7 +255,6 @@
           <EntitySet Name="LOAIBDS" EntityType="Self.LOAIBDS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHUCAU" EntityType="Self.NHUCAU" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="PHIEUDENBU" EntityType="Self.PHIEUDENBU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TINHTRANG" EntityType="Self.TINHTRANG" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BDS_KH" Association="Self.FK_BDS_KH">
@@ -344,18 +297,6 @@
             <End Role="CHUCVU" EntitySet="CHUCVU" />
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
           </AssociationSet>
-          <AssociationSet Name="FK_PDB_HD" Association="Self.FK_PDB_HD">
-            <End Role="HOPDONG" EntitySet="HOPDONG" />
-            <End Role="PHIEUDENBU" EntitySet="PHIEUDENBU" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PDB_TK" Association="Self.FK_PDB_TK">
-            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
-            <End Role="PHIEUDENBU" EntitySet="PHIEUDENBU" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PDB_TT" Association="Self.FK_PDB_TT">
-            <End Role="TINHTRANG" EntitySet="TINHTRANG" />
-            <End Role="PHIEUDENBU" EntitySet="PHIEUDENBU" />
-          </AssociationSet>
           <AssociationSet Name="FK_TT_HD" Association="Self.FK_TT_HD">
             <End Role="HOPDONG" EntitySet="HOPDONG" />
             <End Role="THANHTOAN" EntitySet="THANHTOAN" />
@@ -384,7 +325,6 @@
           <EntitySet Name="LOAIBDS" EntityType="data_BDSModel.LOAIBD" />
           <EntitySet Name="NHANVIENs" EntityType="data_BDSModel.NHANVIEN" />
           <EntitySet Name="NHUCAUs" EntityType="data_BDSModel.NHUCAU" />
-          <EntitySet Name="PHIEUDENBUs" EntityType="data_BDSModel.PHIEUDENBU" />
           <EntitySet Name="THANHTOANs" EntityType="data_BDSModel.THANHTOAN" />
           <EntitySet Name="TINHTRANGs" EntityType="data_BDSModel.TINHTRANG" />
           <AssociationSet Name="FK_BDS_KH" Association="data_BDSModel.FK_BDS_KH">
@@ -427,23 +367,11 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="HOPDONG" EntitySet="HOPDONGs" />
           </AssociationSet>
-          <AssociationSet Name="FK_PDB_HD" Association="data_BDSModel.FK_PDB_HD">
-            <End Role="HOPDONG" EntitySet="HOPDONGs" />
-            <End Role="PHIEUDENBU" EntitySet="PHIEUDENBUs" />
-          </AssociationSet>
           <AssociationSet Name="FK_TT_HD" Association="data_BDSModel.FK_TT_HD">
             <End Role="HOPDONG" EntitySet="HOPDONGs" />
             <End Role="THANHTOAN" EntitySet="THANHTOANs" />
           </AssociationSet>
-          <AssociationSet Name="FK_PDB_TK" Association="data_BDSModel.FK_PDB_TK">
-            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
-            <End Role="PHIEUDENBU" EntitySet="PHIEUDENBUs" />
-          </AssociationSet>
-          <AssociationSet Name="FK_PDB_TT" Association="data_BDSModel.FK_PDB_TT">
-            <End Role="TINHTRANG" EntitySet="TINHTRANGs" />
-            <End Role="PHIEUDENBU" EntitySet="PHIEUDENBUs" />
-          </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="BATDONGSAN">
           <Key>
             <PropertyRef Name="MaBDS" />
@@ -471,7 +399,6 @@
           <Property Name="MaNC" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="MaBDS" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="DinhGia" Type="Int64" />
-          <Property Name="DieuKien" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BATDONGSAN" Relationship="data_BDSModel.FK_CT_BDS" FromRole="CHITIETNHUCAU" ToRole="BATDONGSAN" />
           <NavigationProperty Name="NHUCAU" Relationship="data_BDSModel.FK_CT_NC" FromRole="CHITIETNHUCAU" ToRole="NHUCAU" />
         </EntityType>
@@ -492,15 +419,15 @@
           <Property Name="MaBDS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="MaKH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="MaTK" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Phi" Type="Int64" />
           <Property Name="NgayLap" Type="DateTime" Precision="0" />
           <Property Name="ChiTiet" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
-          <Property Name="NgayThue" Type="DateTime" Precision="0" />
-          <Property Name="NgayTra" Type="DateTime" Precision="0" />
+          <Property Name="NgayBD" Type="DateTime" Precision="0" />
+          <Property Name="NgayKT" Type="DateTime" Precision="0" />
           <NavigationProperty Name="BATDONGSAN" Relationship="data_BDSModel.FK_KD_BDS" FromRole="HOPDONG" ToRole="BATDONGSAN" />
           <NavigationProperty Name="KHACHHANG" Relationship="data_BDSModel.FK_KD_KH" FromRole="HOPDONG" ToRole="KHACHHANG" />
           <NavigationProperty Name="NHUCAU" Relationship="data_BDSModel.FK_KD_NC" FromRole="HOPDONG" ToRole="NHUCAU" />
           <NavigationProperty Name="NHANVIEN" Relationship="data_BDSModel.FK_KD_TK" FromRole="HOPDONG" ToRole="NHANVIEN" />
-          <NavigationProperty Name="PHIEUDENBUs" Relationship="data_BDSModel.FK_PDB_HD" FromRole="HOPDONG" ToRole="PHIEUDENBU" />
           <NavigationProperty Name="THANHTOANs" Relationship="data_BDSModel.FK_TT_HD" FromRole="HOPDONG" ToRole="THANHTOAN" />
         </EntityType>
         <EntityType Name="KHACHHANG">
@@ -538,7 +465,6 @@
           <Property Name="Email" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CHUCVU" Relationship="data_BDSModel.FK_NV_CV" FromRole="NHANVIEN" ToRole="CHUCVU" />
           <NavigationProperty Name="HOPDONGs" Relationship="data_BDSModel.FK_KD_TK" FromRole="NHANVIEN" ToRole="HOPDONG" />
-          <NavigationProperty Name="PHIEUDENBUs" Relationship="data_BDSModel.FK_PDB_TK" FromRole="NHANVIEN" ToRole="PHIEUDENBU" />
         </EntityType>
         <EntityType Name="NHUCAU">
           <Key>
@@ -549,19 +475,6 @@
           <NavigationProperty Name="CHITIETNHUCAUs" Relationship="data_BDSModel.FK_CT_NC" FromRole="NHUCAU" ToRole="CHITIETNHUCAU" />
           <NavigationProperty Name="HOPDONGs" Relationship="data_BDSModel.FK_KD_NC" FromRole="NHUCAU" ToRole="HOPDONG" />
         </EntityType>
-        <EntityType Name="PHIEUDENBU">
-          <Key>
-            <PropertyRef Name="MaPhieu" />
-          </Key>
-          <Property Name="MaPhieu" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="MaHD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="MaTK" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="MaTT" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="TongTien" Type="Int64" />
-          <NavigationProperty Name="HOPDONG" Relationship="data_BDSModel.FK_PDB_HD" FromRole="PHIEUDENBU" ToRole="HOPDONG" />
-          <NavigationProperty Name="NHANVIEN" Relationship="data_BDSModel.FK_PDB_TK" FromRole="PHIEUDENBU" ToRole="NHANVIEN" />
-          <NavigationProperty Name="TINHTRANG" Relationship="data_BDSModel.FK_PDB_TT" FromRole="PHIEUDENBU" ToRole="TINHTRANG" />
-        </EntityType>
         <EntityType Name="THANHTOAN">
           <Key>
             <PropertyRef Name="MATT" />
@@ -570,6 +483,7 @@
           <Property Name="MaHD" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="TongTien" Type="Int64" />
           <Property Name="NgayTT" Type="DateTime" Precision="0" />
+          <Property Name="NoiDung" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="HOPDONG" Relationship="data_BDSModel.FK_TT_HD" FromRole="THANHTOAN" ToRole="HOPDONG" />
         </EntityType>
         <EntityType Name="TINHTRANG">
@@ -579,7 +493,6 @@
           <Property Name="MaTT" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
           <Property Name="TenTT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="BATDONGSANs" Relationship="data_BDSModel.FK_BDS_TT" FromRole="TINHTRANG" ToRole="BATDONGSAN" />
-          <NavigationProperty Name="PHIEUDENBUs" Relationship="data_BDSModel.FK_PDB_TT" FromRole="TINHTRANG" ToRole="PHIEUDENBU" />
         </EntityType>
         <Association Name="FK_BDS_KH">
           <End Type="data_BDSModel.KHACHHANG" Role="KHACHHANG" Multiplicity="0..1" />
@@ -701,18 +614,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_PDB_HD">
-          <End Type="data_BDSModel.HOPDONG" Role="HOPDONG" Multiplicity="0..1" />
-          <End Type="data_BDSModel.PHIEUDENBU" Role="PHIEUDENBU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HOPDONG">
-              <PropertyRef Name="MaHD" />
-            </Principal>
-            <Dependent Role="PHIEUDENBU">
-              <PropertyRef Name="MaHD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TT_HD">
           <End Type="data_BDSModel.HOPDONG" Role="HOPDONG" Multiplicity="0..1" />
           <End Type="data_BDSModel.THANHTOAN" Role="THANHTOAN" Multiplicity="*" />
@@ -722,30 +623,6 @@
             </Principal>
             <Dependent Role="THANHTOAN">
               <PropertyRef Name="MaHD" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PDB_TK">
-          <End Type="data_BDSModel.NHANVIEN" Role="NHANVIEN" Multiplicity="0..1" />
-          <End Type="data_BDSModel.PHIEUDENBU" Role="PHIEUDENBU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="NHANVIEN">
-              <PropertyRef Name="MaTK" />
-            </Principal>
-            <Dependent Role="PHIEUDENBU">
-              <PropertyRef Name="MaTK" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_PDB_TT">
-          <End Type="data_BDSModel.TINHTRANG" Role="TINHTRANG" Multiplicity="0..1" />
-          <End Type="data_BDSModel.PHIEUDENBU" Role="PHIEUDENBU" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TINHTRANG">
-              <PropertyRef Name="MaTT" />
-            </Principal>
-            <Dependent Role="PHIEUDENBU">
-              <PropertyRef Name="MaTT" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -762,7 +639,6 @@
           <FunctionImportMapping FunctionImportName="P_MaHD" FunctionName="data_BDSModel.Store.P_MaHD" />
           <FunctionImportMapping FunctionImportName="P_MaLoai" FunctionName="data_BDSModel.Store.P_MaLoai" />
           <FunctionImportMapping FunctionImportName="P_MaNC" FunctionName="data_BDSModel.Store.P_MaNC" />
-          <FunctionImportMapping FunctionImportName="P_MaPhieu" FunctionName="data_BDSModel.Store.P_MaPhieu" />
           <FunctionImportMapping FunctionImportName="P_MaTT" FunctionName="data_BDSModel.Store.P_MaTT" />
           <FunctionImportMapping FunctionImportName="P_MATToan" FunctionName="data_BDSModel.Store.P_MATToan" />
           <EntitySetMapping Name="BATDONGSANs">
@@ -783,7 +659,6 @@
           <EntitySetMapping Name="CHITIETNHUCAUs">
             <EntityTypeMapping TypeName="data_BDSModel.CHITIETNHUCAU">
               <MappingFragment StoreEntitySet="CHITIETNHUCAU">
-                <ScalarProperty Name="DieuKien" ColumnName="DieuKien" />
                 <ScalarProperty Name="DinhGia" ColumnName="DinhGia" />
                 <ScalarProperty Name="MaBDS" ColumnName="MaBDS" />
                 <ScalarProperty Name="MaNC" ColumnName="MaNC" />
@@ -801,10 +676,11 @@
           <EntitySetMapping Name="HOPDONGs">
             <EntityTypeMapping TypeName="data_BDSModel.HOPDONG">
               <MappingFragment StoreEntitySet="HOPDONG">
-                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
-                <ScalarProperty Name="NgayThue" ColumnName="NgayThue" />
+                <ScalarProperty Name="NgayKT" ColumnName="NgayKT" />
+                <ScalarProperty Name="NgayBD" ColumnName="NgayBD" />
                 <ScalarProperty Name="ChiTiet" ColumnName="ChiTiet" />
                 <ScalarProperty Name="NgayLap" ColumnName="NgayLap" />
+                <ScalarProperty Name="Phi" ColumnName="Phi" />
                 <ScalarProperty Name="MaTK" ColumnName="MaTK" />
                 <ScalarProperty Name="MaKH" ColumnName="MaKH" />
                 <ScalarProperty Name="MaBDS" ColumnName="MaBDS" />
@@ -855,20 +731,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="PHIEUDENBUs">
-            <EntityTypeMapping TypeName="data_BDSModel.PHIEUDENBU">
-              <MappingFragment StoreEntitySet="PHIEUDENBU">
-                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-                <ScalarProperty Name="MaTT" ColumnName="MaTT" />
-                <ScalarProperty Name="MaTK" ColumnName="MaTK" />
-                <ScalarProperty Name="MaHD" ColumnName="MaHD" />
-                <ScalarProperty Name="MaPhieu" ColumnName="MaPhieu" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="THANHTOANs">
             <EntityTypeMapping TypeName="data_BDSModel.THANHTOAN">
               <MappingFragment StoreEntitySet="THANHTOAN">
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
                 <ScalarProperty Name="NgayTT" ColumnName="NgayTT" />
                 <ScalarProperty Name="TongTien" ColumnName="TongTien" />
                 <ScalarProperty Name="MaHD" ColumnName="MaHD" />
@@ -884,7 +750,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-        </EntityContainerMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>

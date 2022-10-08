@@ -63,10 +63,14 @@ namespace QuanLy
         {
             OpenForm(typeof(frmBDS));
         }
-
-        private void btnChiTietGia_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnHopDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-          //  OpenForm(typeof(frmCTNC));
+            OpenForm(typeof(frmHopDong));
+        }
+
+        private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmThanhToan));
         }
     }
 }

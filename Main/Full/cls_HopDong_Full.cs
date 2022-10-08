@@ -1,5 +1,4 @@
-﻿using Data;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Main.Full
 {
-    public class cls_CTNC_Full
+    public class cls_HopDong_Full
     {
-        public string MaNC { get; set; }
+        public string MaHD { get; set; }
+        public string MaNC { get; set; }    
         public string TenNC { get; set; }
         public string MaBDS { get; set; }
         public Nullable<long> DinhGia { get; set; }
@@ -22,7 +22,12 @@ namespace Main.Full
         public string TenTT { get; set; }
         public string DiaChi { get; set; }
         public Nullable<long> DienTich { get; set; }
-        public string GioiThieu { get; set; }
-        public byte[] HinhAnh { get; set; }
+        public string MaTK { get; set; }
+        public string HoTenNV { get; set; }
+        public Nullable<System.DateTime> NgayLap { get; set; }
+        public string ChiTiet { get; set; }
+        public Nullable<long> Phi { get; set; }
+        public Nullable<System.DateTime> NgayBD { get; set; }
+        public Nullable<System.DateTime> NgayKT { get; set; }
     }
 }

@@ -163,7 +163,6 @@ namespace QuanLy
                     ct.MaBDS = bds.MaBDS;
                     ct.MaNC = cbxNhuCau.SelectedValue.ToString();
                     ct.DinhGia = long.Parse(txtGia.Text);
-                    ct.DieuKien = txtDieuKien.Text;
                     _ct.Add(ct);
                 }
                 else
@@ -177,7 +176,6 @@ namespace QuanLy
                     ct.MaBDS = ktra.MaBDS;
                     ct.MaNC = cbxNhuCau.SelectedValue.ToString();
                     ct.DinhGia = long.Parse(txtGia.Text);
-                    ct.DieuKien = txtDieuKien.Text;
                     _ct.Add(ct);
                 }
             }
@@ -203,7 +201,6 @@ namespace QuanLy
                     ct.MaBDS = bds.MaBDS;
                     ct.MaNC = cbxNhuCau.SelectedValue.ToString();
                     ct.DinhGia = long.Parse(txtGia.Text);
-                    ct.DieuKien = txtDieuKien.Text;
                     _ct.Add(ct);
                 } 
             }
@@ -225,7 +222,6 @@ namespace QuanLy
             var ct = _ct.getItemNC(_id);
             txtGia.Text = ct.DinhGia.ToString();
             cbxNhuCau.SelectedValue = ct.MaNC;
-            txtDieuKien.Text = ct.DieuKien.ToString();
         }
         public byte[] ImageToBase64(Image image, System.Drawing.Imaging.ImageFormat format)
         {
@@ -255,5 +251,6 @@ namespace QuanLy
                 picHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             }    
         }
+
     }
 }

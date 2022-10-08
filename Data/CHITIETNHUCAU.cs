@@ -17,7 +17,6 @@ namespace Data
         public string MaNC { get; set; }
         public string MaBDS { get; set; }
         public Nullable<long> DinhGia { get; set; }
-        public string DieuKien { get; set; }
     
         public virtual BATDONGSAN BATDONGSAN { get; set; }
         public virtual NHUCAU NHUCAU { get; set; }

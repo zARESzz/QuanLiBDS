@@ -18,7 +18,6 @@ namespace Data
         public NHANVIEN()
         {
             this.HOPDONGs = new HashSet<HOPDONG>();
-            this.PHIEUDENBUs = new HashSet<PHIEUDENBU>();
         }
     
         public string MaTK { get; set; }
@@ -34,7 +33,5 @@ namespace Data
         public virtual CHUCVU CHUCVU { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUDENBU> PHIEUDENBUs { get; set; }
     }
 }

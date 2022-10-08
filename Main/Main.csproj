@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="cls_BDS.cs" />
     <Compile Include="cls_CTNC.cs" />
+    <Compile Include="cls_HopDong.cs" />
     <Compile Include="cls_LoaiBD.cs" />
     <Compile Include="cls_MatKhau.cs" />
     <Compile Include="cls_NhanVien.cs" />
@@ -65,8 +66,11 @@
     <Compile Include="Custom\CtCombobox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="cls_ThanhToan.cs" />
     <Compile Include="Full\cls_CTNC_Full.cs" />
+    <Compile Include="Full\cls_HopDong_Full.cs" />
     <Compile Include="Full\cls_NhanVien_Full.cs" />
+    <Compile Include="Full\cls_ThanhToan_Full.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
