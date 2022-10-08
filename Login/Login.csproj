@@ -134,6 +134,10 @@
     <None Include="Resources\PngItem_780642.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\VB-CustomMessageBox\CustomMessageBoxVB\CustomMessageBoxVB.vbproj">
+      <Project>{8c4260ac-ec4a-4747-8be6-10571746c431}</Project>
+      <Name>CustomMessageBoxVB</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{1e560617-ffa0-4cf1-b410-b4a2ffac36f8}</Project>
       <Name>Data</Name>
@@ -150,6 +154,7 @@
   <ItemGroup>
     <None Include="Resources\Resetpass.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

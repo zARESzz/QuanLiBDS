@@ -29,7 +29,7 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtTK = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new Main.Custom.CtButton();
             this.btnForgotPass = new Main.Custom.CtButton();
@@ -38,15 +38,15 @@ namespace Login
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtName
+            // txtTK
             // 
-            this.txtName.BackColor = System.Drawing.Color.LightGray;
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(85, 178);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(242, 27);
-            this.txtName.TabIndex = 0;
+            this.txtTK.BackColor = System.Drawing.Color.LightGray;
+            this.txtTK.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTK.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTK.Location = new System.Drawing.Point(85, 178);
+            this.txtTK.Name = "txtTK";
+            this.txtTK.Size = new System.Drawing.Size(242, 27);
+            this.txtTK.TabIndex = 0;
             // 
             // txtPass
             // 
@@ -123,6 +123,7 @@ namespace Login
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::Login.Properties.Resources.close_button_icon;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(320, 23);
@@ -144,7 +145,7 @@ namespace Login
             this.Controls.Add(this.btnForgotPass);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.txtTK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
@@ -159,7 +160,7 @@ namespace Login
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtTK;
         private System.Windows.Forms.TextBox txtPass;
         private CtButton btnLogin;
         private CtButton btnForgotPass;

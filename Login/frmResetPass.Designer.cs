@@ -83,7 +83,7 @@
             this.ctButton1.Text = "Cancel ";
             this.ctButton1.TextColor = System.Drawing.Color.DarkGray;
             this.ctButton1.UseVisualStyleBackColor = false;
-            this.ctButton1.Click += new System.EventHandler(this.ctButton1_Click);
+            this.ctButton1.Click += new System.EventHandler(this.ctButton1_Click_1);
             // 
             // frmResetPass
             // 
@@ -99,6 +99,7 @@
             this.Name = "frmResetPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPass";
+            this.Load += new System.EventHandler(this.frmResetPass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

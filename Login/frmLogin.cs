@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using CustomMessageBoxVB;
+using Data;
 using Main.Custom;
 using QuanLy;
 
@@ -13,6 +15,7 @@ namespace Login
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
+        data_BDSEntities db = new data_BDSEntities();
         public frmLogin()
         {
             InitializeComponent();
@@ -25,8 +28,17 @@ namespace Login
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            frmQuanLy ql = new frmQuanLy();
-            ql.ShowDialog();
+            var check = db.NHANVIENs.FirstOrDefault(p => p.MaTK == txtTK.Text&&p.MK==txtPass.Text);
+            if (check != null)
+            {
+                frmQuanLy ql = new frmQuanLy();
+                ql.ShowDialog();
+            }
+            else
+            {
+                RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
+            }
+   
         }
 
         private void btnSignup_Click(object sender, EventArgs e)
@@ -65,7 +77,11 @@ namespace Login
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dlr = RJMessageBox.Show("Bạn có muốn thoát chương trình ?",
+                                       "Thông báo",
+                                       MessageBoxButtons.OKCancel);
+            if (dlr == DialogResult.OK)
+                this.Close();
         }
     }
 }
