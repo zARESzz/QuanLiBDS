@@ -231,6 +231,7 @@ namespace QuanLy
                     kHACHHANG.SDT = dt.Rows[i]["SDT"].ToString();
                     kHACHHANG.Emaill = dt.Rows[i]["Emaill"].ToString();
                     kHACHHANG.DiaChi = dt.Rows[i]["DiaChi"].ToString();
+
                     khachHangs.Add(kHACHHANG);
 
                 }
