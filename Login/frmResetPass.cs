@@ -1,20 +1,11 @@
 ﻿using Data;
-using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mail;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using Main;
-using DevExpress.ClipboardSource.SpreadsheetML;
-using CustomMessageBoxVB;
+using CustomMessageBox;
 
 namespace Login
 {
@@ -99,12 +90,12 @@ namespace Login
                 message.IsBodyHtml = true;
                 client.Host = "smtp.gmail.com";
                 client.Send(message);
-                MessageBox.Show("Gửi mail thành công");
+                RJMessageBox.Show("Gửi mail thành công");
                 client.Dispose();
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
                 return;
             }
         }

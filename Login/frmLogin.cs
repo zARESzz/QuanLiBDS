@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-//using CustomMessageBoxVB;
 using Data;
-using Main.Custom;
 using QuanLy;
+using Main;
+using CustomMessageBox;
 
 namespace Login
 {
     public partial class frmLogin : DevExpress.XtraEditors.XtraForm
     {
-        data_BDSEntities db = new data_BDSEntities();
+        data_BDSEntities db;
         public frmLogin()
         {
             InitializeComponent();
@@ -23,20 +19,26 @@ namespace Login
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            db= new data_BDSEntities();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            var check = db.NHANVIENs.FirstOrDefault(p => p.MaTK == txtTK.Text&&p.MK==txtPass.Text);
-            if (check != null)
+            cls_MatKhau mk = new cls_MatKhau();
+            var checkTK = db.NHANVIENs.FirstOrDefault(p =>p.MaTK == txtTK.Text);
+            if(checkTK==null)
+            {
+                RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            if (mk.GiaiMa(checkTK.MK) == txtPass.Text)
             {
                 frmQuanLy ql = new frmQuanLy();
                 ql.ShowDialog();
             }
             else
             {
-                //RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
+                RJMessageBox.Show("Mật khẩu sai", "Thông báo", MessageBoxButtons.OK);
             }
    
         }
@@ -75,13 +77,13 @@ namespace Login
             btnSignup.BackColor= Color.White;
         }
 
-        //private void pictureBox1_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult dlr = RJMessageBox.Show("Bạn có muốn thoát chương trình ?",
-        //                               "Thông báo",
-        //                               MessageBoxButtons.OKCancel);
-        //    if (dlr == DialogResult.OK)
-        //        this.Close();
-        //}
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult dlr = RJMessageBox.Show("Bạn có muốn thoát chương trình ?",
+                                       "Thông báo",
+                                       MessageBoxButtons.OKCancel);
+            if (dlr == DialogResult.OK)
+                this.Close();
+        }
     }
 }

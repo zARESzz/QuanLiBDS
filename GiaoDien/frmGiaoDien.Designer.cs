@@ -177,13 +177,13 @@
             this.panel3.Size = new System.Drawing.Size(220, 125);
             this.panel3.TabIndex = 0;
             // 
-            // Form1
+            // frmGiaoDien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1107, 580);
+            this.ClientSize = new System.Drawing.Size(1171, 585);
             this.Controls.Add(this.panel1);
-            this.Name = "Form1";
+            this.Name = "frmGiaoDien";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
             this.panelMenu.ResumeLayout(false);

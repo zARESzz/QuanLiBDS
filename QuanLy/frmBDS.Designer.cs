@@ -275,7 +275,7 @@
             // 
             // txtGioiThieu
             // 
-            this.txtGioiThieu.Location = new System.Drawing.Point(722, 169);
+            this.txtGioiThieu.Location = new System.Drawing.Point(722, 163);
             this.txtGioiThieu.Multiline = true;
             this.txtGioiThieu.Name = "txtGioiThieu";
             this.txtGioiThieu.ScrollBars = System.Windows.Forms.ScrollBars.Both;
@@ -296,7 +296,7 @@
             // 
             this.cbxKhachHang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxKhachHang.FormattingEnabled = true;
-            this.cbxKhachHang.Location = new System.Drawing.Point(416, 224);
+            this.cbxKhachHang.Location = new System.Drawing.Point(417, 218);
             this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Size = new System.Drawing.Size(250, 32);
             this.cbxKhachHang.TabIndex = 2;
@@ -305,7 +305,7 @@
             // 
             this.cbxTinhTrang.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTinhTrang.FormattingEnabled = true;
-            this.cbxTinhTrang.Location = new System.Drawing.Point(416, 177);
+            this.cbxTinhTrang.Location = new System.Drawing.Point(417, 171);
             this.cbxTinhTrang.Name = "cbxTinhTrang";
             this.cbxTinhTrang.Size = new System.Drawing.Size(250, 32);
             this.cbxTinhTrang.TabIndex = 2;
@@ -314,7 +314,7 @@
             // 
             this.cbxNhuCau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxNhuCau.FormattingEnabled = true;
-            this.cbxNhuCau.Location = new System.Drawing.Point(416, 31);
+            this.cbxNhuCau.Location = new System.Drawing.Point(417, 25);
             this.cbxNhuCau.Name = "cbxNhuCau";
             this.cbxNhuCau.Size = new System.Drawing.Size(250, 32);
             this.cbxNhuCau.TabIndex = 2;
@@ -323,7 +323,7 @@
             // 
             this.cbxLoai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxLoai.FormattingEnabled = true;
-            this.cbxLoai.Location = new System.Drawing.Point(416, 126);
+            this.cbxLoai.Location = new System.Drawing.Point(417, 120);
             this.cbxLoai.Name = "cbxLoai";
             this.cbxLoai.Size = new System.Drawing.Size(250, 32);
             this.cbxLoai.TabIndex = 2;
@@ -332,7 +332,7 @@
             // 
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(722, 126);
+            this.labelControl4.Location = new System.Drawing.Point(722, 120);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(116, 28);
             this.labelControl4.TabIndex = 0;
@@ -340,7 +340,7 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(416, 276);
+            this.txtDiaChi.Location = new System.Drawing.Point(417, 270);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
@@ -351,7 +351,7 @@
             // 
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl3.Appearance.Options.UseFont = true;
-            this.labelControl3.Location = new System.Drawing.Point(256, 280);
+            this.labelControl3.Location = new System.Drawing.Point(257, 274);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(87, 28);
             this.labelControl3.TabIndex = 0;
@@ -359,7 +359,7 @@
             // 
             // txtDienTich
             // 
-            this.txtDienTich.Location = new System.Drawing.Point(853, 32);
+            this.txtDienTich.Location = new System.Drawing.Point(868, 29);
             this.txtDienTich.Name = "txtDienTich";
             this.txtDienTich.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDienTich.Properties.Appearance.Options.UseFont = true;
@@ -370,7 +370,7 @@
             // 
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl2.Appearance.Options.UseFont = true;
-            this.labelControl2.Location = new System.Drawing.Point(710, 31);
+            this.labelControl2.Location = new System.Drawing.Point(725, 28);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(110, 28);
             this.labelControl2.TabIndex = 0;
@@ -378,7 +378,7 @@
             // 
             // txtGia
             // 
-            this.txtGia.Location = new System.Drawing.Point(853, 72);
+            this.txtGia.Location = new System.Drawing.Point(868, 69);
             this.txtGia.Name = "txtGia";
             this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Properties.Appearance.Options.UseFont = true;
@@ -387,7 +387,7 @@
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(416, 75);
+            this.txtTen.Location = new System.Drawing.Point(417, 69);
             this.txtTen.MenuManager = this.barManagerCV;
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -399,7 +399,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(256, 177);
+            this.labelControl8.Location = new System.Drawing.Point(257, 171);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(125, 28);
             this.labelControl8.TabIndex = 0;
@@ -409,7 +409,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(256, 35);
+            this.labelControl6.Location = new System.Drawing.Point(257, 29);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(102, 28);
             this.labelControl6.TabIndex = 0;
@@ -419,7 +419,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(256, 228);
+            this.labelControl7.Location = new System.Drawing.Point(257, 222);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(139, 28);
             this.labelControl7.TabIndex = 0;
@@ -429,7 +429,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(710, 78);
+            this.labelControl9.Location = new System.Drawing.Point(725, 75);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(47, 28);
             this.labelControl9.TabIndex = 0;
@@ -439,7 +439,7 @@
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(256, 130);
+            this.labelControl5.Location = new System.Drawing.Point(257, 124);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(55, 28);
             this.labelControl5.TabIndex = 0;
@@ -449,7 +449,7 @@
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl1.Appearance.Options.UseFont = true;
-            this.labelControl1.Location = new System.Drawing.Point(256, 78);
+            this.labelControl1.Location = new System.Drawing.Point(257, 72);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(53, 28);
             this.labelControl1.TabIndex = 0;
@@ -623,7 +623,7 @@
             this.DiaChi.MinWidth = 25;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 9;
+            this.DiaChi.VisibleIndex = 8;
             this.DiaChi.Width = 94;
             // 
             // GioiThieu
@@ -633,7 +633,7 @@
             this.GioiThieu.MinWidth = 25;
             this.GioiThieu.Name = "GioiThieu";
             this.GioiThieu.Visible = true;
-            this.GioiThieu.VisibleIndex = 10;
+            this.GioiThieu.VisibleIndex = 9;
             this.GioiThieu.Width = 94;
             // 
             // frmBDS
