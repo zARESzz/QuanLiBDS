@@ -37,13 +37,24 @@
             this.btnDele = new DevExpress.XtraBars.BarButtonItem();
             this.btnSave = new DevExpress.XtraBars.BarButtonItem();
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
+            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCopy = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPaste = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.btnImport = new System.Windows.Forms.Button();
+            this.cboSheet = new System.Windows.Forms.ComboBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
@@ -59,7 +70,11 @@
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Emaill = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.btnIn = new DevExpress.XtraBars.BarButtonItem();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
+            this.txtLink = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -90,8 +105,15 @@
             this.btnSave,
             this.btnHuy,
             this.btnDong,
-            this.btnIn});
-            this.barManagerKH.MaxItemId = 7;
+            this.btnIn,
+            this.barButtonItem1,
+            this.btnExcel,
+            this.btnCopy,
+            this.btnPaste,
+            this.barButtonItem2,
+            this.barButtonItem3,
+            this.barButtonItem4});
+            this.barManagerKH.MaxItemId = 14;
             this.barManagerKH.StatusBar = this.bar3;
             // 
             // bar1
@@ -101,7 +123,7 @@
             this.bar1.DockCol = 0;
             this.bar1.DockRow = 0;
             this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.FloatLocation = new System.Drawing.Point(310, 202);
+            this.bar1.FloatLocation = new System.Drawing.Point(256, 192);
             this.bar1.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem, true),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnEdit, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
@@ -109,7 +131,9 @@
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnSave, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHuy, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnIn, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnDong, "", true, true, true, 0, null, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barButtonItem3, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar1.Text = "Tools";
             // 
             // btnThem
@@ -153,6 +177,15 @@
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHuy_ItemClick);
             // 
+            // btnIn
+            // 
+            this.btnIn.Caption = "In";
+            this.btnIn.Id = 6;
+            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
+            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.LargeImage")));
+            this.btnIn.Name = "btnIn";
+            this.btnIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIn_ItemClick);
+            // 
             // btnDong
             // 
             this.btnDong.Caption = "Đóng";
@@ -160,6 +193,27 @@
             this.btnDong.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDong.ImageOptions.SvgImage")));
             this.btnDong.Name = "btnDong";
             this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Tìm kiếm";
+            this.barButtonItem1.Id = 7;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Id = 11;
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "Excel";
+            this.barButtonItem3.Id = 12;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            this.barButtonItem3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem3_ItemClick);
             // 
             // bar3
             // 
@@ -179,7 +233,7 @@
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManagerKH;
-            this.barDockControlTop.Size = new System.Drawing.Size(892, 30);
+            this.barDockControlTop.Size = new System.Drawing.Size(1203, 30);
             // 
             // barDockControlBottom
             // 
@@ -187,7 +241,7 @@
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 717);
             this.barDockControlBottom.Manager = this.barManagerKH;
-            this.barDockControlBottom.Size = new System.Drawing.Size(892, 20);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1203, 20);
             // 
             // barDockControlLeft
             // 
@@ -201,9 +255,33 @@
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(892, 30);
+            this.barDockControlRight.Location = new System.Drawing.Point(1203, 30);
             this.barDockControlRight.Manager = this.barManagerKH;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.Caption = "Excel";
+            this.btnExcel.Id = 8;
+            this.btnExcel.Name = "btnExcel";
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Caption = "Copy";
+            this.btnCopy.Id = 9;
+            this.btnCopy.Name = "btnCopy";
+            // 
+            // btnPaste
+            // 
+            this.btnPaste.Caption = "Paste";
+            this.btnPaste.Id = 10;
+            this.btnPaste.Name = "btnPaste";
+            // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "barButtonItem4";
+            this.barButtonItem4.Id = 13;
+            this.barButtonItem4.Name = "barButtonItem4";
             // 
             // splitContainer1
             // 
@@ -214,6 +292,11 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.Controls.Add(this.txtLink);
+            this.splitContainer1.Panel1.Controls.Add(this.btnImport);
+            this.splitContainer1.Panel1.Controls.Add(this.cboSheet);
+            this.splitContainer1.Panel1.Controls.Add(this.btnTim);
             this.splitContainer1.Panel1.Controls.Add(this.txtEmail);
             this.splitContainer1.Panel1.Controls.Add(this.labelControl4);
             this.splitContainer1.Panel1.Controls.Add(this.txtDiaChi);
@@ -226,9 +309,40 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.gcKHACHHANG);
-            this.splitContainer1.Size = new System.Drawing.Size(892, 687);
-            this.splitContainer1.SplitterDistance = 127;
+            this.splitContainer1.Size = new System.Drawing.Size(1203, 687);
+            this.splitContainer1.SplitterDistance = 126;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // btnImport
+            // 
+            this.btnImport.Location = new System.Drawing.Point(12, 59);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(75, 23);
+            this.btnImport.TabIndex = 4;
+            this.btnImport.TabStop = false;
+            this.btnImport.Text = "import";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // cboSheet
+            // 
+            this.cboSheet.FormattingEnabled = true;
+            this.cboSheet.Location = new System.Drawing.Point(106, 58);
+            this.cboSheet.Name = "cboSheet";
+            this.cboSheet.Size = new System.Drawing.Size(121, 24);
+            this.cboSheet.TabIndex = 3;
+            this.cboSheet.SelectedIndexChanged += new System.EventHandler(this.cboSheet_SelectedIndexChanged);
+            // 
+            // btnTim
+            // 
+            this.btnTim.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.Location = new System.Drawing.Point(856, 24);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(95, 88);
+            this.btnTim.TabIndex = 2;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Visible = false;
             // 
             // txtEmail
             // 
@@ -314,7 +428,7 @@
             this.gcKHACHHANG.MainView = this.gvKHACHHANG;
             this.gcKHACHHANG.MenuManager = this.barManagerKH;
             this.gcKHACHHANG.Name = "gcKHACHHANG";
-            this.gcKHACHHANG.Size = new System.Drawing.Size(892, 556);
+            this.gcKHACHHANG.Size = new System.Drawing.Size(1203, 557);
             this.gcKHACHHANG.TabIndex = 0;
             this.gcKHACHHANG.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvKHACHHANG});
@@ -388,26 +502,34 @@
             this.DiaChi.VisibleIndex = 4;
             this.DiaChi.Width = 94;
             // 
-            // btnIn
+            // txtLink
             // 
-            this.btnIn.Caption = "In";
-            this.btnIn.Id = 6;
-            this.btnIn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.Image")));
-            this.btnIn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnIn.ImageOptions.LargeImage")));
-            this.btnIn.Name = "btnIn";
-            this.btnIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIn_ItemClick);
+            this.txtLink.Location = new System.Drawing.Point(106, 16);
+            this.txtLink.Name = "txtLink";
+            this.txtLink.Size = new System.Drawing.Size(309, 23);
+            this.txtLink.TabIndex = 9;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "File Name";
             // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(892, 737);
+            this.ClientSize = new System.Drawing.Size(1203, 737);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmKhachHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Khách hàng";
             this.Load += new System.EventHandler(this.frmKHACHHANG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerKH)).EndInit();
@@ -458,5 +580,20 @@
         private DevExpress.XtraGrid.Columns.GridColumn Emaill;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
         private DevExpress.XtraBars.BarButtonItem btnIn;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private System.Windows.Forms.Button btnTim;
+        private DevExpress.XtraBars.BarButtonItem btnExcel;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private System.ComponentModel.BackgroundWorker backgroundWorker3;
+        private DevExpress.XtraBars.BarButtonItem btnCopy;
+        private DevExpress.XtraBars.BarButtonItem btnPaste;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
+        private System.Windows.Forms.TextBox txtLink;
+        private System.Windows.Forms.ComboBox cboSheet;
+        private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Label label1;
     }
 }

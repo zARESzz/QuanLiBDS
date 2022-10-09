@@ -12,6 +12,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
+using System.Data.SqlClient;
+using System.IO;
+using System.Data.OleDb;
+using System.Configuration;
+using DevExpress.Utils.Extensions;
+using DevExpress.XtraReports.UserConfiguration;
+using DevExpress.DataProcessing;
+using ExcelDataReader;
+using DevExpress.XtraExport.Xls;
+using DataTable = System.Data.DataTable;
+using DevExpress.Office.Utils;
+using Z.Dapper.Plus;
+using File = System.IO.File;
+using System.Data.Sql;
+using System.Net.Configuration;
 
 namespace QuanLy
 {
@@ -147,7 +162,102 @@ namespace QuanLy
         {
             rptKhachHang rpt = new rptKhachHang(_listkh);
             rpt.ShowPreview();
+        }
 
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            txtHoTen.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            txtSDT.Text = "";
+            ShowHide(false);
+            splitContainer1.Panel1Collapsed = false;
+            btnTim.Visible = true;
+        }
+
+        DataTableCollection tableCollection;
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            txtDiaChi.Visible = false;
+            txtEmail.Visible = false;
+            txtHoTen.Visible = false;
+            txtSDT.Visible = false;
+            labelControl1.Visible = false;
+            labelControl2.Visible = false;
+            labelControl3.Visible = false;
+            labelControl4.Visible = false;
+            txtHoTen.Text = "";
+            txtDiaChi.Text = "";
+            txtEmail.Text = "";
+            txtSDT.Text = "";
+            ShowHide(false);
+            splitContainer1.Panel1Collapsed = false;
+            btnTim.Visible = false;
+            using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Excel 97-2003 Workbook|*.xls|Excel Workbook|*.xlsx" })
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtLink.Text = openFileDialog.FileName;
+                    using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream))
+                        {
+                            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            {
+                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                            });
+                            tableCollection = result.Tables;
+                            cboSheet.Items.Clear();
+                            foreach (DataTable table in tableCollection)
+                                cboSheet.Items.Add(table.TableName);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void cboSheet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = tableCollection[cboSheet.SelectedItem.ToString()];
+            //gcKHACHHANG.DataSource = dt;
+            if (dt != null)
+            {
+                List<KHACHHANG> khachHangs = new List<KHACHHANG>();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    KHACHHANG kHACHHANG = new KHACHHANG();
+                    kHACHHANG.MaKH = dt.Rows[i]["MaKH"].ToString();
+                    kHACHHANG.HoTenKH = dt.Rows[i]["HoTenKH"].ToString();
+                    kHACHHANG.SDT = dt.Rows[i]["SDT"].ToString();
+                    kHACHHANG.Emaill = dt.Rows[i]["Emaill"].ToString();
+                    kHACHHANG.DiaChi = dt.Rows[i]["DiaChi"].ToString();
+                    khachHangs.Add(kHACHHANG);
+
+                }
+                gcKHACHHANG.DataSource = khachHangs;
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string ssdada = "Server=LAPTOP-QJUA0USI\\SQLEXPRESS;Database=data_BDS;User Id = sa;Password=123@qaz";
+                DapperPlusManager.Entity<KHACHHANG>().Table("KHACHHANG");
+                List<KHACHHANG> khachHangs = gcKHACHHANG.DataSource as List<KHACHHANG>;
+                if (khachHangs != null)
+                {
+                    using (IDbConnection db = new SqlConnection(ssdada))
+                    {
+                        db.BulkInsert(khachHangs);
+                    }
+                    MessageBox.Show("Finish!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
