@@ -39,7 +39,6 @@
             this.btnHuy = new DevExpress.XtraBars.BarButtonItem();
             this.btnIn = new DevExpress.XtraBars.BarButtonItem();
             this.btnDong = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
@@ -47,11 +46,14 @@
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnExcel = new DevExpress.XtraBars.BarButtonItem();
             this.btnCopy = new DevExpress.XtraBars.BarButtonItem();
             this.btnPaste = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLink = new System.Windows.Forms.TextBox();
             this.btnImport = new System.Windows.Forms.Button();
             this.cboSheet = new System.Windows.Forms.ComboBox();
             this.btnTim = new System.Windows.Forms.Button();
@@ -73,8 +75,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
-            this.txtLink = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManagerKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -194,13 +194,6 @@
             this.btnDong.Name = "btnDong";
             this.btnDong.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDong_ItemClick);
             // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Tìm kiếm";
-            this.barButtonItem1.Id = 7;
-            this.barButtonItem1.Name = "barButtonItem1";
-            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
-            // 
             // barButtonItem2
             // 
             this.barButtonItem2.Id = 11;
@@ -259,6 +252,13 @@
             this.barDockControlRight.Manager = this.barManagerKH;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 687);
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Tìm kiếm";
+            this.barButtonItem1.Id = 7;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
+            // 
             // btnExcel
             // 
             this.btnExcel.Caption = "Excel";
@@ -312,6 +312,22 @@
             this.splitContainer1.Size = new System.Drawing.Size(1203, 687);
             this.splitContainer1.SplitterDistance = 126;
             this.splitContainer1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(23, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(64, 16);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "File Name";
+            // 
+            // txtLink
+            // 
+            this.txtLink.Location = new System.Drawing.Point(106, 16);
+            this.txtLink.Name = "txtLink";
+            this.txtLink.Size = new System.Drawing.Size(309, 23);
+            this.txtLink.TabIndex = 9;
             // 
             // btnImport
             // 
@@ -390,6 +406,7 @@
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
             this.txtSDT.Size = new System.Drawing.Size(285, 34);
             this.txtSDT.TabIndex = 1;
+            this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // labelControl2
             // 
@@ -501,22 +518,6 @@
             this.DiaChi.Visible = true;
             this.DiaChi.VisibleIndex = 4;
             this.DiaChi.Width = 94;
-            // 
-            // txtLink
-            // 
-            this.txtLink.Location = new System.Drawing.Point(106, 16);
-            this.txtLink.Name = "txtLink";
-            this.txtLink.Size = new System.Drawing.Size(309, 23);
-            this.txtLink.TabIndex = 9;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 16);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "File Name";
             // 
             // frmKhachHang
             // 

@@ -27,6 +27,7 @@ using Z.Dapper.Plus;
 using File = System.IO.File;
 using System.Data.Sql;
 using System.Net.Configuration;
+using System.Text.RegularExpressions;
 
 namespace QuanLy
 {
@@ -123,32 +124,62 @@ namespace QuanLy
         }
         void SaveData()
         {
-            if (_tt)
+            try
             {
-                KHACHHANG kh = new KHACHHANG();
-                data_BDSEntities db = new data_BDSEntities();
-                var list = db.P_MAKH().ToList();
-                foreach (var item in list)
+                if (txtHoTen.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                if (isEmail(txtEmail.Text))
+                    throw new Exception("Sai Định Dạng Email");
+                if (ktrphone(txtSDT.Text) == false)
+                    throw new Exception("Sai Định Dạng SDT");
+                if (_tt)
                 {
-                    kh.MaKH = item;
+
+                    KHACHHANG kh = new KHACHHANG();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MAKH().ToList();
+                    foreach (var item in list)
+                    {
+                        kh.MaKH = item;
+                    }
+                    kh.HoTenKH = txtHoTen.Text;
+                    kh.SDT = txtSDT.Text;
+                    kh.DiaChi = txtDiaChi.Text;
+                    kh.Emaill = txtEmail.Text;
+                    _kh.Add(kh);
                 }
-                kh.HoTenKH = txtHoTen.Text;
-                kh.SDT = txtSDT.Text;
-                kh.DiaChi = txtDiaChi.Text;
-                kh.Emaill = txtEmail.Text;
-                _kh.Add(kh);
+                else
+                {
+                    var kh = _kh.getItem(id);
+                    kh.HoTenKH = txtHoTen.Text;
+                    kh.SDT = txtSDT.Text;
+                    kh.DiaChi = txtDiaChi.Text;
+                    kh.Emaill = txtEmail.Text;
+                    _kh.Updata(kh);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var kh = _kh.getItem(id);
-                kh.HoTenKH = txtHoTen.Text;
-                kh.SDT = txtSDT.Text;
-                kh.DiaChi = txtDiaChi.Text;
-                kh.Emaill = txtEmail.Text;
-                _kh.Updata(kh);
+                MessageBox.Show(ex.Message);
             }
         }
-
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (false);
+            else
+                return (true);
+        }
+        private bool ktrphone(string check)
+        {
+            Regex regex = new Regex(@"^(0|84)([0-9]{9})$");
+            return regex.IsMatch(check);
+        }
         private void gvKHACHHANG_Click(object sender, EventArgs e)
         {
             id = gvKHACHHANG.GetFocusedRowCellValue("MaKH").ToString();
@@ -259,6 +290,14 @@ namespace QuanLy
             {
                 MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                e.Handled = true;
+            if (e.KeyChar == 8)
+                e.Handled = false;
         }
     }
 }
