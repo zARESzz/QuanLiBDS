@@ -214,17 +214,6 @@ namespace QuanLy
             rptNhanVien rpt = new rptNhanVien(_listNV);
             rpt.ShowPreview();
         }
-
-        private void txtSDT_EditValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtNgaySinh_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
