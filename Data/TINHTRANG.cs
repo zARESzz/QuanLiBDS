@@ -18,7 +18,6 @@ namespace Data
         public TINHTRANG()
         {
             this.BATDONGSANs = new HashSet<BATDONGSAN>();
-            this.PHIEUDENBUs = new HashSet<PHIEUDENBU>();
         }
     
         public string MaTT { get; set; }
@@ -26,7 +25,5 @@ namespace Data
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BATDONGSAN> BATDONGSANs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PHIEUDENBU> PHIEUDENBUs { get; set; }
     }
 }

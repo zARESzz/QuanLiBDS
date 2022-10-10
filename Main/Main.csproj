@@ -50,17 +50,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cls_BDS.cs" />
+    <Compile Include="cls_CTNC.cs" />
+    <Compile Include="cls_HopDong.cs" />
+    <Compile Include="cls_LoaiBD.cs" />
     <Compile Include="cls_MatKhau.cs" />
     <Compile Include="cls_NhanVien.cs" />
     <Compile Include="cls_ChucVu.cs" />
     <Compile Include="cls_KhachHang.cs" />
+    <Compile Include="cls_NhuCau.cs" />
+    <Compile Include="cls_TinhTrang.cs" />
     <Compile Include="Custom\CtButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Custom\CtCombobox.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="cls_ThanhToan.cs" />
+    <Compile Include="Full\cls_CTNC_Full.cs" />
+    <Compile Include="Full\cls_HopDong_Full.cs" />
     <Compile Include="Full\cls_NhanVien_Full.cs" />
+    <Compile Include="Full\cls_ThanhToan_Full.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +82,9 @@
       <Project>{1e560617-ffa0-4cf1-b410-b4a2ffac36f8}</Project>
       <Name>Data</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

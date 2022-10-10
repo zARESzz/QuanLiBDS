@@ -241,7 +241,7 @@
             this.lblNS.Multiline = true;
             this.lblNS.Name = "lblNS";
             this.lblNS.Text = "NGÀY SINH";
-            this.lblNS.TextFormatString = "{0:dd/mm/yyyy}";
+            this.lblNS.TextFormatString = "{0:dd/MM/yyyy}";
             this.lblNS.Weight = 0.98824849653107216D;
             // 
             // lblSDT

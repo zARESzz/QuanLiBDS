@@ -510,6 +510,8 @@
             // NgaySinh
             // 
             this.NgaySinh.Caption = "Ngày Sinh";
+            this.NgaySinh.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.NgaySinh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.NgaySinh.FieldName = "NgaySinh";
             this.NgaySinh.MinWidth = 25;
             this.NgaySinh.Name = "NgaySinh";

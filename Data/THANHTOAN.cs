@@ -18,6 +18,7 @@ namespace Data
         public string MaHD { get; set; }
         public Nullable<long> TongTien { get; set; }
         public Nullable<System.DateTime> NgayTT { get; set; }
+        public string NoiDung { get; set; }
     
         public virtual HOPDONG HOPDONG { get; set; }
     }

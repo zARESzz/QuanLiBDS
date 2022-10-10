@@ -35,7 +35,6 @@ namespace Data
         public virtual DbSet<LOAIBD> LOAIBDS { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHUCAU> NHUCAUs { get; set; }
-        public virtual DbSet<PHIEUDENBU> PHIEUDENBUs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
         public virtual DbSet<TINHTRANG> TINHTRANGs { get; set; }
     
@@ -52,6 +51,41 @@ namespace Data
         public virtual ObjectResult<string> P_MATK()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MATK");
+        }
+    
+        public virtual ObjectResult<string> P_MaBDS()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MaBDS");
+        }
+    
+        public virtual ObjectResult<string> P_MaHD()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MaHD");
+        }
+    
+        public virtual ObjectResult<string> P_MaLoai()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MaLoai");
+        }
+    
+        public virtual ObjectResult<string> P_MaNC()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MaNC");
+        }
+    
+        public virtual ObjectResult<string> P_MaPhieu()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MaPhieu");
+        }
+    
+        public virtual ObjectResult<string> P_MaTT()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MaTT");
+        }
+    
+        public virtual ObjectResult<string> P_MATToan()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MATToan");
         }
     }
 }
