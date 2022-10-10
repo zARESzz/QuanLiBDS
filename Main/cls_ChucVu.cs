@@ -52,7 +52,7 @@ namespace Main
             {
                 var _cv = db.CHUCVUs.FirstOrDefault(x => x.MaCV == id);
                 db.CHUCVUs.Remove(_cv);
-                db.SaveChanges();
+                db.SaveChanges();        
             }
             catch (Exception ex)
             {

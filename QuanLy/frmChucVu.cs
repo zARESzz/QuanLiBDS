@@ -1,16 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main;
 using Data;
-using System.Data.Entity;
 
 namespace QuanLy
 {
@@ -20,7 +12,7 @@ namespace QuanLy
         {
             InitializeComponent();
         }
-
+        data_BDSEntities db = new data_BDSEntities();
         cls_ChucVu _cv;
         bool _tt;
         string id;
@@ -66,12 +58,22 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(MessageBox.Show("Bạn có chắc chắn muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+            if(id==null)
             {
+                MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo");
+                return;
+            }
+            var check = db.NHANVIENs.FirstOrDefault(p => p.MaCV == id);
+            if(check!=null)
+            {
+                MessageBox.Show("Có nhân viên có chức vụ: "+id+"\nKhông Thể xóa", "Thông báo");
+                return;
+            }    
+            if(MessageBox.Show("Bạn có chắc chắn muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+            { 
                 _cv.Delete(id);
                 txtTen.Text = "";
                 loadData();
-
             }    
         }
 
