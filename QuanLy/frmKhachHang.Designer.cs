@@ -306,7 +306,6 @@
             this.txtHoTen.Properties.Appearance.Options.UseFont = true;
             this.txtHoTen.Size = new System.Drawing.Size(285, 34);
             this.txtHoTen.TabIndex = 1;
-            this.txtHoTen.EditValueChanged += new System.EventHandler(this.txtHoTen_EditValueChanged);
             // 
             // labelControl1
             // 
