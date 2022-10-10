@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace Login
+namespace CustomMessageBox
 {
     internal static class Program
     {
