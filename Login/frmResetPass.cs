@@ -47,7 +47,6 @@ namespace Login
                     message.From = new MailAddress(fromMail);
                     message.Subject = "Mật khẩu";
                     message.To.Add(new MailAddress(txtName.Text));
-                    //   message.Body = "<html><body> 1234567890 </body></html>";
                     message.Body = "<html><body> "+mk.GiaiMa(check.MK)+ "</body></html>";
                     message.IsBodyHtml = true;
 

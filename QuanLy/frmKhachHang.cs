@@ -111,7 +111,7 @@ namespace QuanLy
             this.Close();
         }
         void SaveData()
-        {
+        {              
             try
             {
                 if (txtHoTen.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
@@ -122,7 +122,6 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng SDT");
                 if (_tt)
                 {
-
                     KHACHHANG kh = new KHACHHANG();
                     data_BDSEntities db = new data_BDSEntities();
                     var list = db.P_MAKH().ToList();
@@ -270,6 +269,13 @@ namespace QuanLy
         }
 
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                e.Handled = true;
+            if (e.KeyChar == 8)
+                e.Handled = false;
+        }
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
                 e.Handled = true;

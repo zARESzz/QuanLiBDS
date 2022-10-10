@@ -14,6 +14,8 @@ using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
 using System.Text.RegularExpressions;
+using DevExpress.Charts.Native;
+using DevExpress.XtraGauges.Core.Model;
 
 namespace QuanLy
 {
@@ -112,59 +114,55 @@ namespace QuanLy
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
         }
-
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             this.Close();
         }
         void SaveData()
+    {   try
         {
-            try
+            if (txtHoTen.Text == ""||txtMatKhau.Text==""||txtSDT.Text==""||txtDiaChi.Text==""||txtEmail.Text=="")
+                throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+            if (isEmail(txtEmail.Text))
+                throw new Exception("Sai Định Dạng Email");
+            if (ktrphone(txtSDT.Text)==false)
+                throw new Exception("Sai Định Dạng SDT");
+            if (_tt)
             {
-                if (txtHoTen.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
-                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
-                if (isEmail(txtEmail.Text))
-                    throw new Exception("Sai Định Dạng Email");
-                if (ktrphone(txtSDT.Text) == false)
-                    throw new Exception("Sai Định Dạng SDT");
-                if (_tt)
-                    if (_tt)
-                    {
-                        NHANVIEN kh = new NHANVIEN();
-                        data_BDSEntities db = new data_BDSEntities();
-                        var list = db.P_MATK().ToList();
-                        foreach (var item in list)
-                        {
-                            kh.MaTK = item;
-                        }
-                        kh.HoTenNV = txtHoTen.Text;
-                        kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
-                        kh.NgaySinh = dtNgaySinh.Value;
-                        kh.MK = _mk.MaHoa(txtMatKhau.Text);
-                        kh.MaCV = cbxChucVu.SelectedValue.ToString();
-                        kh.SDT = txtSDT.Text;
-                        kh.DiaChi = txtDiaChi.Text;
-                        kh.Email = txtEmail.Text;
-                        _nv.Add(kh);
-                    }
-                    else
-                    {
-                        var kh = _nv.getItem(id);
-                        kh.HoTenNV = txtHoTen.Text;
-                        kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
-                        kh.NgaySinh = dtNgaySinh.Value;
-                        kh.MK = _mk.MaHoa(txtMatKhau.Text);
-                        kh.MaCV = cbxChucVu.SelectedValue.ToString();
-                        kh.SDT = txtSDT.Text;
-                        kh.DiaChi = txtDiaChi.Text;
-                        kh.Email = txtEmail.Text;
-                        _nv.Updata(kh);
-                    }
+                NHANVIEN kh = new NHANVIEN();
+                data_BDSEntities db = new data_BDSEntities();
+                var list = db.P_MATK().ToList();
+                foreach (var item in list)
+                {
+                    kh.MaTK = item;
+                }
+                kh.HoTenNV = txtHoTen.Text;
+                kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
+                kh.NgaySinh = dtNgaySinh.Value;
+                kh.MK = _mk.MaHoa(txtMatKhau.Text);
+                kh.MaCV = cbxChucVu.SelectedValue.ToString();
+                kh.SDT = txtSDT.Text;
+                kh.DiaChi = txtDiaChi.Text;
+                kh.Email = txtEmail.Text;
+                _nv.Add(kh);
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+                var kh = _nv.getItem(id);
+                kh.HoTenNV = txtHoTen.Text;
+                kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
+                kh.NgaySinh = dtNgaySinh.Value;
+                kh.MK = _mk.MaHoa(txtMatKhau.Text);
+                kh.MaCV = cbxChucVu.SelectedValue.ToString();
+                kh.SDT = txtSDT.Text;
+                kh.DiaChi = txtDiaChi.Text;
+                kh.Email = txtEmail.Text;
+                _nv.Updata(kh);
             }
+        } catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message);
+        }          
         }
         private bool isEmail(string inputEmail)
         {
@@ -183,7 +181,6 @@ namespace QuanLy
             Regex regex = new Regex(@"^(0|84)([0-9]{9})$");
             return regex.IsMatch(check);
         }
-
         private void gvNHANVIEN_Click(object sender, EventArgs e)
         {
             id = gvNHANVIEN.GetFocusedRowCellValue("MaTK").ToString();
@@ -215,7 +212,6 @@ namespace QuanLy
             rptNhanVien rpt = new rptNhanVien(_listNV);
             rpt.ShowPreview();
         }
-
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))

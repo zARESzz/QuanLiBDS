@@ -100,24 +100,34 @@ namespace QuanLy
         
         void SaveData()
         {
-            if (_tt)
+            try
             {
-                CHUCVU cv = new CHUCVU();
-                data_BDSEntities db = new data_BDSEntities();
-                var list =  db.P_MACV().ToList();
-                foreach (var item in list)
+                if (txtTen.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP TÊN");
+                if (_tt)
                 {
-                    cv.MaCV = item;
+                    CHUCVU cv = new CHUCVU();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MACV().ToList();
+                    foreach (var item in list)
+                    {
+                        cv.MaCV = item;
+                    }
+                    cv.TenCV = txtTen.Text;
+                    _cv.Add(cv);
                 }
-                cv.TenCV = txtTen.Text;
-                _cv.Add(cv);
+                else
+                {
+                    var cv = _cv.getItem(id); 
+                    cv.TenCV = txtTen.Text;
+                    _cv.Updata(cv);
+                }
             }
-            else
+            catch(Exception ex)
             {
-                var cv = _cv.getItem(id);
-                cv.TenCV = txtTen.Text;
-                _cv.Updata(cv);
+                MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void gvChucVu_Click(object sender, EventArgs e)

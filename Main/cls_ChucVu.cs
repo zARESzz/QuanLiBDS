@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Data;
 namespace Main
 {
@@ -51,6 +52,16 @@ namespace Main
             try
             {
                 var _cv = db.CHUCVUs.FirstOrDefault(x => x.MaCV == id);
+                if( _cv != null)
+                {
+                    db.CHUCVUs.Remove(_cv);
+                    db.SaveChanges();
+                }
+                else
+                {
+                    MessageBox.Show("Thông báo", "Không Tìm Thấy Chức Vụ");
+                }
+                
                 db.CHUCVUs.Remove(_cv);
                 db.SaveChanges();        
             }
