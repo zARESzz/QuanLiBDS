@@ -33,15 +33,10 @@ namespace Login
             }
             if (mk.GiaiMa(checkTK.MK) == txtPass.Text)
             {
-<<<<<<< HEAD
-                frmQuanLy ql = new frmQuanLy();
-                ql.ShowDialog();
-=======
-                frmQuanLy ql = new frmQuanLy();                
+                frmQuanLy ql = new frmQuanLy();           
                 this.Hide();
                 ql.ShowDialog();
                 this.Show();
->>>>>>> CuongKudo
             }
             else
             {

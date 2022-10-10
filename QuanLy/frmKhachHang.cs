@@ -7,15 +7,12 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
-<<<<<<< HEAD
-=======
 using System.Data.SqlClient;
 using System.IO;
 using ExcelDataReader;
 using DataTable = System.Data.DataTable;
 using Z.Dapper.Plus;
 using File = System.IO.File;
->>>>>>> CuongKudo
 using System.Text.RegularExpressions;
 
 namespace QuanLy
@@ -114,16 +111,10 @@ namespace QuanLy
             this.Close();
         }
         void SaveData()
-        {
-<<<<<<< HEAD
-            try 
-            {
-                if (txtHoTen.Text==""||txtSDT.Text==""||txtDiaChi.Text==""||txtEmail.Text=="")                    
-=======
+        {              
             try
             {
                 if (txtHoTen.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
->>>>>>> CuongKudo
                     throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
                 if (isEmail(txtEmail.Text))
                     throw new Exception("Sai Định Dạng Email");
@@ -131,10 +122,6 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng SDT");
                 if (_tt)
                 {
-<<<<<<< HEAD
-=======
-
->>>>>>> CuongKudo
                     KHACHHANG kh = new KHACHHANG();
                     data_BDSEntities db = new data_BDSEntities();
                     var list = db.P_MAKH().ToList();
@@ -162,10 +149,6 @@ namespace QuanLy
             {
                 MessageBox.Show(ex.Message);
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> CuongKudo
         }
         private bool isEmail(string inputEmail)
         {
@@ -292,7 +275,7 @@ namespace QuanLy
             if (e.KeyChar == 8)
                 e.Handled = false;
         }
-        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
                 e.Handled = true;

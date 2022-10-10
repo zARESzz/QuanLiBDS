@@ -279,7 +279,6 @@
             this.dtNgaySinh.Name = "dtNgaySinh";
             this.dtNgaySinh.Size = new System.Drawing.Size(229, 32);
             this.dtNgaySinh.TabIndex = 3;
-            this.dtNgaySinh.ValueChanged += new System.EventHandler(this.dtNgaySinh_ValueChanged);
             // 
             // chkGioiTinh
             // 
@@ -319,10 +318,6 @@
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
             this.txtSDT.Size = new System.Drawing.Size(231, 34);
             this.txtSDT.TabIndex = 1;
-<<<<<<< HEAD
-            this.txtSDT.EditValueChanged += new System.EventHandler(this.txtSDT_EditValueChanged);
-=======
->>>>>>> CuongKudo
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtMatKhau

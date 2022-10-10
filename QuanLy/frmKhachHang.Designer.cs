@@ -71,12 +71,9 @@
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Emaill = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-<<<<<<< HEAD
-=======
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker3 = new System.ComponentModel.BackgroundWorker();
->>>>>>> CuongKudo
             ((System.ComponentModel.ISupportInitialize)(this.barManagerKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
