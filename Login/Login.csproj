@@ -134,6 +134,13 @@
     <None Include="Resources\PngItem_780642.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <ProjectReference Include="..\CustomMessageBox-main\CustomMessageBox\CustomMessageBox.csproj">
+      <Project>{99054420-de83-4af4-9f65-7ce1d51a5561}</Project>
+      <Name>CustomMessageBox</Name>
+    </ProjectReference>
+>>>>>>> CuongKudo
     <ProjectReference Include="..\Data\Data.csproj">
       <Project>{1e560617-ffa0-4cf1-b410-b4a2ffac36f8}</Project>
       <Name>Data</Name>

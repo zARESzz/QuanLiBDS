@@ -14,8 +14,11 @@ using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
 using System.Text.RegularExpressions;
+<<<<<<< HEAD
 using DevExpress.Charts.Native;
 using DevExpress.XtraGauges.Core.Model;
+=======
+>>>>>>> CuongKudo
 
 namespace QuanLy
 {
@@ -119,6 +122,7 @@ namespace QuanLy
             this.Close();
         }
         void SaveData()
+<<<<<<< HEAD
         {  try
             {
                 if (txtHoTen.Text == ""||txtMatKhau.Text==""||txtSDT.Text==""||txtDiaChi.Text==""||txtEmail.Text=="")
@@ -163,6 +167,72 @@ namespace QuanLy
             {
                 MessageBox.Show(ex.Message);
             }
+=======
+        {
+            try
+            {
+                if (txtHoTen.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                if (isEmail(txtEmail.Text))
+                    throw new Exception("Sai Định Dạng Email");
+                if (ktrphone(txtSDT.Text) == false)
+                    throw new Exception("Sai Định Dạng SDT");
+                if (_tt)
+                    if (_tt)
+                    {
+                        NHANVIEN kh = new NHANVIEN();
+                        data_BDSEntities db = new data_BDSEntities();
+                        var list = db.P_MATK().ToList();
+                        foreach (var item in list)
+                        {
+                            kh.MaTK = item;
+                        }
+                        kh.HoTenNV = txtHoTen.Text;
+                        kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
+                        kh.NgaySinh = dtNgaySinh.Value;
+                        kh.MK = _mk.MaHoa(txtMatKhau.Text);
+                        kh.MaCV = cbxChucVu.SelectedValue.ToString();
+                        kh.SDT = txtSDT.Text;
+                        kh.DiaChi = txtDiaChi.Text;
+                        kh.Email = txtEmail.Text;
+                        _nv.Add(kh);
+                    }
+                    else
+                    {
+                        var kh = _nv.getItem(id);
+                        kh.HoTenNV = txtHoTen.Text;
+                        kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
+                        kh.NgaySinh = dtNgaySinh.Value;
+                        kh.MK = _mk.MaHoa(txtMatKhau.Text);
+                        kh.MaCV = cbxChucVu.SelectedValue.ToString();
+                        kh.SDT = txtSDT.Text;
+                        kh.DiaChi = txtDiaChi.Text;
+                        kh.Email = txtEmail.Text;
+                        _nv.Updata(kh);
+                    }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private bool isEmail(string inputEmail)
+        {
+            inputEmail = inputEmail ?? string.Empty;
+            string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+                  @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" +
+                  @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+            Regex re = new Regex(strRegex);
+            if (re.IsMatch(inputEmail))
+                return (false);
+            else
+                return (true);
+        }
+        private bool ktrphone(string check)
+        {
+            Regex regex = new Regex(@"^(0|84)([0-9]{9})$");
+            return regex.IsMatch(check);
+>>>>>>> CuongKudo
         }
         
         private bool isEmail(string inputEmail)
@@ -214,6 +284,10 @@ namespace QuanLy
             rptNhanVien rpt = new rptNhanVien(_listNV);
             rpt.ShowPreview();
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> CuongKudo
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))

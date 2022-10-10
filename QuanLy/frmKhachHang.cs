@@ -1,17 +1,21 @@
 ﻿using Data;
-using DevExpress.XtraEditors;
 using Main;
 using QuanLy.Reports;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
+<<<<<<< HEAD
+=======
+using System.Data.SqlClient;
+using System.IO;
+using ExcelDataReader;
+using DataTable = System.Data.DataTable;
+using Z.Dapper.Plus;
+using File = System.IO.File;
+>>>>>>> CuongKudo
 using System.Text.RegularExpressions;
 
 namespace QuanLy
@@ -48,6 +52,7 @@ namespace QuanLy
             btnSave.Enabled = !kt;
             btnHuy.Enabled = !kt;
             btnIn.Enabled = kt;
+            btnExcel.Enabled = kt;
         }
 
         void loadData()
@@ -100,6 +105,7 @@ namespace QuanLy
         {
             _tt = false;
             ShowHide(true);
+            An(true);
             splitContainer1.Panel1Collapsed = true;
         }
 
@@ -109,9 +115,15 @@ namespace QuanLy
         }
         void SaveData()
         {
+<<<<<<< HEAD
             try 
             {
                 if (txtHoTen.Text==""||txtSDT.Text==""||txtDiaChi.Text==""||txtEmail.Text=="")                    
+=======
+            try
+            {
+                if (txtHoTen.Text == "" || txtSDT.Text == "" || txtDiaChi.Text == "" || txtEmail.Text == "")
+>>>>>>> CuongKudo
                     throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
                 if (isEmail(txtEmail.Text))
                     throw new Exception("Sai Định Dạng Email");
@@ -119,6 +131,10 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng SDT");
                 if (_tt)
                 {
+<<<<<<< HEAD
+=======
+
+>>>>>>> CuongKudo
                     KHACHHANG kh = new KHACHHANG();
                     data_BDSEntities db = new data_BDSEntities();
                     var list = db.P_MAKH().ToList();
@@ -146,7 +162,10 @@ namespace QuanLy
             {
                 MessageBox.Show(ex.Message);
             }
+<<<<<<< HEAD
 
+=======
+>>>>>>> CuongKudo
         }
         private bool isEmail(string inputEmail)
         {
@@ -178,7 +197,100 @@ namespace QuanLy
         {
             rptKhachHang rpt = new rptKhachHang(_listkh);
             rpt.ShowPreview();
+        }
+        DataTableCollection tableCollection;
+        void An(bool tt)
+        {
+            txtDiaChi.Visible = tt;
+            txtEmail.Visible = tt;
+            txtHoTen.Visible = tt;
+            txtSDT.Visible = tt;
+            lblTen.Visible = tt;
+            lblSDT.Visible = tt;
+            lblDiaChi.Visible = tt;
+            lblEmail.Visible = tt;
+            lblFile.Visible = !tt;
+            txtLink.Visible = !tt;
+            cbxSheet.Visible = !tt;
+            btnImport.Visible = !tt;
+        }
+        private void btnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            An(false);
+            ShowHide(false);
+            btnSave.Enabled = false;
+            splitContainer1.Panel1Collapsed = false;
+            using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Excel 97-2003 Workbook|*.xls|Excel Workbook|*.xlsx" })
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtLink.Text = openFileDialog.FileName;
+                    using (var stream = File.Open(openFileDialog.FileName, FileMode.Open, FileAccess.Read))
+                    {
+                        using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream))
+                        {
+                            DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                            {
+                                ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
+                            });
+                            tableCollection = result.Tables;
+                            cbxSheet.Items.Clear();
+                            foreach (DataTable table in tableCollection)
+                                cbxSheet.Items.Add(table.TableName);
+                        }
+                    }
+                }
+            }
+        }
 
+        private void cboSheet_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = tableCollection[cbxSheet.SelectedItem.ToString()];
+            if (dt != null)
+            {
+                List<KHACHHANG> khachHangs = new List<KHACHHANG>();
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    KHACHHANG kHACHHANG = new KHACHHANG();
+                    kHACHHANG.MaKH = dt.Rows[i]["MaKH"].ToString();
+                    kHACHHANG.HoTenKH = dt.Rows[i]["HoTenKH"].ToString();
+                    kHACHHANG.SDT = dt.Rows[i]["SDT"].ToString();
+                    kHACHHANG.Emaill = dt.Rows[i]["Emaill"].ToString();
+                    kHACHHANG.DiaChi = dt.Rows[i]["DiaChi"].ToString();
+                    khachHangs.Add(kHACHHANG);
+                }
+                gcKHACHHANG.DataSource = khachHangs;
+            }
+        }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string ssdada = "Server=LAPTOP-4I0T0PPN\\SQLEXPRESS;Database=data_BDS;User Id = sa;Password=123@qaz";
+                DapperPlusManager.Entity<KHACHHANG>().Table("KHACHHANG");
+                List<KHACHHANG> khachHangs = gcKHACHHANG.DataSource as List<KHACHHANG>;
+                if (khachHangs != null)
+                {
+                    using (IDbConnection db = new SqlConnection(ssdada))
+                    {
+                        db.BulkInsert(khachHangs);
+                    }
+                    MessageBox.Show("Lưu thành Công!!!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar))
+                e.Handled = true;
+            if (e.KeyChar == 8)
+                e.Handled = false;
         }
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {

@@ -319,7 +319,10 @@
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
             this.txtSDT.Size = new System.Drawing.Size(231, 34);
             this.txtSDT.TabIndex = 1;
+<<<<<<< HEAD
             this.txtSDT.EditValueChanged += new System.EventHandler(this.txtSDT_EditValueChanged);
+=======
+>>>>>>> CuongKudo
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtMatKhau
