@@ -321,13 +321,16 @@
             this.label1.Size = new System.Drawing.Size(64, 16);
             this.label1.TabIndex = 10;
             this.label1.Text = "File Name";
+            this.label1.Visible = false;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtLink
             // 
-            this.txtLink.Location = new System.Drawing.Point(106, 16);
+            this.txtLink.Location = new System.Drawing.Point(106, 20);
             this.txtLink.Name = "txtLink";
             this.txtLink.Size = new System.Drawing.Size(309, 23);
             this.txtLink.TabIndex = 9;
+            this.txtLink.Visible = false;
             // 
             // btnImport
             // 
@@ -420,7 +423,7 @@
             // 
             // txtHoTen
             // 
-            this.txtHoTen.Location = new System.Drawing.Point(106, 21);
+            this.txtHoTen.Location = new System.Drawing.Point(106, 17);
             this.txtHoTen.MenuManager = this.barManagerKH;
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

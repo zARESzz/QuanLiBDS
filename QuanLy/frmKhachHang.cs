@@ -274,7 +274,7 @@ namespace QuanLy
         {
             try
             {
-                string ssdada = "Server=LAPTOP-QJUA0USI\\SQLEXPRESS;Database=data_BDS;User Id = sa;Password=123@qaz";
+                string ssdada = "Server=LAPTOP-4I0T0PPN\\SQLEXPRESS;Database=data_BDS;User Id = sa;Password=123@qaz";
                 DapperPlusManager.Entity<KHACHHANG>().Table("KHACHHANG");
                 List<KHACHHANG> khachHangs = gcKHACHHANG.DataSource as List<KHACHHANG>;
                 if (khachHangs != null)
@@ -298,6 +298,11 @@ namespace QuanLy
                 e.Handled = true;
             if (e.KeyChar == 8)
                 e.Handled = false;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Net;
 using System.Windows.Forms;
 using CustomMessageBox;
+using Main;
 
 namespace Login
 {
@@ -34,7 +35,8 @@ namespace Login
 
         private void btnGuiEmail_Click(object sender, EventArgs e)
         {
-                var check = db.NHANVIENs.FirstOrDefault(p => p.Email == txtName.Text);
+            cls_MatKhau mk = new cls_MatKhau();
+            var check = db.NHANVIENs.FirstOrDefault(p => p.Email == txtName.Text);
                 if (check != null)
               {
                 try { 
@@ -46,7 +48,7 @@ namespace Login
                     message.Subject = "Mật khẩu";
                     message.To.Add(new MailAddress(txtName.Text));
                     //   message.Body = "<html><body> 1234567890 </body></html>";
-                    message.Body = "<html><body> "+check.MK+ "</body></html>";
+                    message.Body = "<html><body> "+mk.GiaiMa(check.MK)+ "</body></html>";
                     message.IsBodyHtml = true;
 
                     var smtpClient = new SmtpClient("smtp.gmail.com")
