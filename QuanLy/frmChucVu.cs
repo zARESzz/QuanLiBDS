@@ -1,17 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main;
 using Data;
-using System.Data.Entity;
-
 namespace QuanLy
 {
     public partial class frmChucVu : DevExpress.XtraEditors.XtraForm
@@ -20,10 +11,10 @@ namespace QuanLy
         {
             InitializeComponent();
         }
-
+        data_BDSEntities db = new data_BDSEntities();
         cls_ChucVu _cv;
         bool _tt;
-        string  id = null;
+        string id;
         private void frmChucVu_Load(object sender, EventArgs e)
         {
             _tt = false;
@@ -68,16 +59,21 @@ namespace QuanLy
         {
             if (id == null)
             {
-                MessageBox.Show("Vui Lòng Chọn Dòng");
+                MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo");
                 return;
-            } 
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+            }
+            var check = db.NHANVIENs.FirstOrDefault(p => p.MaCV == id);
+            if (check != null)
+            {
+                MessageBox.Show("Có nhân viên có chức vụ: " + id + "\nKhông Thể xóa", "Thông báo");
+                return;
+            }
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _cv.Delete(id);
                 txtTen.Text = "";
                 loadData();
-
-            }    
+            }
         }
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -103,30 +99,23 @@ namespace QuanLy
 
         void SaveData()
         {
-            try {
-                if (txtTen.Text == "")
-                    if (_tt)
-                    {
-                        CHUCVU cv = new CHUCVU();
-                        data_BDSEntities db = new data_BDSEntities();
-                        var list = db.P_MACV().ToList();
-                        foreach (var item in list)
-                        {
-                            cv.MaCV = item;
-                        }
-                        cv.TenCV = txtTen.Text;
-                        _cv.Add(cv);
-                    }
-                    else
-                    {
-                        var cv = _cv.getItem(id);
-                        cv.TenCV = txtTen.Text;
-                        _cv.Updata(cv);
-                    }
-            }
-            catch (Exception ex)
+            if (_tt)
             {
-                MessageBox.Show(ex.Message);
+                CHUCVU cv = new CHUCVU();
+                data_BDSEntities db = new data_BDSEntities();
+                var list = db.P_MACV().ToList();
+                foreach (var item in list)
+                {
+                    cv.MaCV = item;
+                }
+                cv.TenCV = txtTen.Text;
+                _cv.Add(cv);
+            }
+            else
+            {
+                var cv = _cv.getItem(id);
+                cv.TenCV = txtTen.Text;
+                _cv.Updata(cv);
             }
         }
 

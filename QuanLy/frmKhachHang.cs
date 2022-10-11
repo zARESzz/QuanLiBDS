@@ -1,32 +1,19 @@
 ﻿using Data;
-using DevExpress.XtraEditors;
 using Main;
 using QuanLy.Reports;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using System.Data.SqlClient;
 using System.IO;
-using System.Data.OleDb;
-using System.Configuration;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraReports.UserConfiguration;
 using DevExpress.DataProcessing;
 using ExcelDataReader;
-using DevExpress.XtraExport.Xls;
 using DataTable = System.Data.DataTable;
-using DevExpress.Office.Utils;
 using Z.Dapper.Plus;
 using File = System.IO.File;
-using System.Data.Sql;
-using System.Net.Configuration;
 using System.Text.RegularExpressions;
 
 namespace QuanLy
@@ -63,6 +50,7 @@ namespace QuanLy
             btnSave.Enabled = !kt;
             btnHuy.Enabled = !kt;
             btnIn.Enabled = kt;
+            btnExcel.Enabled = kt;
         }
 
         void loadData()
@@ -115,6 +103,7 @@ namespace QuanLy
         {
             _tt = false;
             ShowHide(true);
+            An(true);
             splitContainer1.Panel1Collapsed = true;
         }
 
@@ -134,7 +123,6 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng SDT");
                 if (_tt)
                 {
-
                     KHACHHANG kh = new KHACHHANG();
                     data_BDSEntities db = new data_BDSEntities();
                     var list = db.P_MAKH().ToList();
@@ -194,36 +182,28 @@ namespace QuanLy
             rptKhachHang rpt = new rptKhachHang(_listkh);
             rpt.ShowPreview();
         }
-
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            txtHoTen.Text = "";
-            txtDiaChi.Text = "";
-            txtEmail.Text = "";
-            txtSDT.Text = "";
-            ShowHide(false);
-            splitContainer1.Panel1Collapsed = false;
-            btnTim.Visible = true;
-        }
-
         DataTableCollection tableCollection;
-        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        void An(bool tt)
         {
-            txtDiaChi.Visible = false;
-            txtEmail.Visible = false;
-            txtHoTen.Visible = false;
-            txtSDT.Visible = false;
-            labelControl1.Visible = false;
-            labelControl2.Visible = false;
-            labelControl3.Visible = false;
-            labelControl4.Visible = false;
-            txtHoTen.Text = "";
-            txtDiaChi.Text = "";
-            txtEmail.Text = "";
-            txtSDT.Text = "";
+            txtDiaChi.Visible = tt;
+            txtEmail.Visible = tt;
+            txtHoTen.Visible = tt;
+            txtSDT.Visible = tt;
+            lblTen.Visible = tt;
+            lblSDT.Visible = tt;
+            lblDiaChi.Visible = tt;
+            lblEmail.Visible = tt;
+            lblFile.Visible = !tt;
+            txtLink.Visible = !tt;
+            cbxSheet.Visible = !tt;
+            btnImport.Visible = !tt;
+        }
+        private void btnExcel_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            An(false);
             ShowHide(false);
+            btnSave.Enabled = false;
             splitContainer1.Panel1Collapsed = false;
-            btnTim.Visible = false;
             using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Excel 97-2003 Workbook|*.xls|Excel Workbook|*.xlsx" })
             {
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
@@ -238,9 +218,9 @@ namespace QuanLy
                                 ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }
                             });
                             tableCollection = result.Tables;
-                            cboSheet.Items.Clear();
+                            cbxSheet.Items.Clear();
                             foreach (DataTable table in tableCollection)
-                                cboSheet.Items.Add(table.TableName);
+                                cbxSheet.Items.Add(table.TableName);
                         }
                     }
                 }
@@ -249,8 +229,7 @@ namespace QuanLy
 
         private void cboSheet_SelectedIndexChanged(object sender, EventArgs e)
         {
-            DataTable dt = tableCollection[cboSheet.SelectedItem.ToString()];
-            //gcKHACHHANG.DataSource = dt;
+            DataTable dt = tableCollection[cbxSheet.SelectedItem.ToString()];
             if (dt != null)
             {
                 List<KHACHHANG> khachHangs = new List<KHACHHANG>();
@@ -262,9 +241,7 @@ namespace QuanLy
                     kHACHHANG.SDT = dt.Rows[i]["SDT"].ToString();
                     kHACHHANG.Emaill = dt.Rows[i]["Emaill"].ToString();
                     kHACHHANG.DiaChi = dt.Rows[i]["DiaChi"].ToString();
-
                     khachHangs.Add(kHACHHANG);
-
                 }
                 gcKHACHHANG.DataSource = khachHangs;
             }
@@ -283,7 +260,7 @@ namespace QuanLy
                     {
                         db.BulkInsert(khachHangs);
                     }
-                    MessageBox.Show("Finish!!!");
+                    MessageBox.Show("Lưu thành Công!!!");
                 }
             }
             catch (Exception ex)
@@ -299,10 +276,12 @@ namespace QuanLy
             if (e.KeyChar == 8)
                 e.Handled = false;
         }
-
-        private void label1_Click(object sender, EventArgs e)
+        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsDigit(e.KeyChar))
+                e.Handled = true;
+            if (e.KeyChar == 8)
+                e.Handled = false;
         }
     }
 }

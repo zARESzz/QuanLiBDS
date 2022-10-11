@@ -127,39 +127,39 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng Email");
                 if (ktrphone(txtSDT.Text) == false)
                     throw new Exception("Sai Định Dạng SDT");
+                
                 if (_tt)
-                    if (_tt)
+                {
+                    NHANVIEN kh = new NHANVIEN();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MATK().ToList();
+                    foreach (var item in list)
                     {
-                        NHANVIEN kh = new NHANVIEN();
-                        data_BDSEntities db = new data_BDSEntities();
-                        var list = db.P_MATK().ToList();
-                        foreach (var item in list)
-                        {
-                            kh.MaTK = item;
-                        }
-                        kh.HoTenNV = txtHoTen.Text;
-                        kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
-                        kh.NgaySinh = dtNgaySinh.Value;
-                        kh.MK = _mk.MaHoa(txtMatKhau.Text);
-                        kh.MaCV = cbxChucVu.SelectedValue.ToString();
-                        kh.SDT = txtSDT.Text;
-                        kh.DiaChi = txtDiaChi.Text;
-                        kh.Email = txtEmail.Text;
-                        _nv.Add(kh);
+                        kh.MaTK = item;
                     }
-                    else
-                    {
-                        var kh = _nv.getItem(id);
-                        kh.HoTenNV = txtHoTen.Text;
-                        kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
-                        kh.NgaySinh = dtNgaySinh.Value;
-                        kh.MK = _mk.MaHoa(txtMatKhau.Text);
-                        kh.MaCV = cbxChucVu.SelectedValue.ToString();
-                        kh.SDT = txtSDT.Text;
-                        kh.DiaChi = txtDiaChi.Text;
-                        kh.Email = txtEmail.Text;
-                        _nv.Updata(kh);
-                    }
+                    kh.HoTenNV = txtHoTen.Text;
+                    kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
+                    kh.NgaySinh = dtNgaySinh.Value;
+                    kh.MK = _mk.MaHoa(txtMatKhau.Text);
+                    kh.MaCV = cbxChucVu.SelectedValue.ToString();
+                    kh.SDT = txtSDT.Text;
+                    kh.DiaChi = txtDiaChi.Text;
+                    kh.Email = txtEmail.Text;
+                    _nv.Add(kh);
+                }
+                else
+                {
+                    var kh = _nv.getItem(id);
+                    kh.HoTenNV = txtHoTen.Text;
+                    kh.GioiTinh = chkGioiTinh.Checked ? "Nam" : "Nữ";
+                    kh.NgaySinh = dtNgaySinh.Value;
+                    kh.MK = _mk.MaHoa(txtMatKhau.Text);
+                    kh.MaCV = cbxChucVu.SelectedValue.ToString();
+                    kh.SDT = txtSDT.Text;
+                    kh.DiaChi = txtDiaChi.Text;
+                    kh.Email = txtEmail.Text;
+                    _nv.Updata(kh);
+                }
             }
             catch (Exception ex)
             {

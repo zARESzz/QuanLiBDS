@@ -6,6 +6,9 @@ using Data;
 using QuanLy;
 using Main;
 using CustomMessageBox;
+using DevExpress.Utils.Extensions;
+using DevExpress.XtraBars.Ribbon;
+using System.Collections;
 
 namespace Login
 {
@@ -33,10 +36,13 @@ namespace Login
             }
             if (mk.GiaiMa(checkTK.MK) == txtPass.Text)
             {
-                frmQuanLy ql = new frmQuanLy();                
-                this.Hide();
-                ql.ShowDialog();
-                this.Show();
+                if(checkTK.CHUCVU.TenCV=="Quản lý")
+                {
+                    frmQuanLy ql = new frmQuanLy();
+                    this.Hide();
+                    ql.ShowDialog();
+                    this.Show();
+                }          
             }
             else
             {

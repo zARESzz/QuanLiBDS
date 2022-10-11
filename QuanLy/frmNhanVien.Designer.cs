@@ -493,7 +493,7 @@
             this.TenCV.MinWidth = 25;
             this.TenCV.Name = "TenCV";
             this.TenCV.Visible = true;
-            this.TenCV.VisibleIndex = 7;
+            this.TenCV.VisibleIndex = 8;
             this.TenCV.Width = 94;
             // 
             // GioiTinh
@@ -524,6 +524,8 @@
             this.SDT.FieldName = "SDT";
             this.SDT.MinWidth = 25;
             this.SDT.Name = "SDT";
+            this.SDT.Visible = true;
+            this.SDT.VisibleIndex = 6;
             this.SDT.Width = 94;
             // 
             // Email
@@ -543,7 +545,7 @@
             this.DiaChi.MinWidth = 25;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 6;
+            this.DiaChi.VisibleIndex = 7;
             this.DiaChi.Width = 140;
             // 
             // frmNhanVien
