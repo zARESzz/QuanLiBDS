@@ -98,23 +98,32 @@ namespace QuanLy
 
         void SaveData()
         {
-            if (_tt)
+            try
             {
-                NHUCAU cv = new NHUCAU();
-                data_BDSEntities db = new data_BDSEntities();
-                var list = db.P_MaNC().ToList();
-                foreach (var item in list)
+                if (txtTen.Text == "")
+                    throw new Exception("Vui Long Nhap Day Du Thong Tin");
+                if (_tt)
                 {
-                    cv.MaNC = item;
+                    NHUCAU cv = new NHUCAU();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MaNC().ToList();
+                    foreach (var item in list)
+                    {
+                        cv.MaNC = item;
+                    }
+                    cv.TenNC = txtTen.Text;
+                    _nc.Add(cv);
                 }
-                cv.TenNC = txtTen.Text;
-                _nc.Add(cv);
+                else
+                {
+                    var cv = _nc.getItem(id);
+                    cv.TenNC = txtTen.Text;
+                    _nc.Updata(cv);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var cv = _nc.getItem(id);
-                cv.TenNC = txtTen.Text;
-                _nc.Updata(cv);
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -122,6 +131,11 @@ namespace QuanLy
         {
             id = gvNhuCau.GetFocusedRowCellValue("MaNC").ToString();
             txtTen.Text = gvNhuCau.GetFocusedRowCellValue("TenNC").ToString();
+        }
+
+        private void txtTen_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

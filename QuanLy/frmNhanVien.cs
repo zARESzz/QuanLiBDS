@@ -223,5 +223,10 @@ namespace QuanLy
             if (e.KeyChar == 8)
                 e.Handled = false;
         }
+
+        private void txtHoTen_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

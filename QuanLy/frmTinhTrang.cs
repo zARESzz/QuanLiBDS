@@ -98,23 +98,32 @@ namespace QuanLy
 
         void SaveData()
         {
-            if (_tt)
+            try
             {
-                TINHTRANG tt = new TINHTRANG();
-                data_BDSEntities db = new data_BDSEntities();
-                var list = db.P_MaTT().ToList();
-                foreach (var item in list)
+                if (txtTen.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                if (_tt)
                 {
-                    tt.MaTT = item;
+                    TINHTRANG tt = new TINHTRANG();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MaTT().ToList();
+                    foreach (var item in list)
+                    {
+                        tt.MaTT = item;
+                    }
+                    tt.TenTT = txtTen.Text;
+                    _ttr.Add(tt);
                 }
-                tt.TenTT = txtTen.Text;
-                _ttr.Add(tt);
+                else
+                {
+                    var tt = _ttr.getItem(id);
+                    tt.TenTT = txtTen.Text;
+                    _ttr.Updata(tt);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var tt = _ttr.getItem(id);
-                tt.TenTT = txtTen.Text;
-                _ttr.Updata(tt);
+                MessageBox.Show(ex.Message);
             }
         }
         private void gvTinhTrang_Click(object sender, EventArgs e)

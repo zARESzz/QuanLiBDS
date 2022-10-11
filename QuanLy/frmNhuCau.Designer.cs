@@ -219,6 +219,7 @@
             this.txtTen.Properties.Appearance.Options.UseFont = true;
             this.txtTen.Size = new System.Drawing.Size(285, 34);
             this.txtTen.TabIndex = 1;
+            this.txtTen.EditValueChanged += new System.EventHandler(this.txtTen_EditValueChanged);
             // 
             // labelControl1
             // 

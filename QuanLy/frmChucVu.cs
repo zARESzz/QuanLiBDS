@@ -23,7 +23,7 @@ namespace QuanLy
 
         cls_ChucVu _cv;
         bool _tt;
-        string id;
+        string  id = null;
         private void frmChucVu_Load(object sender, EventArgs e)
         {
             _tt = false;
@@ -66,7 +66,12 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(MessageBox.Show("Bạn có chắc chắn muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+            if (id == null)
+            {
+                MessageBox.Show("Vui Lòng Chọn Dòng");
+                return;
+            } 
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?","Thông báo",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
             {
                 _cv.Delete(id);
                 txtTen.Text = "";
@@ -95,26 +100,33 @@ namespace QuanLy
         {
             this.Close();
         }
-        
+
         void SaveData()
         {
-            if (_tt)
-            {
-                CHUCVU cv = new CHUCVU();
-                data_BDSEntities db = new data_BDSEntities();
-                var list =  db.P_MACV().ToList();
-                foreach (var item in list)
-                {
-                    cv.MaCV = item;
-                }
-                cv.TenCV = txtTen.Text;
-                _cv.Add(cv);
+            try {
+                if (txtTen.Text == "")
+                    if (_tt)
+                    {
+                        CHUCVU cv = new CHUCVU();
+                        data_BDSEntities db = new data_BDSEntities();
+                        var list = db.P_MACV().ToList();
+                        foreach (var item in list)
+                        {
+                            cv.MaCV = item;
+                        }
+                        cv.TenCV = txtTen.Text;
+                        _cv.Add(cv);
+                    }
+                    else
+                    {
+                        var cv = _cv.getItem(id);
+                        cv.TenCV = txtTen.Text;
+                        _cv.Updata(cv);
+                    }
             }
-            else
+            catch (Exception ex)
             {
-                var cv = _cv.getItem(id);
-                cv.TenCV = txtTen.Text;
-                _cv.Updata(cv);
+                MessageBox.Show(ex.Message);
             }
         }
 

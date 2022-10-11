@@ -108,6 +108,7 @@
             this.txtTen.Properties.Appearance.Options.UseFont = true;
             this.txtTen.Size = new System.Drawing.Size(285, 34);
             this.txtTen.TabIndex = 1;
+            this.txtTen.EditValueChanged += new System.EventHandler(this.txtTen_EditValueChanged);
             // 
             // labelControl1
             // 
@@ -333,7 +334,7 @@
             // 
             this.barDockControl6.CausesValidation = false;
             this.barDockControl6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControl6.Location = new System.Drawing.Point(0, 30);
+            this.barDockControl6.Location = new System.Drawing.Point(0, 0);
             this.barDockControl6.Manager = this.barManagerCV;
             this.barDockControl6.Size = new System.Drawing.Size(892, 0);
             // 
@@ -341,7 +342,7 @@
             // 
             this.barDockControl7.CausesValidation = false;
             this.barDockControl7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControl7.Location = new System.Drawing.Point(0, 717);
+            this.barDockControl7.Location = new System.Drawing.Point(0, 737);
             this.barDockControl7.Manager = this.barManagerCV;
             this.barDockControl7.Size = new System.Drawing.Size(892, 0);
             // 
@@ -349,17 +350,17 @@
             // 
             this.barDockControl8.CausesValidation = false;
             this.barDockControl8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControl8.Location = new System.Drawing.Point(0, 30);
+            this.barDockControl8.Location = new System.Drawing.Point(0, 0);
             this.barDockControl8.Manager = this.barManagerCV;
-            this.barDockControl8.Size = new System.Drawing.Size(0, 687);
+            this.barDockControl8.Size = new System.Drawing.Size(0, 737);
             // 
             // barDockControl9
             // 
             this.barDockControl9.CausesValidation = false;
             this.barDockControl9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControl9.Location = new System.Drawing.Point(892, 30);
+            this.barDockControl9.Location = new System.Drawing.Point(892, 0);
             this.barDockControl9.Manager = this.barManagerCV;
-            this.barDockControl9.Size = new System.Drawing.Size(0, 687);
+            this.barDockControl9.Size = new System.Drawing.Size(0, 737);
             // 
             // bar4
             // 
@@ -451,14 +452,14 @@
             this.Controls.Add(this.barDockControl3);
             this.Controls.Add(this.barDockControl2);
             this.Controls.Add(this.barDockControl1);
-            this.Controls.Add(this.barDockControl8);
-            this.Controls.Add(this.barDockControl9);
-            this.Controls.Add(this.barDockControl7);
-            this.Controls.Add(this.barDockControl6);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.barDockControl8);
+            this.Controls.Add(this.barDockControl9);
+            this.Controls.Add(this.barDockControl7);
+            this.Controls.Add(this.barDockControl6);
             this.Name = "frmLoaiBD";
             this.Text = "Loại Bất Động Sản";
             this.Load += new System.EventHandler(this.frmTinhTrang_Load);

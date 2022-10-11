@@ -116,28 +116,35 @@ namespace QuanLy
         }
         void SaveData()
         {
-            if (_tt)
-            {
-                THANHTOAN ttn = new THANHTOAN();
-                var list = db.P_MATToan().ToList();
-                foreach (var item in list)
+            try {
+                if (txtDiaChi.Text == "" || txtKhachHang.Text == "" || txtNhanVien.Text == "" || txtNoiDung.Text == null || txtSoTien.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                if (_tt)
                 {
-                    ttn.MATT = item;
+                    THANHTOAN ttn = new THANHTOAN();
+                    var list = db.P_MATToan().ToList();
+                    foreach (var item in list)
+                    {
+                        ttn.MATT = item;
+                    }
+                    ttn.MaHD = cbxHD.SelectedValue.ToString();
+                    ttn.NgayTT = dtNgayLap.Value;
+                    ttn.NoiDung = txtNoiDung.Text;
+                    ttn.TongTien = long.Parse(txtSoTien.Text);
+                    _ttn.Add(ttn);
                 }
-                ttn.MaHD = cbxHD.SelectedValue.ToString();
-                ttn.NgayTT = dtNgayLap.Value;
-                ttn.NoiDung = txtNoiDung.Text;
-                ttn.TongTien = long.Parse(txtSoTien.Text);
-                _ttn.Add(ttn);
-            }
-            else
+                else
+                {
+                    var ttn = _ttn.getItem(id);
+                    ttn.MaHD = cbxHD.SelectedValue.ToString();
+                    ttn.NgayTT = dtNgayLap.Value;
+                    ttn.NoiDung = txtNoiDung.Text;
+                    ttn.TongTien = long.Parse(txtSoTien.Text);
+                    _ttn.Updata(ttn);
+                }
+            }catch(Exception ex)
             {
-                var ttn = _ttn.getItem(id);
-                ttn.MaHD = cbxHD.SelectedValue.ToString();
-                ttn.NgayTT = dtNgayLap.Value;
-                ttn.NoiDung = txtNoiDung.Text;
-                ttn.TongTien = long.Parse(txtSoTien.Text);
-                _ttn.Updata(ttn);
+                MessageBox.Show(ex.Message);
             }
         }
 

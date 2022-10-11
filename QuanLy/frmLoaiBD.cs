@@ -98,29 +98,43 @@ namespace QuanLy
 
         void SaveData()
         {
-            if (_tt)
+            try
             {
-                LOAIBD lbd = new LOAIBD();
-                data_BDSEntities db = new data_BDSEntities();
-                var list = db.P_MaLoai().ToList();
-                foreach (var item in list)
+                if (txtTen.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                if (_tt)
                 {
-                    lbd.MaLoai = item;
+                    LOAIBD lbd = new LOAIBD();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MaLoai().ToList();
+                    foreach (var item in list)
+                    {
+                        lbd.MaLoai = item;
+                    }
+                    lbd.TenLoai = txtTen.Text;
+                    _lbd.Add(lbd);
                 }
-                lbd.TenLoai = txtTen.Text;
-                _lbd.Add(lbd);
+                else
+                {
+                    var lbd = _lbd.getItem(id);
+                    lbd.TenLoai = txtTen.Text;
+                    _lbd.Updata(lbd);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var lbd = _lbd.getItem(id);
-                lbd.TenLoai = txtTen.Text;
-                _lbd.Updata(lbd);
+                MessageBox.Show(ex.Message);
             }
         }
         private void gvLoaiBD_Click(object sender, EventArgs e)
         {
             id = gvLoaiBD.GetFocusedRowCellValue("MaLoai").ToString();
             txtTen.Text = gvLoaiBD.GetFocusedRowCellValue("TenLoai").ToString();
+        }
+
+        private void txtTen_EditValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

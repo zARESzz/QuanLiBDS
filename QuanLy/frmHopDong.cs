@@ -179,39 +179,48 @@ namespace QuanLy
 
         void SaveData()
         {
-            if (_tt)
+            try
             {
-                HOPDONG hd = new HOPDONG();
-                CHITIETNHUCAU ct = new CHITIETNHUCAU();
-                var list = db.P_MaHD().ToList();
-                foreach (var item in list)
+                if (txtChiTiet.Text == null || txtDiaChi.Text == "" || txtDienTich.Text == "" || txtGia.Text == "" || txtLoai.Text == "" || txtPhi.Text == "" || txtTinhTrang.Text == "")
+                    throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                if (_tt)
                 {
-                    hd.MaHD = item;
+                    HOPDONG hd = new HOPDONG();
+                    CHITIETNHUCAU ct = new CHITIETNHUCAU();
+                    var list = db.P_MaHD().ToList();
+                    foreach (var item in list)
+                    {
+                        hd.MaHD = item;
+                    }
+                    hd.MaNC = cbxNhuCau.SelectedValue.ToString();
+                    hd.MaBDS = cbxBDS.SelectedValue.ToString();
+                    hd.MaKH = cbxKhachHang.SelectedValue.ToString();
+                    hd.MaTK = cbxNhanVien.SelectedValue.ToString();
+                    hd.Phi = long.Parse(txtPhi.Text);
+                    hd.ChiTiet = txtChiTiet.Text;
+                    hd.NgayLap = dtNgayLap.Value;
+                    hd.NgayBD = dtNgayBD.Value;
+                    hd.NgayKT = dtNgayKT.Value;
+                    _hd.Add(hd);
                 }
-                hd.MaNC = cbxNhuCau.SelectedValue.ToString();
-                hd.MaBDS = cbxBDS.SelectedValue.ToString();
-                hd.MaKH = cbxKhachHang.SelectedValue.ToString();
-                hd.MaTK = cbxNhanVien.SelectedValue.ToString();
-                hd.Phi = long.Parse(txtPhi.Text);
-                hd.ChiTiet = txtChiTiet.Text;
-                hd.NgayLap = dtNgayLap.Value;
-                hd.NgayBD = dtNgayBD.Value;
-                hd.NgayKT = dtNgayKT.Value;
-                _hd.Add(hd);
+                else
+                {
+                    var hd = _hd.getItem(id);
+                    hd.MaNC = cbxNhuCau.SelectedValue.ToString();
+                    hd.MaBDS = cbxBDS.SelectedValue.ToString();
+                    hd.MaKH = cbxKhachHang.SelectedValue.ToString();
+                    hd.MaTK = cbxNhanVien.SelectedValue.ToString();
+                    hd.Phi = long.Parse(txtPhi.Text);
+                    hd.ChiTiet = txtChiTiet.Text;
+                    hd.NgayLap = dtNgayLap.Value;
+                    hd.NgayBD = dtNgayBD.Value;
+                    hd.NgayKT = dtNgayKT.Value;
+                    _hd.Updata(hd);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                var hd = _hd.getItem(id);
-                hd.MaNC = cbxNhuCau.SelectedValue.ToString();
-                hd.MaBDS = cbxBDS.SelectedValue.ToString();
-                hd.MaKH = cbxKhachHang.SelectedValue.ToString();
-                hd.MaTK = cbxNhanVien.SelectedValue.ToString();
-                hd.Phi = long.Parse(txtPhi.Text);
-                hd.ChiTiet = txtChiTiet.Text;
-                hd.NgayLap = dtNgayLap.Value;
-                hd.NgayBD = dtNgayBD.Value;
-                hd.NgayKT = dtNgayKT.Value;
-                _hd.Updata(hd);
+                MessageBox.Show(ex.Message);
             }
         }
 
