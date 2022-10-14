@@ -43,7 +43,7 @@ namespace Login
             this.txtTK.BackColor = System.Drawing.Color.LightGray;
             this.txtTK.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTK.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTK.Location = new System.Drawing.Point(85, 178);
+            this.txtTK.Location = new System.Drawing.Point(85, 183);
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(242, 27);
             this.txtTK.TabIndex = 0;
@@ -128,7 +128,7 @@ namespace Login
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(320, 23);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(70, 60);
+            this.pictureBox1.Size = new System.Drawing.Size(64, 60);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -147,6 +147,7 @@ namespace Login
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtTK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Image = global::Login.Properties.Resources.icons8_villa_50;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

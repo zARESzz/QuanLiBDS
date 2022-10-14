@@ -91,6 +91,7 @@
             this.dtNgayC.Name = "dtNgayC";
             this.dtNgayC.Size = new System.Drawing.Size(200, 28);
             this.dtNgayC.TabIndex = 2;
+            this.dtNgayC.ValueChanged += new System.EventHandler(this.dtNgayC_ValueChanged);
             // 
             // dtNgayD
             // 
@@ -101,6 +102,7 @@
             this.dtNgayD.Name = "dtNgayD";
             this.dtNgayD.Size = new System.Drawing.Size(200, 28);
             this.dtNgayD.TabIndex = 1;
+            this.dtNgayD.ValueChanged += new System.EventHandler(this.dtNgayD_ValueChanged);
             // 
             // charDoanhThuThang
             // 

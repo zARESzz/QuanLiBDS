@@ -1,4 +1,5 @@
-﻿using Data;
+﻿using CustomMessageBox;
+using Data;
 using Main;
 using System;
 using System.Linq;
@@ -50,17 +51,17 @@ namespace QuanLy
                 {
                     check.MaCV = cbxChucVu.SelectedValue.ToString();
                     db.SaveChanges();
-                    MessageBox.Show("Thay đổi thành công", "Thông báo");
+                    RJMessageBox.Show("Thay đổi thành công", "Thông báo");
                     _nv = new cls_NhanVien();
                     loadData();
                 }    
                 else
                 {
-                    MessageBox.Show("Không tìm thấy nhân viên", "Thông báo");
+                    RJMessageBox.Show("Không tìm thấy nhân viên", "Thông báo");
                 }    
             }catch(Exception ex)
             {
-                MessageBox.Show("Thất bại" + ex.Message, "Thông báo");
+                RJMessageBox.Show("Thất bại" + ex.Message, "Thông báo");
             }
         }
     }

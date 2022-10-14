@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Forms;
 using Main;
 using Data;
+using CustomMessageBox;
 
 namespace QuanLy
 {
@@ -58,7 +59,7 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _lbd.Delete(id);
                 txtTen.Text = "";
@@ -115,7 +116,7 @@ namespace QuanLy
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
         private void gvLoaiBD_Click(object sender, EventArgs e)

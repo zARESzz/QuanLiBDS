@@ -267,7 +267,7 @@
             // 
             // dtNgayGio
             // 
-            this.dtNgayGio.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayGio.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             this.dtNgayGio.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtNgayGio.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayGio.Location = new System.Drawing.Point(571, 77);
@@ -397,7 +397,7 @@
             // NGAYGIO
             // 
             this.NGAYGIO.Caption = "Ngày giờ";
-            this.NGAYGIO.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.NGAYGIO.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss";
             this.NGAYGIO.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.NGAYGIO.FieldName = "NGAYGIO";
             this.NGAYGIO.MinWidth = 25;

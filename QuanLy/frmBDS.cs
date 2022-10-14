@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using Main;
 using Data;
 using System.IO;
+using CustomMessageBox;
 
 namespace QuanLy
 {
@@ -90,7 +91,7 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _ct.Delete(id);
                 var ktra = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaBDS == id);
@@ -164,7 +165,7 @@ namespace QuanLy
                         var ktT = db.CHITIETNHUCAUs.SingleOrDefault(p => p.MaNC == cbxNhuCau.SelectedValue.ToString() && p.MaBDS == ktra.MaBDS);
                         if (ktT != null)
                         {
-                            MessageBox.Show("Đã tồn tại", "Thông báo");
+                            RJMessageBox.Show("Đã tồn tại", "Thông báo");
                             return;
                         }
                         ct.MaBDS = ktra.MaBDS;
@@ -178,7 +179,7 @@ namespace QuanLy
                     var ct = _ct.getItem(id);
                     var ktT = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaNC == cbxNhuCau.SelectedValue.ToString() && p.MaBDS == id);
                     if (ktT != null)
-                        MessageBox.Show("Đã tồn tại", "Thông báo");
+                        RJMessageBox.Show("Đã tồn tại", "Thông báo");
                     else
                     {
                         var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == ct.MaBDS);
@@ -201,7 +202,7 @@ namespace QuanLy
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
 
         }

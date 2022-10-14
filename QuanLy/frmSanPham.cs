@@ -16,6 +16,7 @@ namespace QuanLy
             _ct = new cls_CTNC();
             gcBDS.DataSource = _ct.getListFull();
             lvBDS.OptionsBehavior.Editable = false;
+            
         }
     }
 }
