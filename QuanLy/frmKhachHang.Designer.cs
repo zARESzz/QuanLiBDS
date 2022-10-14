@@ -316,7 +316,7 @@
             this.txtLink.Properties.Appearance.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLink.Properties.Appearance.Options.UseFont = true;
             this.txtLink.Size = new System.Drawing.Size(285, 36);
-            this.txtLink.TabIndex = 11;
+            this.txtLink.TabIndex = 5;
             this.txtLink.Visible = false;
             // 
             // lblFile
@@ -336,7 +336,7 @@
             this.btnImport.Location = new System.Drawing.Point(665, 22);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(102, 37);
-            this.btnImport.TabIndex = 4;
+            this.btnImport.TabIndex = 7;
             this.btnImport.TabStop = false;
             this.btnImport.Text = "import";
             this.btnImport.UseVisualStyleBackColor = true;
@@ -350,7 +350,7 @@
             this.cbxSheet.Location = new System.Drawing.Point(523, 23);
             this.cbxSheet.Name = "cbxSheet";
             this.cbxSheet.Size = new System.Drawing.Size(136, 37);
-            this.cbxSheet.TabIndex = 3;
+            this.cbxSheet.TabIndex = 6;
             this.cbxSheet.Visible = false;
             this.cbxSheet.SelectedIndexChanged += new System.EventHandler(this.cboSheet_SelectedIndexChanged);
             // 
@@ -361,7 +361,7 @@
             this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Properties.Appearance.Options.UseFont = true;
             this.txtEmail.Size = new System.Drawing.Size(285, 34);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
             // 
@@ -380,7 +380,7 @@
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
             this.txtDiaChi.Size = new System.Drawing.Size(285, 34);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 2;
             // 
             // lblDiaChi
             // 
@@ -399,7 +399,7 @@
             this.txtSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
             this.txtSDT.Size = new System.Drawing.Size(285, 34);
-            this.txtSDT.TabIndex = 1;
+            this.txtSDT.TabIndex = 3;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // lblSDT

@@ -269,7 +269,7 @@
             this.btnHinhAnh.Location = new System.Drawing.Point(49, 277);
             this.btnHinhAnh.Name = "btnHinhAnh";
             this.btnHinhAnh.Size = new System.Drawing.Size(135, 39);
-            this.btnHinhAnh.TabIndex = 5;
+            this.btnHinhAnh.TabIndex = 10;
             this.btnHinhAnh.Text = "Chọn Hình";
             this.btnHinhAnh.Click += new System.EventHandler(this.btnHinhAnh_Click);
             // 
@@ -280,7 +280,7 @@
             this.txtGioiThieu.Name = "txtGioiThieu";
             this.txtGioiThieu.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtGioiThieu.Size = new System.Drawing.Size(410, 141);
-            this.txtGioiThieu.TabIndex = 4;
+            this.txtGioiThieu.TabIndex = 9;
             // 
             // picHinhAnh
             // 
@@ -299,7 +299,7 @@
             this.cbxKhachHang.Location = new System.Drawing.Point(417, 218);
             this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Size = new System.Drawing.Size(250, 32);
-            this.cbxKhachHang.TabIndex = 2;
+            this.cbxKhachHang.TabIndex = 5;
             // 
             // cbxTinhTrang
             // 
@@ -308,7 +308,7 @@
             this.cbxTinhTrang.Location = new System.Drawing.Point(417, 171);
             this.cbxTinhTrang.Name = "cbxTinhTrang";
             this.cbxTinhTrang.Size = new System.Drawing.Size(250, 32);
-            this.cbxTinhTrang.TabIndex = 2;
+            this.cbxTinhTrang.TabIndex = 4;
             // 
             // cbxNhuCau
             // 
@@ -317,7 +317,7 @@
             this.cbxNhuCau.Location = new System.Drawing.Point(417, 25);
             this.cbxNhuCau.Name = "cbxNhuCau";
             this.cbxNhuCau.Size = new System.Drawing.Size(250, 32);
-            this.cbxNhuCau.TabIndex = 2;
+            this.cbxNhuCau.TabIndex = 1;
             // 
             // cbxLoai
             // 
@@ -326,7 +326,7 @@
             this.cbxLoai.Location = new System.Drawing.Point(417, 120);
             this.cbxLoai.Name = "cbxLoai";
             this.cbxLoai.Size = new System.Drawing.Size(250, 32);
-            this.cbxLoai.TabIndex = 2;
+            this.cbxLoai.TabIndex = 3;
             // 
             // labelControl4
             // 
@@ -345,7 +345,7 @@
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
             this.txtDiaChi.Size = new System.Drawing.Size(250, 34);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 6;
             // 
             // labelControl3
             // 
@@ -364,7 +364,7 @@
             this.txtDienTich.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDienTich.Properties.Appearance.Options.UseFont = true;
             this.txtDienTich.Size = new System.Drawing.Size(250, 34);
-            this.txtDienTich.TabIndex = 1;
+            this.txtDienTich.TabIndex = 7;
             // 
             // labelControl2
             // 
@@ -383,7 +383,7 @@
             this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Properties.Appearance.Options.UseFont = true;
             this.txtGia.Size = new System.Drawing.Size(250, 34);
-            this.txtGia.TabIndex = 1;
+            this.txtGia.TabIndex = 8;
             // 
             // txtTen
             // 
@@ -393,7 +393,7 @@
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTen.Properties.Appearance.Options.UseFont = true;
             this.txtTen.Size = new System.Drawing.Size(250, 34);
-            this.txtTen.TabIndex = 1;
+            this.txtTen.TabIndex = 2;
             // 
             // labelControl8
             // 

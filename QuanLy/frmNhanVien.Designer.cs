@@ -298,7 +298,7 @@
             this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Properties.Appearance.Options.UseFont = true;
             this.txtEmail.Size = new System.Drawing.Size(231, 34);
-            this.txtEmail.TabIndex = 1;
+            this.txtEmail.TabIndex = 7;
             // 
             // labelControl4
             // 
@@ -317,7 +317,7 @@
             this.txtSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
             this.txtSDT.Size = new System.Drawing.Size(231, 34);
-            this.txtSDT.TabIndex = 1;
+            this.txtSDT.TabIndex = 6;
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtMatKhau
@@ -328,7 +328,7 @@
             this.txtMatKhau.Properties.Appearance.Options.UseFont = true;
             this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(231, 34);
-            this.txtMatKhau.TabIndex = 1;
+            this.txtMatKhau.TabIndex = 5;
             this.txtMatKhau.MouseLeave += new System.EventHandler(this.txtMatKhau_MouseLeave);
             this.txtMatKhau.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseMove);
             // 
@@ -349,7 +349,7 @@
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
             this.txtDiaChi.Size = new System.Drawing.Size(378, 34);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 8;
             // 
             // labelControl6
             // 
@@ -400,7 +400,6 @@
             this.txtHoTen.Properties.Appearance.Options.UseFont = true;
             this.txtHoTen.Size = new System.Drawing.Size(231, 34);
             this.txtHoTen.TabIndex = 1;
-            this.txtHoTen.EditValueChanged += new System.EventHandler(this.txtHoTen_EditValueChanged);
             // 
             // labelControl1
             // 

@@ -16,12 +16,11 @@ namespace Main
         {
             db = new data_BDSEntities();
         }
-        public List<cls_ThongKe_Full> DoanhThuTheoNhomBDS()
+        public List<cls_ThongKe_Full> DoanhThuTheoNhomBDS(DateTime NgayD, DateTime NgayC)
         {
             cls_ThongKe_Full nhomBDS ;
             List<cls_ThongKe_Full> listTK = new List<cls_ThongKe_Full>();
-            DateTime ngayD = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
-            var list = db.F_THONGKETHANG(ngayD, DateTime.Now.AddDays(1)).ToList();
+            var list = db.F_THONGKETHANG(NgayD, NgayC).ToList();
             foreach(var item in list)
             {
                 nhomBDS = new cls_ThongKe_Full();

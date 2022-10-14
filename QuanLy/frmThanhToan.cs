@@ -1,20 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main;
 using Data;
-using System.Data.Entity;
-using Main.Full;
-using System.IO;
-using DevExpress.XtraRichEdit.API.Native;
-using DevExpress.DataProcessing.InMemoryDataProcessor;
 
 namespace QuanLy
 {
@@ -25,18 +13,14 @@ namespace QuanLy
             InitializeComponent();
         }
         data_BDSEntities db = new data_BDSEntities();
-        cls_KhachHang _kh;
         cls_HopDong _hd;
-        cls_NhanVien _nv;
         cls_ThanhToan _ttn;
         bool _tt;
         string id;
         private void frmHopDong_Load(object sender, EventArgs e)
         {
             _tt = false;
-            _kh = new cls_KhachHang();
             _hd = new cls_HopDong();
-            _nv = new cls_NhanVien();
             _ttn = new cls_ThanhToan();
             ShowHide(true);
             loadData();

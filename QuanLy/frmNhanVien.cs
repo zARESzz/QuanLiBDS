@@ -1,15 +1,9 @@
 ﻿using Data;
-using DevExpress.XtraEditors;
 using Main;
 using Main.Full;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
@@ -222,11 +216,6 @@ namespace QuanLy
                 e.Handled = true;
             if (e.KeyChar == 8)
                 e.Handled = false;
-        }
-
-        private void txtHoTen_EditValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

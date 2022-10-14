@@ -234,7 +234,7 @@
             this.cbxNV.Location = new System.Drawing.Point(190, 77);
             this.cbxNV.Name = "cbxNV";
             this.cbxNV.Size = new System.Drawing.Size(231, 32);
-            this.cbxNV.TabIndex = 7;
+            this.cbxNV.TabIndex = 2;
             // 
             // labelControl2
             // 
@@ -253,7 +253,7 @@
             this.cbxKHTN.Location = new System.Drawing.Point(190, 20);
             this.cbxKHTN.Name = "cbxKHTN";
             this.cbxKHTN.Size = new System.Drawing.Size(231, 32);
-            this.cbxKHTN.TabIndex = 7;
+            this.cbxKHTN.TabIndex = 1;
             // 
             // labelControl5
             // 
@@ -273,7 +273,7 @@
             this.dtNgayGio.Location = new System.Drawing.Point(571, 77);
             this.dtNgayGio.Name = "dtNgayGio";
             this.dtNgayGio.Size = new System.Drawing.Size(285, 32);
-            this.dtNgayGio.TabIndex = 5;
+            this.dtNgayGio.TabIndex = 4;
             // 
             // labelControl7
             // 
@@ -293,7 +293,7 @@
             this.txtDiaDiem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaDiem.Properties.Appearance.Options.UseFont = true;
             this.txtDiaDiem.Size = new System.Drawing.Size(285, 34);
-            this.txtDiaDiem.TabIndex = 1;
+            this.txtDiaDiem.TabIndex = 3;
             // 
             // labelControl1
             // 
@@ -417,7 +417,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmPhieuHen";
-            this.Text = "Chức Vụ";
+            this.Text = "Phiếu Hẹn";
             this.Load += new System.EventHandler(this.frmChucVu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);

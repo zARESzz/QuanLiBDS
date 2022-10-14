@@ -211,7 +211,7 @@
             // 
             // txtTen
             // 
-            this.txtTen.Location = new System.Drawing.Point(140, 36);
+            this.txtTen.Location = new System.Drawing.Point(258, 36);
             this.txtTen.MenuManager = this.barManagerCV;
             this.txtTen.Name = "txtTen";
             this.txtTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,9 +225,9 @@
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Location = new System.Drawing.Point(81, 39);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(53, 28);
+            this.labelControl1.Size = new System.Drawing.Size(146, 28);
             this.labelControl1.TabIndex = 0;
-            this.labelControl1.Text = "Tên :";
+            this.labelControl1.Text = "Tên Chức Vụ :";
             // 
             // gcChucVu
             // 

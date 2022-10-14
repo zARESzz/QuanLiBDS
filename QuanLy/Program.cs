@@ -17,7 +17,7 @@ namespace QuanLy
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmThongKe());
+            Application.Run(new frmQuanLy());
         }
     }
 }

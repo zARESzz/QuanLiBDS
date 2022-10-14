@@ -44,16 +44,14 @@ namespace Login
                     this.Show();
                 }else if(checkTK.CHUCVU.TenCV.Equals("Nhân Viên"))
                 {
-                    ql.rbBDS.Visible = true;
+                    ql.rbQLHD.Visible = true;
                     this.Hide();
                     ql.ShowDialog();
                     this.Show();
                 }else
                 {
-                    ql.rbQLNS.Visible = true;
-                    ql.rbQLBDS.Visible = true;
-                    ql.rbQLKH.Visible = true;
-                    ql.rbBDS.Visible = true;
+                    ql.rbQLHD.Visible = true;
+                    ql.rbQLTK.Visible = true;
                     this.Hide();
                     ql.ShowDialog();
                     this.Show();

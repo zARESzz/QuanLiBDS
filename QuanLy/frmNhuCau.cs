@@ -1,16 +1,8 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main;
 using Data;
-using System.Data.Entity;
 
 namespace QuanLy
 {
@@ -131,11 +123,6 @@ namespace QuanLy
         {
             id = gvNhuCau.GetFocusedRowCellValue("MaNC").ToString();
             txtTen.Text = gvNhuCau.GetFocusedRowCellValue("TenNC").ToString();
-        }
-
-        private void txtTen_EditValueChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

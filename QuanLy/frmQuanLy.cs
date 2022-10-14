@@ -1,12 +1,5 @@
-﻿using Data;
-using Main;
+﻿using Main;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace QuanLy
@@ -109,10 +102,29 @@ namespace QuanLy
         {
             OpenForm(typeof(frmKHTN));
         }
+        private void btnCot_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmThongKeCot));
+        }
 
-        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void btnTron_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmThongKeTron));
+        }
+
+        private void btnHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmThongKeHang));
+        }
+
+        private void btnPhieuHen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm(typeof(frmPhieuHen));
+        }
+
+        private void btnPhanQuyen_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmPhanQuyen));
         }
     }
 }

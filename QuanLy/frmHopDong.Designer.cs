@@ -294,7 +294,7 @@
             this.dtNgayKT.Location = new System.Drawing.Point(752, 306);
             this.dtNgayKT.Name = "dtNgayKT";
             this.dtNgayKT.Size = new System.Drawing.Size(289, 32);
-            this.dtNgayKT.TabIndex = 5;
+            this.dtNgayKT.TabIndex = 14;
             // 
             // labelControl12
             // 
@@ -314,7 +314,7 @@
             this.dtNgayBD.Location = new System.Drawing.Point(752, 253);
             this.dtNgayBD.Name = "dtNgayBD";
             this.dtNgayBD.Size = new System.Drawing.Size(289, 32);
-            this.dtNgayBD.TabIndex = 5;
+            this.dtNgayBD.TabIndex = 13;
             // 
             // labelControl11
             // 
@@ -334,7 +334,7 @@
             this.dtNgayLap.Location = new System.Drawing.Point(752, 196);
             this.dtNgayLap.Name = "dtNgayLap";
             this.dtNgayLap.Size = new System.Drawing.Size(289, 32);
-            this.dtNgayLap.TabIndex = 5;
+            this.dtNgayLap.TabIndex = 12;
             // 
             // labelControl14
             // 
@@ -353,7 +353,7 @@
             this.cbxKhachHang.Location = new System.Drawing.Point(752, 52);
             this.cbxKhachHang.Name = "cbxKhachHang";
             this.cbxKhachHang.Size = new System.Drawing.Size(289, 32);
-            this.cbxKhachHang.TabIndex = 2;
+            this.cbxKhachHang.TabIndex = 9;
             // 
             // cbxNhanVien
             // 
@@ -362,7 +362,7 @@
             this.cbxNhanVien.Location = new System.Drawing.Point(752, 6);
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(289, 32);
-            this.cbxNhanVien.TabIndex = 2;
+            this.cbxNhanVien.TabIndex = 8;
             // 
             // cbxBDS
             // 
@@ -381,7 +381,7 @@
             this.cbxNhuCau.Location = new System.Drawing.Point(194, 6);
             this.cbxNhuCau.Name = "cbxNhuCau";
             this.cbxNhuCau.Size = new System.Drawing.Size(250, 32);
-            this.cbxNhuCau.TabIndex = 2;
+            this.cbxNhuCau.TabIndex = 1;
             this.cbxNhuCau.SelectedValueChanged += new System.EventHandler(this.cbxNhuCau_SelectedValueChanged);
             // 
             // txtDiaChi
@@ -391,7 +391,7 @@
             this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
             this.txtDiaChi.Size = new System.Drawing.Size(250, 34);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 6;
             // 
             // labelControl3
             // 
@@ -410,7 +410,7 @@
             this.txtTinhTrang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTinhTrang.Properties.Appearance.Options.UseFont = true;
             this.txtTinhTrang.Size = new System.Drawing.Size(250, 34);
-            this.txtTinhTrang.TabIndex = 1;
+            this.txtTinhTrang.TabIndex = 7;
             // 
             // txtLoai
             // 
@@ -419,7 +419,7 @@
             this.txtLoai.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoai.Properties.Appearance.Options.UseFont = true;
             this.txtLoai.Size = new System.Drawing.Size(250, 34);
-            this.txtLoai.TabIndex = 1;
+            this.txtLoai.TabIndex = 3;
             // 
             // txtDienTich
             // 
@@ -428,7 +428,7 @@
             this.txtDienTich.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDienTich.Properties.Appearance.Options.UseFont = true;
             this.txtDienTich.Size = new System.Drawing.Size(250, 34);
-            this.txtDienTich.TabIndex = 1;
+            this.txtDienTich.TabIndex = 4;
             // 
             // labelControl2
             // 
@@ -447,7 +447,7 @@
             this.txtPhi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhi.Properties.Appearance.Options.UseFont = true;
             this.txtPhi.Size = new System.Drawing.Size(289, 34);
-            this.txtPhi.TabIndex = 1;
+            this.txtPhi.TabIndex = 10;
             // 
             // txtChiTiet
             // 
@@ -456,7 +456,7 @@
             this.txtChiTiet.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChiTiet.Properties.Appearance.Options.UseFont = true;
             this.txtChiTiet.Size = new System.Drawing.Size(289, 34);
-            this.txtChiTiet.TabIndex = 1;
+            this.txtChiTiet.TabIndex = 11;
             // 
             // txtGia
             // 
@@ -465,7 +465,7 @@
             this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Properties.Appearance.Options.UseFont = true;
             this.txtGia.Size = new System.Drawing.Size(250, 34);
-            this.txtGia.TabIndex = 1;
+            this.txtGia.TabIndex = 5;
             // 
             // lbSoHuu
             // 

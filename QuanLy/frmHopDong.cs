@@ -16,7 +16,6 @@ namespace QuanLy
         cls_KhachHang _kh;
         cls_BDS _bds;
         cls_NhuCau _nc;
-        cls_CTNC _ct;
         cls_HopDong _hd;
         cls_NhanVien _nv;
         bool _tt;
@@ -27,7 +26,6 @@ namespace QuanLy
             _bds = new cls_BDS();
             _kh = new cls_KhachHang();
             _nc = new cls_NhuCau();
-            _ct = new cls_CTNC();
             _hd = new cls_HopDong();
             _nv = new cls_NhanVien();
             ShowHide(true);
