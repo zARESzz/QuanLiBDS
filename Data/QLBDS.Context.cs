@@ -32,9 +32,11 @@ namespace Data
         public virtual DbSet<CHUCVU> CHUCVUs { get; set; }
         public virtual DbSet<HOPDONG> HOPDONGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
+        public virtual DbSet<KHTN> KHTNs { get; set; }
         public virtual DbSet<LOAIBD> LOAIBDS { get; set; }
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<NHUCAU> NHUCAUs { get; set; }
+        public virtual DbSet<PHIEUHEN> PHIEUHENs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
         public virtual DbSet<TINHTRANG> TINHTRANGs { get; set; }
     
@@ -86,6 +88,25 @@ namespace Data
         public virtual ObjectResult<string> P_MATToan()
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MATToan");
+        }
+    
+        public virtual ObjectResult<string> P_MAPH()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("P_MAPH");
+        }
+    
+        [DbFunction("data_BDSEntities", "F_THONGKETHANG")]
+        public virtual IQueryable<F_THONGKETHANG_Result> F_THONGKETHANG(Nullable<System.DateTime> nGAYD, Nullable<System.DateTime> nGAYC)
+        {
+            var nGAYDParameter = nGAYD.HasValue ?
+                new ObjectParameter("NGAYD", nGAYD) :
+                new ObjectParameter("NGAYD", typeof(System.DateTime));
+    
+            var nGAYCParameter = nGAYC.HasValue ?
+                new ObjectParameter("NGAYC", nGAYC) :
+                new ObjectParameter("NGAYC", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.CreateQuery<F_THONGKETHANG_Result>("[data_BDSEntities].[F_THONGKETHANG](@NGAYD, @NGAYC)", nGAYDParameter, nGAYCParameter);
         }
     }
 }

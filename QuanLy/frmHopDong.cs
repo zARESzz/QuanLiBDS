@@ -91,12 +91,8 @@ namespace QuanLy
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _ct.Delete(id);
-                var ktra = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaBDS == id);
-                if (ktra == null)
-                    _bds.Delete(id);
+                _hd.Delete(id);
                 loadData();
-
             }
         }
 

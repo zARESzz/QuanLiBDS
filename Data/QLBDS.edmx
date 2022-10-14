@@ -60,6 +60,16 @@
           <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
           <Property Name="Emaill" Type="varchar" MaxLength="35" Nullable="false" />
         </EntityType>
+        <EntityType Name="KHTN">
+          <Key>
+            <PropertyRef Name="MaTN" />
+          </Key>
+          <Property Name="MaTN" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="HoTenTN" Type="nvarchar" MaxLength="36" Nullable="false" />
+          <Property Name="SDT" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="DiaChi" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="35" Nullable="false" />
+        </EntityType>
         <EntityType Name="LOAIBDS">
           <Key>
             <PropertyRef Name="MaLoai" />
@@ -87,6 +97,16 @@
           </Key>
           <Property Name="MaNC" Type="varchar" MaxLength="5" Nullable="false" />
           <Property Name="TenNC" Type="nvarchar" MaxLength="15" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEUHEN">
+          <Key>
+            <PropertyRef Name="MaPH" />
+          </Key>
+          <Property Name="MaPH" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="MaTN" Type="int" />
+          <Property Name="MaTK" Type="varchar" MaxLength="5" />
+          <Property Name="DIADIEM" Type="nvarchar" MaxLength="255" />
+          <Property Name="NGAYGIO" Type="datetime" />
         </EntityType>
         <EntityType Name="THANHTOAN">
           <Key>
@@ -225,6 +245,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PH_TK">
+          <End Role="NHANVIEN" Type="Self.NHANVIEN" Multiplicity="0..1" />
+          <End Role="PHIEUHEN" Type="Self.PHIEUHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaTK" />
+            </Principal>
+            <Dependent Role="PHIEUHEN">
+              <PropertyRef Name="MaTK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PH_TN">
+          <End Role="KHTN" Type="Self.KHTN" Multiplicity="0..1" />
+          <End Role="PHIEUHEN" Type="Self.PHIEUHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHTN">
+              <PropertyRef Name="MaTN" />
+            </Principal>
+            <Dependent Role="PHIEUHEN">
+              <PropertyRef Name="MaTN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TT_HD">
           <End Role="HOPDONG" Type="Self.HOPDONG" Multiplicity="0..1" />
           <End Role="THANHTOAN" Type="Self.THANHTOAN" Multiplicity="*" />
@@ -237,12 +281,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="F_THONGKETHANG" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="NGAYD" Type="datetime" Mode="In" />
+          <Parameter Name="NGAYC" Type="datetime" Mode="In" />
+          <ReturnType>
+            <CollectionType>
+              <RowType>
+                <Property Name="TenLoai" Type="nvarchar" MaxLength="20" Nullable="false" />
+                <Property Name="THANHTIEN" Type="bigint" />
+              </RowType>
+            </CollectionType>
+          </ReturnType>
+        </Function>
         <Function Name="P_MaBDS" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MACV" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaHD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MAKH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaLoai" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaNC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="P_MAPH" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MATK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MaTT" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="P_MATToan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -252,9 +309,11 @@
           <EntitySet Name="CHUCVU" EntityType="Self.CHUCVU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HOPDONG" EntityType="Self.HOPDONG" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="KHACHHANG" EntityType="Self.KHACHHANG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KHTN" EntityType="Self.KHTN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="LOAIBDS" EntityType="Self.LOAIBDS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHANVIEN" EntityType="Self.NHANVIEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="NHUCAU" EntityType="Self.NHUCAU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUHEN" EntityType="Self.PHIEUHEN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="THANHTOAN" EntityType="Self.THANHTOAN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TINHTRANG" EntityType="Self.TINHTRANG" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_BDS_KH" Association="Self.FK_BDS_KH">
@@ -297,6 +356,14 @@
             <End Role="CHUCVU" EntitySet="CHUCVU" />
             <End Role="NHANVIEN" EntitySet="NHANVIEN" />
           </AssociationSet>
+          <AssociationSet Name="FK_PH_TK" Association="Self.FK_PH_TK">
+            <End Role="NHANVIEN" EntitySet="NHANVIEN" />
+            <End Role="PHIEUHEN" EntitySet="PHIEUHEN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PH_TN" Association="Self.FK_PH_TN">
+            <End Role="KHTN" EntitySet="KHTN" />
+            <End Role="PHIEUHEN" EntitySet="PHIEUHEN" />
+          </AssociationSet>
           <AssociationSet Name="FK_TT_HD" Association="Self.FK_TT_HD">
             <End Role="HOPDONG" EntitySet="HOPDONG" />
             <End Role="THANHTOAN" EntitySet="THANHTOAN" />
@@ -322,9 +389,11 @@
           <EntitySet Name="CHUCVUs" EntityType="data_BDSModel.CHUCVU" />
           <EntitySet Name="HOPDONGs" EntityType="data_BDSModel.HOPDONG" />
           <EntitySet Name="KHACHHANGs" EntityType="data_BDSModel.KHACHHANG" />
+          <EntitySet Name="KHTNs" EntityType="data_BDSModel.KHTN" />
           <EntitySet Name="LOAIBDS" EntityType="data_BDSModel.LOAIBD" />
           <EntitySet Name="NHANVIENs" EntityType="data_BDSModel.NHANVIEN" />
           <EntitySet Name="NHUCAUs" EntityType="data_BDSModel.NHUCAU" />
+          <EntitySet Name="PHIEUHENs" EntityType="data_BDSModel.PHIEUHEN" />
           <EntitySet Name="THANHTOANs" EntityType="data_BDSModel.THANHTOAN" />
           <EntitySet Name="TINHTRANGs" EntityType="data_BDSModel.TINHTRANG" />
           <AssociationSet Name="FK_BDS_KH" Association="data_BDSModel.FK_BDS_KH">
@@ -371,6 +440,19 @@
             <End Role="HOPDONG" EntitySet="HOPDONGs" />
             <End Role="THANHTOAN" EntitySet="THANHTOANs" />
           </AssociationSet>
+          <AssociationSet Name="FK_PH_TN" Association="data_BDSModel.FK_PH_TN">
+            <End Role="KHTN" EntitySet="KHTNs" />
+            <End Role="PHIEUHEN" EntitySet="PHIEUHENs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PH_TK" Association="data_BDSModel.FK_PH_TK">
+            <End Role="NHANVIEN" EntitySet="NHANVIENs" />
+            <End Role="PHIEUHEN" EntitySet="PHIEUHENs" />
+          </AssociationSet>
+          <FunctionImport Name="P_MAPH" ReturnType="Collection(String)" />
+          <FunctionImport Name="F_THONGKETHANG" IsComposable="true" ReturnType="Collection(data_BDSModel.F_THONGKETHANG_Result)">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="BATDONGSAN">
           <Key>
@@ -442,6 +524,17 @@
           <NavigationProperty Name="BATDONGSANs" Relationship="data_BDSModel.FK_BDS_KH" FromRole="KHACHHANG" ToRole="BATDONGSAN" />
           <NavigationProperty Name="HOPDONGs" Relationship="data_BDSModel.FK_KD_KH" FromRole="KHACHHANG" ToRole="HOPDONG" />
         </EntityType>
+        <EntityType Name="KHTN">
+          <Key>
+            <PropertyRef Name="MaTN" />
+          </Key>
+          <Property Name="MaTN" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="HoTenTN" Type="String" Nullable="false" MaxLength="36" FixedLength="false" Unicode="true" />
+          <Property Name="SDT" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DiaChi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="35" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIEUHENs" Relationship="data_BDSModel.FK_PH_TN" FromRole="KHTN" ToRole="PHIEUHEN" />
+        </EntityType>
         <EntityType Name="LOAIBD">
           <Key>
             <PropertyRef Name="MaLoai" />
@@ -465,6 +558,7 @@
           <Property Name="Email" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="CHUCVU" Relationship="data_BDSModel.FK_NV_CV" FromRole="NHANVIEN" ToRole="CHUCVU" />
           <NavigationProperty Name="HOPDONGs" Relationship="data_BDSModel.FK_KD_TK" FromRole="NHANVIEN" ToRole="HOPDONG" />
+          <NavigationProperty Name="PHIEUHENs" Relationship="data_BDSModel.FK_PH_TK" FromRole="NHANVIEN" ToRole="PHIEUHEN" />
         </EntityType>
         <EntityType Name="NHUCAU">
           <Key>
@@ -474,6 +568,18 @@
           <Property Name="TenNC" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="CHITIETNHUCAUs" Relationship="data_BDSModel.FK_CT_NC" FromRole="NHUCAU" ToRole="CHITIETNHUCAU" />
           <NavigationProperty Name="HOPDONGs" Relationship="data_BDSModel.FK_KD_NC" FromRole="NHUCAU" ToRole="HOPDONG" />
+        </EntityType>
+        <EntityType Name="PHIEUHEN">
+          <Key>
+            <PropertyRef Name="MaPH" />
+          </Key>
+          <Property Name="MaPH" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="MaTN" Type="Int32" />
+          <Property Name="MaTK" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="DIADIEM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NGAYGIO" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="KHTN" Relationship="data_BDSModel.FK_PH_TN" FromRole="PHIEUHEN" ToRole="KHTN" />
+          <NavigationProperty Name="NHANVIEN" Relationship="data_BDSModel.FK_PH_TK" FromRole="PHIEUHEN" ToRole="NHANVIEN" />
         </EntityType>
         <EntityType Name="THANHTOAN">
           <Key>
@@ -626,6 +732,34 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PH_TN">
+          <End Type="data_BDSModel.KHTN" Role="KHTN" Multiplicity="0..1" />
+          <End Type="data_BDSModel.PHIEUHEN" Role="PHIEUHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KHTN">
+              <PropertyRef Name="MaTN" />
+            </Principal>
+            <Dependent Role="PHIEUHEN">
+              <PropertyRef Name="MaTN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PH_TK">
+          <End Type="data_BDSModel.NHANVIEN" Role="NHANVIEN" Multiplicity="0..1" />
+          <End Type="data_BDSModel.PHIEUHEN" Role="PHIEUHEN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHANVIEN">
+              <PropertyRef Name="MaTK" />
+            </Principal>
+            <Dependent Role="PHIEUHEN">
+              <PropertyRef Name="MaTK" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="F_THONGKETHANG_Result">
+          <Property Type="String" Name="TenLoai" Nullable="false" MaxLength="20" />
+          <Property Type="Int64" Name="THANHTIEN" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -700,6 +834,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="KHTNs">
+            <EntityTypeMapping TypeName="data_BDSModel.KHTN">
+              <MappingFragment StoreEntitySet="KHTN">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="HoTenTN" ColumnName="HoTenTN" />
+                <ScalarProperty Name="MaTN" ColumnName="MaTN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="LOAIBDS">
             <EntityTypeMapping TypeName="data_BDSModel.LOAIBD">
               <MappingFragment StoreEntitySet="LOAIBDS">
@@ -731,6 +876,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUHENs">
+            <EntityTypeMapping TypeName="data_BDSModel.PHIEUHEN">
+              <MappingFragment StoreEntitySet="PHIEUHEN">
+                <ScalarProperty Name="NGAYGIO" ColumnName="NGAYGIO" />
+                <ScalarProperty Name="DIADIEM" ColumnName="DIADIEM" />
+                <ScalarProperty Name="MaTK" ColumnName="MaTK" />
+                <ScalarProperty Name="MaTN" ColumnName="MaTN" />
+                <ScalarProperty Name="MaPH" ColumnName="MaPH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="THANHTOANs">
             <EntityTypeMapping TypeName="data_BDSModel.THANHTOAN">
               <MappingFragment StoreEntitySet="THANHTOAN">
@@ -750,6 +906,15 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="P_MAPH" FunctionName="data_BDSModel.Store.P_MAPH" />
+          <FunctionImportMapping FunctionImportName="F_THONGKETHANG" FunctionName="data_BDSModel.Store.F_THONGKETHANG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="data_BDSModel.F_THONGKETHANG_Result">
+                <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

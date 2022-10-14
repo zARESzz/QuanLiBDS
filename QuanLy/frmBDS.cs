@@ -1,20 +1,10 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Main;
 using Data;
-using System.Data.Entity;
-using Main.Full;
 using System.IO;
-using DevExpress.XtraRichEdit.API.Native;
-using DevExpress.DataProcessing.InMemoryDataProcessor;
 
 namespace QuanLy
 {

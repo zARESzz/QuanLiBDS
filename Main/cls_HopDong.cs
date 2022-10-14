@@ -107,5 +107,9 @@ namespace Main
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
+        public List<cls_HopDong_Full> getHopDong()
+        {
+            return getListFull().Where(x => (x.NgayKT.Value.Day - DateTime.Now.Day < 7)  && x.NgayKT.Value.Month == DateTime.Now.Month && x.NgayKT.Value.Year == DateTime.Now.Year).ToList();
+        }
     }
 }

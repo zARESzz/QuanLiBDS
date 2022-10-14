@@ -1,6 +1,6 @@
 ﻿namespace QuanLy
 {
-    partial class frmKhachHang
+    partial class frmKHTN
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKHTN));
             this.barManagerKH = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarButtonItem();
@@ -64,10 +64,10 @@
             this.lblSDT = new DevExpress.XtraEditors.LabelControl();
             this.txtHoTen = new DevExpress.XtraEditors.TextEdit();
             this.lblTen = new DevExpress.XtraEditors.LabelControl();
-            this.gcKHACHHANG = new DevExpress.XtraGrid.GridControl();
-            this.gvKHACHHANG = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.MaKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcKHTN = new DevExpress.XtraGrid.GridControl();
+            this.gvKHTN = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MaTN = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.HoTenTN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.Emaill = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -84,8 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcKHACHHANG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvKHACHHANG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcKHTN)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKHTN)).BeginInit();
             this.SuspendLayout();
             // 
             // barManagerKH
@@ -165,7 +165,8 @@
             // 
             this.btnSave.Caption = "Lưu";
             this.btnSave.Id = 3;
-            this.btnSave.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSave.ImageOptions.SvgImage")));
+            this.btnSave.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.Image")));
+            this.btnSave.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSave.ImageOptions.LargeImage")));
             this.btnSave.Name = "btnSave";
             this.btnSave.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSave_ItemClick);
             // 
@@ -203,6 +204,7 @@
             // 
             this.btnExel.Caption = "Excel";
             this.btnExel.Id = 12;
+            this.btnExel.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnExel.ImageOptions.SvgImage")));
             this.btnExel.Name = "btnExel";
             this.btnExel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcel_ItemClick);
             // 
@@ -303,7 +305,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.gcKHACHHANG);
+            this.splitContainer1.Panel2.Controls.Add(this.gcKHTN);
             this.splitContainer1.Size = new System.Drawing.Size(1363, 687);
             this.splitContainer1.SplitterDistance = 219;
             this.splitContainer1.TabIndex = 4;
@@ -432,56 +434,54 @@
             this.lblTen.TabIndex = 0;
             this.lblTen.Text = "Họ Tên :";
             // 
-            // gcKHACHHANG
+            // gcKHTN
             // 
-            this.gcKHACHHANG.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcKHACHHANG.Location = new System.Drawing.Point(0, 0);
-            this.gcKHACHHANG.MainView = this.gvKHACHHANG;
-            this.gcKHACHHANG.MenuManager = this.barManagerKH;
-            this.gcKHACHHANG.Name = "gcKHACHHANG";
-            this.gcKHACHHANG.Size = new System.Drawing.Size(1363, 464);
-            this.gcKHACHHANG.TabIndex = 0;
-            this.gcKHACHHANG.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvKHACHHANG});
+            this.gcKHTN.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcKHTN.Location = new System.Drawing.Point(0, 0);
+            this.gcKHTN.MainView = this.gvKHTN;
+            this.gcKHTN.MenuManager = this.barManagerKH;
+            this.gcKHTN.Name = "gcKHTN";
+            this.gcKHTN.Size = new System.Drawing.Size(1363, 464);
+            this.gcKHTN.TabIndex = 0;
+            this.gcKHTN.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvKHTN});
             // 
-            // gvKHACHHANG
+            // gvKHTN
             // 
-            this.gvKHACHHANG.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.MaKH,
-            this.HoTenKH,
+            this.gvKHTN.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MaTN,
+            this.HoTenTN,
             this.SDT,
             this.Emaill,
             this.DiaChi});
-            this.gvKHACHHANG.GridControl = this.gcKHACHHANG;
-            this.gvKHACHHANG.Name = "gvKHACHHANG";
-            this.gvKHACHHANG.OptionsView.ShowGroupPanel = false;
-            this.gvKHACHHANG.Click += new System.EventHandler(this.gvKHACHHANG_Click);
+            this.gvKHTN.GridControl = this.gcKHTN;
+            this.gvKHTN.Name = "gvKHTN";
+            this.gvKHTN.OptionsView.ShowGroupPanel = false;
+            this.gvKHTN.Click += new System.EventHandler(this.gvKHACHHANG_Click);
             // 
-            // MaKH
+            // MaTN
             // 
-            this.MaKH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.MaKH.AppearanceCell.Options.UseFont = true;
-            this.MaKH.Caption = "ID";
-            this.MaKH.FieldName = "MaKH";
-            this.MaKH.MaxWidth = 50;
-            this.MaKH.MinWidth = 50;
-            this.MaKH.Name = "MaKH";
-            this.MaKH.Visible = true;
-            this.MaKH.VisibleIndex = 0;
-            this.MaKH.Width = 50;
+            this.MaTN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.MaTN.AppearanceCell.Options.UseFont = true;
+            this.MaTN.Caption = "ID";
+            this.MaTN.FieldName = "MaTN";
+            this.MaTN.MaxWidth = 50;
+            this.MaTN.MinWidth = 50;
+            this.MaTN.Name = "MaTN";
+            this.MaTN.Width = 50;
             // 
-            // HoTenKH
+            // HoTenTN
             // 
-            this.HoTenKH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
-            this.HoTenKH.AppearanceCell.Options.UseFont = true;
-            this.HoTenKH.Caption = "Họ Tên ";
-            this.HoTenKH.FieldName = "HoTenKH";
-            this.HoTenKH.MaxWidth = 200;
-            this.HoTenKH.MinWidth = 200;
-            this.HoTenKH.Name = "HoTenKH";
-            this.HoTenKH.Visible = true;
-            this.HoTenKH.VisibleIndex = 1;
-            this.HoTenKH.Width = 200;
+            this.HoTenTN.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.HoTenTN.AppearanceCell.Options.UseFont = true;
+            this.HoTenTN.Caption = "Họ Tên ";
+            this.HoTenTN.FieldName = "HoTenTN";
+            this.HoTenTN.MaxWidth = 200;
+            this.HoTenTN.MinWidth = 200;
+            this.HoTenTN.Name = "HoTenTN";
+            this.HoTenTN.Visible = true;
+            this.HoTenTN.VisibleIndex = 0;
+            this.HoTenTN.Width = 200;
             // 
             // SDT
             // 
@@ -490,7 +490,7 @@
             this.SDT.MinWidth = 25;
             this.SDT.Name = "SDT";
             this.SDT.Visible = true;
-            this.SDT.VisibleIndex = 2;
+            this.SDT.VisibleIndex = 1;
             this.SDT.Width = 94;
             // 
             // Emaill
@@ -500,7 +500,7 @@
             this.Emaill.MinWidth = 25;
             this.Emaill.Name = "Emaill";
             this.Emaill.Visible = true;
-            this.Emaill.VisibleIndex = 3;
+            this.Emaill.VisibleIndex = 2;
             this.Emaill.Width = 94;
             // 
             // DiaChi
@@ -510,10 +510,10 @@
             this.DiaChi.MinWidth = 25;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
-            this.DiaChi.VisibleIndex = 4;
+            this.DiaChi.VisibleIndex = 3;
             this.DiaChi.Width = 94;
             // 
-            // frmKhachHang
+            // frmKHTN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -523,9 +523,9 @@
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
-            this.Name = "frmKhachHang";
+            this.Name = "frmKHTN";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Khách hàng";
+            this.Text = "Khách hàng tiềm năng";
             this.Load += new System.EventHandler(this.frmKHACHHANG_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerKH)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -538,8 +538,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcKHACHHANG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvKHACHHANG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcKHTN)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvKHTN)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -562,10 +562,10 @@
         private DevExpress.XtraEditors.LabelControl lblTen;
         private DevExpress.XtraBars.Bar bar1;
         private DevExpress.XtraBars.BarManager barManagerKH;
-        private DevExpress.XtraGrid.GridControl gcKHACHHANG;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvKHACHHANG;
-        private DevExpress.XtraGrid.Columns.GridColumn MaKH;
-        private DevExpress.XtraGrid.Columns.GridColumn HoTenKH;
+        private DevExpress.XtraGrid.GridControl gcKHTN;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvKHTN;
+        private DevExpress.XtraGrid.Columns.GridColumn MaTN;
+        private DevExpress.XtraGrid.Columns.GridColumn HoTenTN;
         private DevExpress.XtraEditors.TextEdit txtEmail;
         private DevExpress.XtraEditors.LabelControl lblEmail;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;

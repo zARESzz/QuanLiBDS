@@ -12,28 +12,20 @@ namespace Data
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN
+    public partial class KHTN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NHANVIEN()
+        public KHTN()
         {
-            this.HOPDONGs = new HashSet<HOPDONG>();
             this.PHIEUHENs = new HashSet<PHIEUHEN>();
         }
     
-        public string MaTK { get; set; }
-        public string MK { get; set; }
-        public string HoTenNV { get; set; }
-        public string MaCV { get; set; }
-        public string GioiTinh { get; set; }
-        public Nullable<System.DateTime> NgaySinh { get; set; }
+        public int MaTN { get; set; }
+        public string HoTenTN { get; set; }
         public string SDT { get; set; }
         public string DiaChi { get; set; }
         public string Email { get; set; }
     
-        public virtual CHUCVU CHUCVU { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOPDONG> HOPDONGs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUHEN> PHIEUHENs { get; set; }
     }

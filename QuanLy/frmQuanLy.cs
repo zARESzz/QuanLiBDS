@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Data;
+using Main;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +30,31 @@ namespace QuanLy
             Form f =(Form) Activator.CreateInstance(typeForm);
             f.MdiParent = this;
             f.Show();
+        }
+        cls_PhieuHen _ph;
+        cls_NhanVien _nv;
+        cls_HopDong _hd;
+        void loadList()
+        {
+            listSinhNhat.DataSource = _nv.getSinhNhat();
+            listSinhNhat.DisplayMember = "HoTenNV";
+            listSinhNhat.ValueMember = "MaTK";
+
+            listLichHen.DataSource = _ph.getLichHen();
+            listLichHen.DisplayMember = "MaTN";
+            listLichHen.ValueMember = "MaLH";
+
+            listHopDong.DataSource = _hd.getHopDong();
+            listHopDong.DisplayMember = "MaBDS";
+            listHopDong.ValueMember = "MaHD";
+        }
+
+        private void frmQuanLy_Load(object sender, EventArgs e)
+        {
+            _nv = new cls_NhanVien();
+            _ph = new cls_PhieuHen();
+            _hd = new cls_HopDong();
+            loadList();
         }
         private void btnChucVu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -71,6 +98,21 @@ namespace QuanLy
         private void btnThanhToan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             OpenForm(typeof(frmThanhToan));
+        }
+
+        private void btnSP_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmSanPham));
+        }
+
+        private void btnKHTN_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmKHTN));
+        }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            OpenForm(typeof(frmPhieuHen));
         }
     }
 }

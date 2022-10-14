@@ -91,5 +91,10 @@ namespace Main
                 throw new Exception("Lỗi: " + ex.Message);
             }
         }
+
+        public List<NHANVIEN> getSinhNhat()
+        {
+            return db.NHANVIENs.Where(x=>x.NgaySinh.Value.Day == DateTime.Now.Day && x.NgaySinh.Value.Month == DateTime.Now.Month).ToList();
+        }
     }
 }

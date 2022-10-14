@@ -6,9 +6,6 @@ using Data;
 using QuanLy;
 using Main;
 using CustomMessageBox;
-using DevExpress.Utils.Extensions;
-using DevExpress.XtraBars.Ribbon;
-using System.Collections;
 
 namespace Login
 {
@@ -36,13 +33,31 @@ namespace Login
             }
             if (mk.GiaiMa(checkTK.MK) == txtPass.Text)
             {
-                if(checkTK.CHUCVU.TenCV=="Quản lý")
+                frmQuanLy ql = new frmQuanLy();
+                if (checkTK.CHUCVU.TenCV.Equals("Quản Lý"))
                 {
-                    frmQuanLy ql = new frmQuanLy();
+                    ql.rbQLNS.Visible = true;
+                    ql.rbQLBDS.Visible = true;
+                    ql.rbQLKH.Visible = true;
                     this.Hide();
                     ql.ShowDialog();
                     this.Show();
-                }          
+                }else if(checkTK.CHUCVU.TenCV.Equals("Nhân Viên"))
+                {
+                    ql.rbBDS.Visible = true;
+                    this.Hide();
+                    ql.ShowDialog();
+                    this.Show();
+                }else
+                {
+                    ql.rbQLNS.Visible = true;
+                    ql.rbQLBDS.Visible = true;
+                    ql.rbQLKH.Visible = true;
+                    ql.rbBDS.Visible = true;
+                    this.Hide();
+                    ql.ShowDialog();
+                    this.Show();
+                }
             }
             else
             {

@@ -59,10 +59,16 @@
     <Compile Include="CHUCVU.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
+    <Compile Include="F_THONGKETHANG_Result.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
     <Compile Include="HOPDONG.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
     <Compile Include="KHACHHANG.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KHTN.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
     <Compile Include="LOAIBD.cs">
@@ -72,6 +78,9 @@
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
     <Compile Include="NHUCAU.cs">
+      <DependentUpon>QLBDS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PHIEUHEN.cs">
       <DependentUpon>QLBDS.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
