@@ -318,6 +318,7 @@
             this.txtSDT.Properties.Appearance.Options.UseFont = true;
             this.txtSDT.Size = new System.Drawing.Size(231, 34);
             this.txtSDT.TabIndex = 6;
+            this.txtSDT.EditValueChanged += new System.EventHandler(this.txtSDT_EditValueChanged);
             this.txtSDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSDT_KeyPress);
             // 
             // txtMatKhau
@@ -329,6 +330,7 @@
             this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(231, 34);
             this.txtMatKhau.TabIndex = 5;
+            this.txtMatKhau.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMatKhau_KeyPress);
             this.txtMatKhau.MouseLeave += new System.EventHandler(this.txtMatKhau_MouseLeave);
             this.txtMatKhau.MouseMove += new System.Windows.Forms.MouseEventHandler(this.txtMatKhau_MouseMove);
             // 

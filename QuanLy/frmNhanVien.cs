@@ -9,6 +9,7 @@ using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
 using System.Text.RegularExpressions;
 using CustomMessageBox;
+using DevExpress.XtraBars.Docking2010.Views.Widget;
 
 namespace QuanLy
 {
@@ -122,7 +123,8 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng Email");
                 if (ktrphone(txtSDT.Text) == false)
                     throw new Exception("Sai Định Dạng SDT");
-                
+                if (checkmk(txtMatKhau.Text) == false)
+                    throw new Exception("Sai Định Dạng Mật Khẩu");
                 if (_tt)
                 {
                     NHANVIEN kh = new NHANVIEN();
@@ -180,6 +182,12 @@ namespace QuanLy
             return regex.IsMatch(check);
         }
 
+        private bool checkmk(string mk)
+        {
+            var passValidation = new Regex(@"^([0-9]{8})$");
+
+            return passValidation.IsMatch(mk);
+        }
         private void gvNHANVIEN_Click(object sender, EventArgs e)
         {
             id = gvNHANVIEN.GetFocusedRowCellValue("MaTK").ToString();
@@ -218,6 +226,16 @@ namespace QuanLy
                 e.Handled = true;
             if (e.KeyChar == 8)
                 e.Handled = false;
+        }
+
+        private void txtSDT_EditValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
         }
     }
 }
