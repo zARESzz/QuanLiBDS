@@ -197,6 +197,9 @@ namespace QuanLy
                         ct.MaNC = cbxNhuCau.SelectedValue.ToString();
                         ct.DinhGia = long.Parse(txtGia.Text);
                         _ct.Add(ct);
+                        _ct = new cls_CTNC();
+                        loadData();
+
                     }
                 }
             }
@@ -212,6 +215,7 @@ namespace QuanLy
             id = gvBDS.GetFocusedRowCellValue("MaBDS").ToString();
             _id = gvBDS.GetFocusedRowCellValue("MaNC").ToString();
             var tg = _bds.getItem(id);
+            if(tg.HinhAnh != null)
             picHinhAnh.Image =Base64ToImage(tg.HinhAnh);
             txtTen.Text = tg.TenBDS;
             txtDienTich.Text = tg.DienTich.ToString();

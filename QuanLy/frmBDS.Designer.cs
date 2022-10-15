@@ -382,6 +382,8 @@
             this.txtGia.Name = "txtGia";
             this.txtGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGia.Properties.Appearance.Options.UseFont = true;
+            this.txtGia.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtGia.Properties.MaskSettings.Set("mask", "f3");
             this.txtGia.Size = new System.Drawing.Size(250, 34);
             this.txtGia.TabIndex = 8;
             // 
@@ -609,6 +611,8 @@
             // DinhGia
             // 
             this.DinhGia.Caption = "Giá";
+            this.DinhGia.DisplayFormat.FormatString = "#,####";
+            this.DinhGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.DinhGia.FieldName = "DinhGia";
             this.DinhGia.MinWidth = 25;
             this.DinhGia.Name = "DinhGia";
