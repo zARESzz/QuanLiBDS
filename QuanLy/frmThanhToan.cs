@@ -4,6 +4,8 @@ using System.Windows.Forms;
 using Main;
 using CustomMessageBox;
 using Data;
+using System.Globalization;
+using static System.Globalization.CultureInfo;
 
 namespace QuanLy
 {
@@ -18,6 +20,7 @@ namespace QuanLy
         cls_ThanhToan _ttn;
         bool _tt;
         string id;
+
         private void frmHopDong_Load(object sender, EventArgs e)
         {
             _tt = false;
@@ -31,6 +34,7 @@ namespace QuanLy
             txtDiaChi.Enabled = false;
             txtKhachHang.Enabled = false;
             txtNhanVien.Enabled = false;
+            
         }
         void ShowHide(bool kt)
         {
@@ -137,7 +141,7 @@ namespace QuanLy
         {
             try
             {
-                id = gvThanhToan.GetFocusedRowCellValue("MaTT").ToString();             
+                id = gvThanhToan.GetFocusedRowCellValue("MATT").ToString();             
                 var tg = _ttn.getItem(id);
                 var hd = db.HOPDONGs.FirstOrDefault(p => p.MaHD == tg.MaHD);
                 var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == hd.MaBDS);
@@ -171,6 +175,22 @@ namespace QuanLy
                 var nv = db.NHANVIENs.FirstOrDefault(p => p.MaTK == hd.MaTK);
                 txtNhanVien.Text = nv.HoTenNV;
             }    
+        }
+
+        private void txtSoTien_TextChanged(object sender, EventArgs e)
+        {
+            //try
+            //{
+            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
+            ////    decimal value = decimal.Parse(txtSoTien.Text, System.Globalization.NumberStyles.AllowThousands);
+            //txtSoTien.Text = String.Format(culture, "{ 0:0,0.0}");
+            //    txtSoTien.Select(txtSoTien.Text.Length, 0);
+            //}
+            //catch (Exception ex)
+            //{
+            //    RJMessageBox.Show(ex.Message);
+            //}
+           
         }
     }
 }

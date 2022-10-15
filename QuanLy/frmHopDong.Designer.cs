@@ -446,6 +446,9 @@
             this.txtPhi.Name = "txtPhi";
             this.txtPhi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhi.Properties.Appearance.Options.UseFont = true;
+            this.txtPhi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPhi.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtPhi.Properties.MaskSettings.Set("mask", "n3");
             this.txtPhi.Size = new System.Drawing.Size(289, 34);
             this.txtPhi.TabIndex = 10;
             // 
@@ -688,6 +691,8 @@
             this.DinhGia.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DinhGia.AppearanceCell.Options.UseFont = true;
             this.DinhGia.Caption = "Giá";
+            this.DinhGia.DisplayFormat.FormatString = "#,###";
+            this.DinhGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.DinhGia.FieldName = "DinhGia";
             this.DinhGia.MinWidth = 25;
             this.DinhGia.Name = "DinhGia";
@@ -756,6 +761,8 @@
             this.Phi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Phi.AppearanceCell.Options.UseFont = true;
             this.Phi.Caption = "Phí";
+            this.Phi.DisplayFormat.FormatString = "#,###";
+            this.Phi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.Phi.FieldName = "Phi";
             this.Phi.MinWidth = 25;
             this.Phi.Name = "Phi";
@@ -847,7 +854,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmHopDong";
-            this.Text = "Hợp Đồng";
+            this.Text = "7";
             this.Load += new System.EventHandler(this.frmHopDong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);

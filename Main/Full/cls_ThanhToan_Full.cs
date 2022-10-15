@@ -17,6 +17,8 @@ namespace Main.Full
         public string NoiDung { get; set; }
         public string TenKH { get; set; }
         public Nullable<long> TongTien { get; set; }
+        public string MaTK { get; set; }
+        public string TenNV { get; set; }
         public Nullable<System.DateTime> NgayTT { get; set; }
 
     }
