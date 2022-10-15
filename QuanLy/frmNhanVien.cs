@@ -54,7 +54,7 @@ namespace QuanLy
             btnSave.Enabled = !kt;
             btnHuy.Enabled = !kt;
         }
-
+      
         void loadData()
         {
             gcNHANVIEN.DataSource = _nv.getListFull();
@@ -123,8 +123,8 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng Email");
                 if (ktrphone(txtSDT.Text) == false)
                     throw new Exception("Sai Định Dạng SDT");
-                if (checkmk(txtMatKhau.Text) == false)
-                    throw new Exception("Sai Định Dạng Mật Khẩu");
+                //if (checkmk(txtMatKhau.Text) == false)
+                //    throw new Exception("Sai Định Dạng Mật Khẩu");
                 if (_tt)
                 {
                     NHANVIEN kh = new NHANVIEN();
@@ -184,7 +184,7 @@ namespace QuanLy
 
         private bool checkmk(string mk)
         {
-            var passValidation = new Regex(@"^([0-9]{8})$");
+            var passValidation = new Regex(@"^([0-9]{9})$");
 
             return passValidation.IsMatch(mk);
         }

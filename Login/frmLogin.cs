@@ -6,6 +6,7 @@ using Data;
 using QuanLy;
 using Main;
 using CustomMessageBox;
+using DevExpress.Utils.Drawing.Helpers;
 
 namespace Login
 {
@@ -21,7 +22,7 @@ namespace Login
         {
             db= new data_BDSEntities();
         }
-
+        
         private void btnLogin_Click(object sender, EventArgs e)
         {
             cls_MatKhau mk = new cls_MatKhau();
@@ -31,18 +32,21 @@ namespace Login
                 RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
                 return;
             }
+            
             if (mk.GiaiMa(checkTK.MK) == txtPass.Text)
             {
                 frmQuanLy ql = new frmQuanLy();
                 if (checkTK.CHUCVU.TenCV.Equals("Quản Lý"))
                 {
+                   
                     ql.rbQLNS.Visible = true;
                     ql.rbQLBDS.Visible = true;
                     ql.rbQLKH.Visible = true;
                     this.Hide();
                     ql.ShowDialog();
-                    this.Show();
-                }else if(checkTK.CHUCVU.TenCV.Equals("Nhân Viên"))
+                    this.Show();                 
+                }
+                else if(checkTK.CHUCVU.TenCV.Equals("Nhân Viên"))
                 {
                     ql.rbQLHD.Visible = true;
                     this.Hide();
