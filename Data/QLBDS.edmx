@@ -384,6 +384,11 @@
           <FunctionImport Name="P_MaPhieu" ReturnType="Collection(String)" />
           <FunctionImport Name="P_MaTT" ReturnType="Collection(String)" />
           <FunctionImport Name="P_MATToan" ReturnType="Collection(String)" />
+          <FunctionImport Name="P_MAPH" ReturnType="Collection(String)" />
+          <FunctionImport Name="F_THONGKETHANG" IsComposable="true" ReturnType="Collection(data_BDSModel.F_THONGKETHANG_Result)">
+            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
+            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
+          </FunctionImport>
           <EntitySet Name="BATDONGSANs" EntityType="data_BDSModel.BATDONGSAN" />
           <EntitySet Name="CHITIETNHUCAUs" EntityType="data_BDSModel.CHITIETNHUCAU" />
           <EntitySet Name="CHUCVUs" EntityType="data_BDSModel.CHUCVU" />
@@ -448,12 +453,11 @@
             <End Role="NHANVIEN" EntitySet="NHANVIENs" />
             <End Role="PHIEUHEN" EntitySet="PHIEUHENs" />
           </AssociationSet>
-          <FunctionImport Name="P_MAPH" ReturnType="Collection(String)" />
-          <FunctionImport Name="F_THONGKETHANG" IsComposable="true" ReturnType="Collection(data_BDSModel.F_THONGKETHANG_Result)">
-            <Parameter Name="NGAYD" Mode="In" Type="DateTime" />
-            <Parameter Name="NGAYC" Mode="In" Type="DateTime" />
-          </FunctionImport>
           </EntityContainer>
+        <ComplexType Name="F_THONGKETHANG_Result">
+          <Property Type="String" Name="TenLoai" Nullable="false" MaxLength="20" />
+          <Property Type="Int64" Name="THANHTIEN" Nullable="true" />
+        </ComplexType>
         <EntityType Name="BATDONGSAN">
           <Key>
             <PropertyRef Name="MaBDS" />
@@ -756,10 +760,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="F_THONGKETHANG_Result">
-          <Property Type="String" Name="TenLoai" Nullable="false" MaxLength="20" />
-          <Property Type="Int64" Name="THANHTIEN" Nullable="true" />
-        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -775,6 +775,15 @@
           <FunctionImportMapping FunctionImportName="P_MaNC" FunctionName="data_BDSModel.Store.P_MaNC" />
           <FunctionImportMapping FunctionImportName="P_MaTT" FunctionName="data_BDSModel.Store.P_MaTT" />
           <FunctionImportMapping FunctionImportName="P_MATToan" FunctionName="data_BDSModel.Store.P_MATToan" />
+          <FunctionImportMapping FunctionImportName="P_MAPH" FunctionName="data_BDSModel.Store.P_MAPH" />
+          <FunctionImportMapping FunctionImportName="F_THONGKETHANG" FunctionName="data_BDSModel.Store.F_THONGKETHANG">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="data_BDSModel.F_THONGKETHANG_Result">
+                <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <EntitySetMapping Name="BATDONGSANs">
             <EntityTypeMapping TypeName="data_BDSModel.BATDONGSAN">
               <MappingFragment StoreEntitySet="BATDONGSAN">
@@ -906,15 +915,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="P_MAPH" FunctionName="data_BDSModel.Store.P_MAPH" />
-          <FunctionImportMapping FunctionImportName="F_THONGKETHANG" FunctionName="data_BDSModel.Store.F_THONGKETHANG">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="data_BDSModel.F_THONGKETHANG_Result">
-                <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
-                <ScalarProperty Name="THANHTIEN" ColumnName="THANHTIEN" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

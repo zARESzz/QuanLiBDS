@@ -3,6 +3,8 @@ using System.Linq;
 using System.Windows.Forms;
 using Main;
 using Data;
+using DevExpress.XtraRichEdit.Model;
+using System.CodeDom;
 
 namespace QuanLy
 {
@@ -96,11 +98,22 @@ namespace QuanLy
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            loadData();
-            _tt = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            try
+            {
+                if (dtNgayBD.Value < dtNgayLap.Value)
+                    throw new Exception("Ngày bắt đầu phải lớn hơn ngày lập!");
+                if (dtNgayKT.Value < dtNgayBD.Value)
+                    throw new Exception("Ngày kết thúc phải lớn hơn ngày băt đầu!");
+                SaveData();
+                loadData();
+                _tt = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

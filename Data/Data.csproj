@@ -109,7 +109,6 @@
   <ItemGroup>
     <EntityDeploy Include="QLBDS.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLBDS.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
