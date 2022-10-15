@@ -67,9 +67,9 @@
             this.MaBDS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TenBDS = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaTK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.HoTenNV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TenNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.MaKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.TongTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.NoiDung = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -337,8 +337,13 @@
             this.txtSoTien.Name = "txtSoTien";
             this.txtSoTien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoTien.Properties.Appearance.Options.UseFont = true;
+            this.txtSoTien.Properties.BeepOnError = true;
+            this.txtSoTien.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtSoTien.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtSoTien.Properties.MaskSettings.Set("mask", "n3");
             this.txtSoTien.Size = new System.Drawing.Size(289, 34);
             this.txtSoTien.TabIndex = 6;
+            this.txtSoTien.TextChanged += new System.EventHandler(this.txtSoTien_TextChanged);
             // 
             // txtNoiDung
             // 
@@ -430,9 +435,9 @@
             this.MaBDS,
             this.TenBDS,
             this.DiaChi,
-            this.HoTenKH,
+            this.TenKH,
             this.MaTK,
-            this.HoTenNV,
+            this.TenNV,
             this.MaKH,
             this.TongTien,
             this.NoiDung,
@@ -487,15 +492,15 @@
             this.DiaChi.VisibleIndex = 2;
             this.DiaChi.Width = 94;
             // 
-            // HoTenKH
+            // TenKH
             // 
-            this.HoTenKH.Caption = "Khách Hàng";
-            this.HoTenKH.FieldName = "HoTenKH";
-            this.HoTenKH.MinWidth = 25;
-            this.HoTenKH.Name = "HoTenKH";
-            this.HoTenKH.Visible = true;
-            this.HoTenKH.VisibleIndex = 3;
-            this.HoTenKH.Width = 94;
+            this.TenKH.Caption = "Khách Hàng";
+            this.TenKH.FieldName = "TenKH";
+            this.TenKH.MinWidth = 25;
+            this.TenKH.Name = "TenKH";
+            this.TenKH.Visible = true;
+            this.TenKH.VisibleIndex = 3;
+            this.TenKH.Width = 94;
             // 
             // MaTK
             // 
@@ -505,15 +510,15 @@
             this.MaTK.Name = "MaTK";
             this.MaTK.Width = 94;
             // 
-            // HoTenNV
+            // TenNV
             // 
-            this.HoTenNV.Caption = "Nhân Viên";
-            this.HoTenNV.FieldName = "HoTenNV";
-            this.HoTenNV.MinWidth = 25;
-            this.HoTenNV.Name = "HoTenNV";
-            this.HoTenNV.Visible = true;
-            this.HoTenNV.VisibleIndex = 4;
-            this.HoTenNV.Width = 94;
+            this.TenNV.Caption = "Nhân Viên";
+            this.TenNV.FieldName = "TenNV";
+            this.TenNV.MinWidth = 25;
+            this.TenNV.Name = "TenNV";
+            this.TenNV.Visible = true;
+            this.TenNV.VisibleIndex = 4;
+            this.TenNV.Width = 94;
             // 
             // MaKH
             // 
@@ -526,6 +531,8 @@
             // TongTien
             // 
             this.TongTien.Caption = "Số Tiền";
+            this.TongTien.DisplayFormat.FormatString = "#,####";
+            this.TongTien.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.TongTien.FieldName = "TongTien";
             this.TongTien.MinWidth = 25;
             this.TongTien.Name = "TongTien";
@@ -646,9 +653,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn MaBDS;
         private DevExpress.XtraGrid.Columns.GridColumn TenBDS;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
-        private DevExpress.XtraGrid.Columns.GridColumn HoTenKH;
+        private DevExpress.XtraGrid.Columns.GridColumn TenKH;
         private DevExpress.XtraGrid.Columns.GridColumn MaTK;
-        private DevExpress.XtraGrid.Columns.GridColumn HoTenNV;
+        private DevExpress.XtraGrid.Columns.GridColumn TenNV;
         private DevExpress.XtraGrid.Columns.GridColumn MaKH;
         private DevExpress.XtraGrid.Columns.GridColumn TongTien;
         private DevExpress.XtraGrid.Columns.GridColumn NoiDung;

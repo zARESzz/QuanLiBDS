@@ -36,14 +36,16 @@
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase2 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement2 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement3 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.ItemTemplateBase itemTemplateBase3 = new DevExpress.XtraEditors.TableLayout.ItemTemplateBase();
-            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement4 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement5 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement6 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement7 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
+            DevExpress.XtraEditors.TableLayout.TemplatedItemElement templatedItemElement8 = new DevExpress.XtraEditors.TableLayout.TemplatedItemElement();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             this.rbQuanLy = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.btnChucVu = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhanVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnKhachHang = new DevExpress.XtraBars.BarButtonItem();
@@ -60,6 +62,21 @@
             this.btnTron = new DevExpress.XtraBars.BarButtonItem();
             this.btnHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnPhanQuyen = new DevExpress.XtraBars.BarButtonItem();
+            this.skinRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.skinDropDownButtonItem1 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinPaletteRibbonGalleryBarItem1 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.skinPaletteDropDownButtonItem1 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinPaletteDropDownButtonItem2 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.skinPaletteRibbonGalleryBarItem2 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.skinPaletteDropDownButtonItem3 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinPaletteRibbonGalleryBarItem3 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.skinPaletteRibbonGalleryBarItem4 = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.skinRibbonGalleryBarItem3 = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
+            this.skinPaletteDropDownButtonItem4 = new DevExpress.XtraBars.SkinPaletteDropDownButtonItem();
+            this.skinDropDownButtonItem2 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.skinDropDownButtonItem3 = new DevExpress.XtraBars.SkinDropDownButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.rbQLNS = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rbQLKH = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -87,7 +104,6 @@
             this.listLichHen = new DevExpress.XtraEditors.ListBoxControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.listHopDong = new DevExpress.XtraEditors.ListBoxControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.rbQuanLy)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -111,6 +127,7 @@
             this.rbQuanLy.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(44, 46, 44, 46);
             this.rbQuanLy.ExpandCollapseItem.Id = 0;
             this.rbQuanLy.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.barButtonItem1,
             this.rbQuanLy.ExpandCollapseItem,
             this.rbQuanLy.SearchEditItem,
             this.btnChucVu,
@@ -129,10 +146,24 @@
             this.btnTron,
             this.btnHang,
             this.btnPhanQuyen,
-            this.barButtonItem1});
+            this.skinRibbonGalleryBarItem1,
+            this.skinDropDownButtonItem1,
+            this.skinPaletteRibbonGalleryBarItem1,
+            this.skinPaletteDropDownButtonItem1,
+            this.skinPaletteDropDownButtonItem2,
+            this.skinRibbonGalleryBarItem2,
+            this.skinPaletteRibbonGalleryBarItem2,
+            this.skinPaletteDropDownButtonItem3,
+            this.skinPaletteRibbonGalleryBarItem3,
+            this.skinPaletteRibbonGalleryBarItem4,
+            this.skinRibbonGalleryBarItem3,
+            this.skinPaletteDropDownButtonItem4,
+            this.skinDropDownButtonItem2,
+            this.skinDropDownButtonItem3,
+            this.barButtonItem2});
             this.rbQuanLy.Location = new System.Drawing.Point(0, 0);
             this.rbQuanLy.Margin = new System.Windows.Forms.Padding(5);
-            this.rbQuanLy.MaxItemId = 25;
+            this.rbQuanLy.MaxItemId = 42;
             this.rbQuanLy.Name = "rbQuanLy";
             this.rbQuanLy.OptionsMenuMinWidth = 481;
             this.rbQuanLy.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -141,7 +172,15 @@
             this.rbQLBDS,
             this.rbQLHD,
             this.rbQLTK});
+            this.rbQuanLy.QuickToolbarItemLinks.Add(this.skinDropDownButtonItem3);
             this.rbQuanLy.Size = new System.Drawing.Size(1141, 193);
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Id = 25;
+            this.barButtonItem1.ImageOptions.Image = global::QuanLy.Properties.Resources.LogOut;
+            this.barButtonItem1.Name = "barButtonItem1";
+            this.barButtonItem1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem1_ItemClick);
             // 
             // btnChucVu
             // 
@@ -270,11 +309,96 @@
             // 
             // btnPhanQuyen
             // 
-            this.btnPhanQuyen.Caption = "Phần Quyền";
+            this.btnPhanQuyen.Caption = "Phân Quyền";
             this.btnPhanQuyen.Id = 23;
             this.btnPhanQuyen.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPhanQuyen.ImageOptions.SvgImage")));
             this.btnPhanQuyen.Name = "btnPhanQuyen";
             this.btnPhanQuyen.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPhanQuyen_ItemClick);
+            // 
+            // skinRibbonGalleryBarItem1
+            // 
+            this.skinRibbonGalleryBarItem1.Caption = "skinRibbonGalleryBarItem1";
+            this.skinRibbonGalleryBarItem1.Id = 26;
+            this.skinRibbonGalleryBarItem1.Name = "skinRibbonGalleryBarItem1";
+            // 
+            // skinDropDownButtonItem1
+            // 
+            this.skinDropDownButtonItem1.Id = 27;
+            this.skinDropDownButtonItem1.Name = "skinDropDownButtonItem1";
+            // 
+            // skinPaletteRibbonGalleryBarItem1
+            // 
+            this.skinPaletteRibbonGalleryBarItem1.Caption = "skinPaletteRibbonGalleryBarItem1";
+            this.skinPaletteRibbonGalleryBarItem1.Id = 28;
+            this.skinPaletteRibbonGalleryBarItem1.Name = "skinPaletteRibbonGalleryBarItem1";
+            // 
+            // skinPaletteDropDownButtonItem1
+            // 
+            this.skinPaletteDropDownButtonItem1.Id = 29;
+            this.skinPaletteDropDownButtonItem1.Name = "skinPaletteDropDownButtonItem1";
+            // 
+            // skinPaletteDropDownButtonItem2
+            // 
+            this.skinPaletteDropDownButtonItem2.Id = 30;
+            this.skinPaletteDropDownButtonItem2.Name = "skinPaletteDropDownButtonItem2";
+            // 
+            // skinRibbonGalleryBarItem2
+            // 
+            this.skinRibbonGalleryBarItem2.Caption = "skinRibbonGalleryBarItem2";
+            this.skinRibbonGalleryBarItem2.Id = 31;
+            this.skinRibbonGalleryBarItem2.Name = "skinRibbonGalleryBarItem2";
+            // 
+            // skinPaletteRibbonGalleryBarItem2
+            // 
+            this.skinPaletteRibbonGalleryBarItem2.Caption = "skinPaletteRibbonGalleryBarItem2";
+            this.skinPaletteRibbonGalleryBarItem2.Id = 32;
+            this.skinPaletteRibbonGalleryBarItem2.Name = "skinPaletteRibbonGalleryBarItem2";
+            // 
+            // skinPaletteDropDownButtonItem3
+            // 
+            this.skinPaletteDropDownButtonItem3.Id = 33;
+            this.skinPaletteDropDownButtonItem3.Name = "skinPaletteDropDownButtonItem3";
+            // 
+            // skinPaletteRibbonGalleryBarItem3
+            // 
+            this.skinPaletteRibbonGalleryBarItem3.Caption = "skinPaletteRibbonGalleryBarItem3";
+            this.skinPaletteRibbonGalleryBarItem3.Id = 34;
+            this.skinPaletteRibbonGalleryBarItem3.Name = "skinPaletteRibbonGalleryBarItem3";
+            // 
+            // skinPaletteRibbonGalleryBarItem4
+            // 
+            this.skinPaletteRibbonGalleryBarItem4.Caption = "skinPaletteRibbonGalleryBarItem4";
+            this.skinPaletteRibbonGalleryBarItem4.Id = 35;
+            this.skinPaletteRibbonGalleryBarItem4.Name = "skinPaletteRibbonGalleryBarItem4";
+            // 
+            // skinRibbonGalleryBarItem3
+            // 
+            this.skinRibbonGalleryBarItem3.Caption = "skinRibbonGalleryBarItem3";
+            this.skinRibbonGalleryBarItem3.Id = 36;
+            this.skinRibbonGalleryBarItem3.Name = "skinRibbonGalleryBarItem3";
+            // 
+            // skinPaletteDropDownButtonItem4
+            // 
+            this.skinPaletteDropDownButtonItem4.Id = 37;
+            this.skinPaletteDropDownButtonItem4.Name = "skinPaletteDropDownButtonItem4";
+            // 
+            // skinDropDownButtonItem2
+            // 
+            this.skinDropDownButtonItem2.Id = 38;
+            this.skinDropDownButtonItem2.Name = "skinDropDownButtonItem2";
+            // 
+            // skinDropDownButtonItem3
+            // 
+            this.skinDropDownButtonItem3.Id = 39;
+            this.skinDropDownButtonItem3.Name = "skinDropDownButtonItem3";
+            this.skinDropDownButtonItem3.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "barButtonItem2";
+            this.barButtonItem2.Id = 40;
+            this.barButtonItem2.Name = "barButtonItem2";
             // 
             // rbQLNS
             // 
@@ -359,7 +483,7 @@
             // ribbonPageGroup7
             // 
             this.ribbonPageGroup7.AllowTextClipping = false;
-            this.ribbonPageGroup7.ItemLinks.Add(this.btnHopDong);
+            this.ribbonPageGroup7.ItemLinks.Add(this.btnHopDong, true);
             this.ribbonPageGroup7.ItemLinks.Add(this.btnThanhToan);
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Danh mục hợp đồng";
@@ -386,7 +510,7 @@
             // 
             this.ribbonPageGroup11.ItemLinks.Add(this.btnPhanQuyen);
             this.ribbonPageGroup11.Name = "ribbonPageGroup11";
-            this.ribbonPageGroup11.Text = "Tải Khoản";
+            this.ribbonPageGroup11.Text = "Tài Khoản";
             // 
             // documentManager1
             // 
@@ -434,10 +558,10 @@
             this.dpThongBao.Controls.Add(this.dockPanel1_Container);
             this.dpThongBao.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
             this.dpThongBao.ID = new System.Guid("e016cb5c-07df-43a6-a0ce-6356b939bc1b");
-            this.dpThongBao.Location = new System.Drawing.Point(843, 193);
+            this.dpThongBao.Location = new System.Drawing.Point(933, 193);
             this.dpThongBao.Name = "dpThongBao";
-            this.dpThongBao.OriginalSize = new System.Drawing.Size(298, 200);
-            this.dpThongBao.Size = new System.Drawing.Size(298, 555);
+            this.dpThongBao.OriginalSize = new System.Drawing.Size(208, 200);
+            this.dpThongBao.Size = new System.Drawing.Size(208, 555);
             this.dpThongBao.Text = "Thông Báo";
             // 
             // dockPanel1_Container
@@ -447,7 +571,7 @@
             this.dockPanel1_Container.Controls.Add(this.groupControl1);
             this.dockPanel1_Container.Location = new System.Drawing.Point(6, 32);
             this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(288, 519);
+            this.dockPanel1_Container.Size = new System.Drawing.Size(198, 519);
             this.dockPanel1_Container.TabIndex = 0;
             // 
             // groupControl3
@@ -456,17 +580,19 @@
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupControl3.Location = new System.Drawing.Point(0, 339);
             this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(288, 180);
+            this.groupControl3.Size = new System.Drawing.Size(198, 180);
             this.groupControl3.TabIndex = 2;
             this.groupControl3.Text = "Chúc Mừng Sinh Nhật";
             // 
             // listSinhNhat
             // 
+            this.listSinhNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listSinhNhat.Appearance.Options.UseFont = true;
             this.listSinhNhat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listSinhNhat.ItemHeight = 120;
             this.listSinhNhat.Location = new System.Drawing.Point(2, 28);
             this.listSinhNhat.Name = "listSinhNhat";
-            this.listSinhNhat.Size = new System.Drawing.Size(284, 150);
+            this.listSinhNhat.Size = new System.Drawing.Size(194, 150);
             this.listSinhNhat.TabIndex = 0;
             templatedItemElement1.FieldName = "HoTenNV";
             templatedItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
@@ -485,7 +611,7 @@
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl2.Location = new System.Drawing.Point(0, 180);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(288, 339);
+            this.groupControl2.Size = new System.Drawing.Size(198, 339);
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Lịch Hẹn Hôm Nay";
             // 
@@ -495,7 +621,7 @@
             this.listLichHen.ItemHeight = 120;
             this.listLichHen.Location = new System.Drawing.Point(2, 28);
             this.listLichHen.Name = "listLichHen";
-            this.listLichHen.Size = new System.Drawing.Size(284, 309);
+            this.listLichHen.Size = new System.Drawing.Size(194, 309);
             this.listLichHen.TabIndex = 0;
             templatedItemElement2.FieldName = "HoTenTN";
             templatedItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
@@ -508,8 +634,16 @@
             templatedItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             templatedItemElement3.Text = "DIADIEM";
             templatedItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement4.AnchorElementIndex = 1;
+            templatedItemElement4.FieldName = "NGAYGIO";
+            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement4.Name = "NGAYGIO";
+            templatedItemElement4.Text = "NGAYGIO";
+            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
             itemTemplateBase2.Elements.Add(templatedItemElement2);
             itemTemplateBase2.Elements.Add(templatedItemElement3);
+            itemTemplateBase2.Elements.Add(templatedItemElement4);
             itemTemplateBase2.Name = "lichhen";
             itemTemplateBase2.Rows.Add(tableRowDefinition2);
             this.listLichHen.Templates.Add(itemTemplateBase2);
@@ -520,7 +654,7 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(288, 180);
+            this.groupControl1.Size = new System.Drawing.Size(198, 180);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Hợp Đồng Hết Hạn Trong Tuần";
             // 
@@ -530,46 +664,48 @@
             this.listHopDong.ItemHeight = 120;
             this.listHopDong.Location = new System.Drawing.Point(2, 28);
             this.listHopDong.Name = "listHopDong";
-            this.listHopDong.Size = new System.Drawing.Size(284, 150);
+            this.listHopDong.Size = new System.Drawing.Size(194, 150);
             this.listHopDong.TabIndex = 0;
-            templatedItemElement4.FieldName = "MaHD";
-            templatedItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            templatedItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement4.Text = "MaHD";
-            templatedItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
-            templatedItemElement5.AnchorElementIndex = 0;
-            templatedItemElement5.FieldName = "TenBDS";
+            templatedItemElement5.FieldName = "MaHD";
             templatedItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement5.Text = "TenBDS";
-            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            templatedItemElement6.AnchorElementIndex = 1;
-            templatedItemElement6.FieldName = "TenKH";
+            templatedItemElement5.Text = "MaHD";
+            templatedItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+            templatedItemElement6.AnchorElementIndex = 0;
+            templatedItemElement6.FieldName = "TenBDS";
             templatedItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement6.Text = "TenKH";
+            templatedItemElement6.Text = "TenBDS";
             templatedItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            templatedItemElement7.AnchorElementIndex = 2;
-            templatedItemElement7.FieldName = "NgayKT";
+            templatedItemElement7.AnchorElementIndex = 1;
+            templatedItemElement7.FieldName = "TenKH";
             templatedItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             templatedItemElement7.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            templatedItemElement7.Text = "NgayKT";
+            templatedItemElement7.Text = "TenKH";
             templatedItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
-            itemTemplateBase3.Elements.Add(templatedItemElement4);
+            templatedItemElement8.AnchorElementIndex = 2;
+            templatedItemElement8.FieldName = "NgayKT";
+            templatedItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            templatedItemElement8.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            templatedItemElement8.Text = "NgayKT";
+            templatedItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopCenter;
             itemTemplateBase3.Elements.Add(templatedItemElement5);
             itemTemplateBase3.Elements.Add(templatedItemElement6);
             itemTemplateBase3.Elements.Add(templatedItemElement7);
+            itemTemplateBase3.Elements.Add(templatedItemElement8);
             itemTemplateBase3.Name = "hopdong";
             itemTemplateBase3.Rows.Add(tableRowDefinition3);
-            this.listHopDong.Templates.Add(itemTemplateBase3);  
+            this.listHopDong.Templates.Add(itemTemplateBase3);
             // 
             // frmQuanLy
             // 
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1141, 748);
             this.Controls.Add(this.dpThongBao);
             this.Controls.Add(this.rbQuanLy);
+            this.IconOptions.Image = global::QuanLy.Properties.Resources.icons8_villa_50;
             this.IsMdiContainer = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmQuanLy";
@@ -644,6 +780,21 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup11;
         public DevExpress.XtraBars.Ribbon.RibbonPage rbQLTK;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem1;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem2;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem2;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem2;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem3;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem3;
+        private DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem skinPaletteRibbonGalleryBarItem4;
+        private DevExpress.XtraBars.SkinRibbonGalleryBarItem skinRibbonGalleryBarItem3;
+        private DevExpress.XtraBars.SkinPaletteDropDownButtonItem skinPaletteDropDownButtonItem4;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem2;
+        private DevExpress.XtraBars.SkinDropDownButtonItem skinDropDownButtonItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
     }
 }
 

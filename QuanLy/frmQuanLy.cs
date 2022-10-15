@@ -39,7 +39,7 @@ namespace QuanLy
 
             listHopDong.DataSource = _hd.getHopDong();
             listHopDong.DisplayMember = "MaBDS";
-            listHopDong.ValueMember = "MaHD";
+            listHopDong.ValueMember = "MaHD";            
         }
 
         private void frmQuanLy_Load(object sender, EventArgs e)
@@ -126,5 +126,11 @@ namespace QuanLy
         {
             OpenForm(typeof(frmPhanQuyen));
         }
+
+        private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

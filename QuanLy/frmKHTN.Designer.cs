@@ -69,7 +69,7 @@
             this.MaTN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HoTenTN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.Emaill = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.Email = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
@@ -452,7 +452,7 @@
             this.MaTN,
             this.HoTenTN,
             this.SDT,
-            this.Emaill,
+            this.Email,
             this.DiaChi});
             this.gvKHTN.GridControl = this.gcKHTN;
             this.gvKHTN.Name = "gvKHTN";
@@ -493,15 +493,15 @@
             this.SDT.VisibleIndex = 1;
             this.SDT.Width = 94;
             // 
-            // Emaill
+            // Email
             // 
-            this.Emaill.Caption = "Email";
-            this.Emaill.FieldName = "Emaill";
-            this.Emaill.MinWidth = 25;
-            this.Emaill.Name = "Emaill";
-            this.Emaill.Visible = true;
-            this.Emaill.VisibleIndex = 2;
-            this.Emaill.Width = 94;
+            this.Email.Caption = "Email";
+            this.Email.FieldName = "Email";
+            this.Email.MinWidth = 25;
+            this.Email.Name = "Email";
+            this.Email.Visible = true;
+            this.Email.VisibleIndex = 2;
+            this.Email.Width = 94;
             // 
             // DiaChi
             // 
@@ -573,7 +573,7 @@
         private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.LabelControl lblSDT;
         private DevExpress.XtraGrid.Columns.GridColumn SDT;
-        private DevExpress.XtraGrid.Columns.GridColumn Emaill;
+        private DevExpress.XtraGrid.Columns.GridColumn Email;
         private DevExpress.XtraGrid.Columns.GridColumn DiaChi;
         private DevExpress.XtraBars.BarButtonItem btnIn;
         private DevExpress.XtraBars.BarButtonItem barButtonItem1;

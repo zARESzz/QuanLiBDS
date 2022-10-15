@@ -328,7 +328,7 @@
             // 
             // dtNgayLap
             // 
-            this.dtNgayLap.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayLap.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             this.dtNgayLap.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayLap.Location = new System.Drawing.Point(752, 196);
@@ -446,6 +446,9 @@
             this.txtPhi.Name = "txtPhi";
             this.txtPhi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhi.Properties.Appearance.Options.UseFont = true;
+            this.txtPhi.Properties.MaskSettings.Set("MaskManagerType", typeof(DevExpress.Data.Mask.NumericMaskManager));
+            this.txtPhi.Properties.MaskSettings.Set("MaskManagerSignature", "allowNull=False");
+            this.txtPhi.Properties.MaskSettings.Set("mask", "n3");
             this.txtPhi.Size = new System.Drawing.Size(289, 34);
             this.txtPhi.TabIndex = 10;
             // 
@@ -560,6 +563,7 @@
             // gcHopDong
             // 
             this.gcHopDong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcHopDong.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gcHopDong.Location = new System.Drawing.Point(0, 0);
             this.gcHopDong.MainView = this.gvHopDong;
             this.gcHopDong.MenuManager = this.barManagerCV;
@@ -599,27 +603,31 @@
             // 
             // MaHD
             // 
+            this.MaHD.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaHD.AppearanceCell.Options.UseFont = true;
             this.MaHD.Caption = "ID";
             this.MaHD.FieldName = "MaHD";
             this.MaHD.MinWidth = 25;
             this.MaHD.Name = "MaHD";
             this.MaHD.Visible = true;
             this.MaHD.VisibleIndex = 0;
-            this.MaHD.Width = 94;
+            this.MaHD.Width = 84;
             // 
             // TenNC
             // 
+            this.TenNC.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenNC.AppearanceCell.Options.UseFont = true;
             this.TenNC.Caption = "Nhu Cầu";
             this.TenNC.FieldName = "TenNC";
             this.TenNC.MinWidth = 25;
             this.TenNC.Name = "TenNC";
             this.TenNC.Visible = true;
             this.TenNC.VisibleIndex = 1;
-            this.TenNC.Width = 94;
+            this.TenNC.Width = 84;
             // 
             // TenBDS
             // 
-            this.TenBDS.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.TenBDS.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TenBDS.AppearanceCell.Options.UseFont = true;
             this.TenBDS.Caption = "Bất Động Sản";
             this.TenBDS.FieldName = "TenBDS";
@@ -632,78 +640,96 @@
             // 
             // TenKH
             // 
+            this.TenKH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenKH.AppearanceCell.Options.UseFont = true;
             this.TenKH.Caption = "Khách Hàng";
             this.TenKH.FieldName = "TenKH";
             this.TenKH.MinWidth = 25;
             this.TenKH.Name = "TenKH";
             this.TenKH.Visible = true;
             this.TenKH.VisibleIndex = 3;
-            this.TenKH.Width = 94;
+            this.TenKH.Width = 84;
             // 
             // HoTenNV
             // 
+            this.HoTenNV.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HoTenNV.AppearanceCell.Options.UseFont = true;
             this.HoTenNV.Caption = "Nhân Viên";
             this.HoTenNV.FieldName = "HoTenNV";
             this.HoTenNV.MinWidth = 25;
             this.HoTenNV.Name = "HoTenNV";
             this.HoTenNV.Visible = true;
             this.HoTenNV.VisibleIndex = 4;
-            this.HoTenNV.Width = 94;
+            this.HoTenNV.Width = 84;
             // 
             // TenLoai
             // 
+            this.TenLoai.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenLoai.AppearanceCell.Options.UseFont = true;
             this.TenLoai.Caption = "Loại";
             this.TenLoai.FieldName = "TenLoai";
             this.TenLoai.MinWidth = 25;
             this.TenLoai.Name = "TenLoai";
             this.TenLoai.Visible = true;
             this.TenLoai.VisibleIndex = 7;
-            this.TenLoai.Width = 94;
+            this.TenLoai.Width = 84;
             // 
             // DienTich
             // 
+            this.DienTich.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DienTich.AppearanceCell.Options.UseFont = true;
             this.DienTich.Caption = "Diện Tích";
             this.DienTich.FieldName = "DienTich";
             this.DienTich.MinWidth = 25;
             this.DienTich.Name = "DienTich";
             this.DienTich.Visible = true;
             this.DienTich.VisibleIndex = 8;
-            this.DienTich.Width = 94;
+            this.DienTich.Width = 68;
             // 
             // DinhGia
             // 
+            this.DinhGia.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DinhGia.AppearanceCell.Options.UseFont = true;
             this.DinhGia.Caption = "Giá";
+            this.DinhGia.DisplayFormat.FormatString = "#,###";
+            this.DinhGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.DinhGia.FieldName = "DinhGia";
             this.DinhGia.MinWidth = 25;
             this.DinhGia.Name = "DinhGia";
             this.DinhGia.Visible = true;
             this.DinhGia.VisibleIndex = 5;
-            this.DinhGia.Width = 94;
+            this.DinhGia.Width = 84;
             // 
             // DiaChi
             // 
+            this.DiaChi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DiaChi.AppearanceCell.Options.UseFont = true;
             this.DiaChi.Caption = "Địa Chỉ";
             this.DiaChi.FieldName = "DiaChi";
             this.DiaChi.MinWidth = 25;
             this.DiaChi.Name = "DiaChi";
             this.DiaChi.Visible = true;
             this.DiaChi.VisibleIndex = 12;
-            this.DiaChi.Width = 94;
+            this.DiaChi.Width = 79;
             // 
             // NgayLap
             // 
+            this.NgayLap.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayLap.AppearanceCell.Options.UseFont = true;
             this.NgayLap.Caption = "Ngày Lập";
-            this.NgayLap.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.NgayLap.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss";
             this.NgayLap.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.NgayLap.FieldName = "NgayLap";
             this.NgayLap.MinWidth = 25;
             this.NgayLap.Name = "NgayLap";
             this.NgayLap.Visible = true;
             this.NgayLap.VisibleIndex = 9;
-            this.NgayLap.Width = 94;
+            this.NgayLap.Width = 114;
             // 
             // NgayBD
             // 
+            this.NgayBD.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayBD.AppearanceCell.Options.UseFont = true;
             this.NgayBD.Caption = "Bắt Đầu";
             this.NgayBD.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.NgayBD.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -712,10 +738,12 @@
             this.NgayBD.Name = "NgayBD";
             this.NgayBD.Visible = true;
             this.NgayBD.VisibleIndex = 10;
-            this.NgayBD.Width = 94;
+            this.NgayBD.Width = 79;
             // 
             // NgayKT
             // 
+            this.NgayKT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NgayKT.AppearanceCell.Options.UseFont = true;
             this.NgayKT.Caption = "Kết Thúc";
             this.NgayKT.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.NgayKT.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
@@ -725,21 +753,27 @@
             this.NgayKT.Name = "NgayKT";
             this.NgayKT.Visible = true;
             this.NgayKT.VisibleIndex = 11;
-            this.NgayKT.Width = 94;
+            this.NgayKT.Width = 79;
             // 
             // Phi
             // 
             this.Phi.AccessibleName = "";
+            this.Phi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Phi.AppearanceCell.Options.UseFont = true;
             this.Phi.Caption = "Phí";
+            this.Phi.DisplayFormat.FormatString = "#,###";
+            this.Phi.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Custom;
             this.Phi.FieldName = "Phi";
             this.Phi.MinWidth = 25;
             this.Phi.Name = "Phi";
             this.Phi.Visible = true;
             this.Phi.VisibleIndex = 6;
-            this.Phi.Width = 94;
+            this.Phi.Width = 84;
             // 
             // MaNC
             // 
+            this.MaNC.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaNC.AppearanceCell.Options.UseFont = true;
             this.MaNC.Caption = "ID";
             this.MaNC.FieldName = "MaNC";
             this.MaNC.MinWidth = 25;
@@ -748,7 +782,7 @@
             // 
             // MaBDS
             // 
-            this.MaBDS.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold);
+            this.MaBDS.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaBDS.AppearanceCell.Options.UseFont = true;
             this.MaBDS.Caption = "ID";
             this.MaBDS.FieldName = "MaBDS";
@@ -759,6 +793,8 @@
             // 
             // MaLoai
             // 
+            this.MaLoai.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaLoai.AppearanceCell.Options.UseFont = true;
             this.MaLoai.Caption = "ID";
             this.MaLoai.FieldName = "MaLoai";
             this.MaLoai.MinWidth = 25;
@@ -767,6 +803,8 @@
             // 
             // MaKH
             // 
+            this.MaKH.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaKH.AppearanceCell.Options.UseFont = true;
             this.MaKH.Caption = "ID";
             this.MaKH.FieldName = "MaKH";
             this.MaKH.MinWidth = 25;
@@ -775,6 +813,8 @@
             // 
             // MaTK
             // 
+            this.MaTK.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaTK.AppearanceCell.Options.UseFont = true;
             this.MaTK.Caption = "ID";
             this.MaTK.FieldName = "MaTK";
             this.MaTK.MinWidth = 25;
@@ -783,6 +823,8 @@
             // 
             // MaTT
             // 
+            this.MaTT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaTT.AppearanceCell.Options.UseFont = true;
             this.MaTT.Caption = "ID";
             this.MaTT.FieldName = "MaTT";
             this.MaTT.MinWidth = 25;
@@ -791,13 +833,15 @@
             // 
             // TenTT
             // 
+            this.TenTT.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TenTT.AppearanceCell.Options.UseFont = true;
             this.TenTT.Caption = "Tình Trạng";
             this.TenTT.FieldName = "TenTT";
             this.TenTT.MinWidth = 25;
             this.TenTT.Name = "TenTT";
             this.TenTT.Visible = true;
             this.TenTT.VisibleIndex = 13;
-            this.TenTT.Width = 94;
+            this.TenTT.Width = 66;
             // 
             // frmHopDong
             // 
@@ -810,7 +854,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmHopDong";
-            this.Text = "Hợp Đồng";
+            this.Text = "7";
             this.Load += new System.EventHandler(this.frmHopDong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);

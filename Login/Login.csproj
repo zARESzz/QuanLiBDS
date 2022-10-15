@@ -154,7 +154,15 @@
   <ItemGroup>
     <None Include="Resources\Resetpass.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-villa-35.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-villa-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-villa-501.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

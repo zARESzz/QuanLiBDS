@@ -13,6 +13,7 @@ using DataTable = System.Data.DataTable;
 using Z.Dapper.Plus;
 using File = System.IO.File;
 using System.Text.RegularExpressions;
+using CustomMessageBox;
 
 namespace QuanLy
 {
@@ -77,7 +78,7 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _tn.Delete(id);
                 txtHoTen.Text = "";
@@ -141,7 +142,7 @@ namespace QuanLy
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
         }
         private bool isEmail(string inputEmail)
@@ -253,12 +254,12 @@ namespace QuanLy
                     {
                         db.BulkInsert(khachHangs);
                     }
-                    MessageBox.Show("Lưu thành Công!!!");
+                    RJMessageBox.Show("Lưu thành Công!!!");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                RJMessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

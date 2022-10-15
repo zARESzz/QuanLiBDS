@@ -132,6 +132,7 @@
             this.Controls.Add(this.txtName);
             this.FormBorderEffect = DevExpress.XtraEditors.FormBorderEffect.Shadow;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.IconOptions.Image = global::Login.Properties.Resources.icons8_villa_501;
             this.Name = "frmCreAcc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CreAcc";

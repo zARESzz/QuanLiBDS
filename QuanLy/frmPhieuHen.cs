@@ -3,6 +3,8 @@ using System.Linq;
 using System.Windows.Forms;
 using Main;
 using Data;
+using CustomMessageBox;
+
 namespace QuanLy
 {
     public partial class frmPhieuHen : DevExpress.XtraEditors.XtraForm
@@ -73,16 +75,16 @@ namespace QuanLy
         {
             if (id == null)
             {
-                MessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo");
+                RJMessageBox.Show("Vui lòng chọn dòng để xóa", "Thông báo");
                 return;
             }
             var check = db.NHANVIENs.FirstOrDefault(p => p.MaCV == id);
             if (check != null)
             {
-                MessageBox.Show("Có nhân viên có chức vụ: " + id + "\nKhông Thể xóa", "Thông báo");
+                RJMessageBox.Show("Có nhân viên có chức vụ: " + id + "\nKhông Thể xóa", "Thông báo");
                 return;
             }
-            if (MessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 _ph.Delete(id);
                 txtDiaDiem.Text = "";

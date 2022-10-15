@@ -33,6 +33,10 @@ namespace Main
                 ttFull.MaHD = item.MaHD;
                 var hd = db.HOPDONGs.FirstOrDefault(p => p.MaHD == item.MaHD);
                 ttFull.MaBDS = hd.MaBDS;
+                ttFull.MaTK=hd.MaTK;
+                var nv=db.NHANVIENs.FirstOrDefault(p=>p.MaTK==hd.MaTK);
+                ttFull.TenNV=nv.HoTenNV;
+
                 var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == hd.MaBDS);
                 ttFull.TenBDS = bds.TenBDS;
                 ttFull.DiaChi = bds.DiaChi;
