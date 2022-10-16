@@ -3,17 +3,12 @@ using System.Linq;
 using System.Windows.Forms;
 using Main;
 using Data;
-<<<<<<< HEAD
-using DevExpress.XtraRichEdit.Model;
-using System.CodeDom;
-=======
 using CustomMessageBox;
->>>>>>> 314bf01decc22165c9e91e7730cae9a887ccd861
 
 namespace QuanLy
 {
     public partial class frmHopDong : DevExpress.XtraEditors.XtraForm
-    {
+    {  
         public frmHopDong()
         {
             InitializeComponent();
@@ -104,8 +99,8 @@ namespace QuanLy
         {
             try
             {
-                if (dtNgayBD.Value < dtNgayLap.Value)
-                    throw new Exception("Ngày bắt đầu phải lớn hơn ngày lập!");
+                if (dtNgayBD.Value <= dtNgayLap.Value)
+                    throw new Exception("Ngày bắt đầu phải lớn hơn hoặc bằng ngày lập!");
                 if (dtNgayKT.Value < dtNgayBD.Value)
                     throw new Exception("Ngày kết thúc phải lớn hơn ngày băt đầu!");
                 SaveData();
@@ -115,7 +110,7 @@ namespace QuanLy
                 splitContainer1.Panel1Collapsed = true;
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                RJMessageBox.Show(ex.Message);
             }
            
         }

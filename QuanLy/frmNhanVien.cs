@@ -123,8 +123,10 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng Email");
                 if (ktrphone(txtSDT.Text) == false)
                     throw new Exception("Sai Định Dạng SDT");
-                //if (checkmk(txtMatKhau.Text) == false)
-                //    throw new Exception("Sai Định Dạng Mật Khẩu");
+                if (txtMatKhau.Text.Length <= 9)
+                    throw new Exception("Mật Khẩu phải lớn hơn 9 ký tự");
+
+
                 if (_tt)
                 {
                     NHANVIEN kh = new NHANVIEN();
@@ -181,13 +183,7 @@ namespace QuanLy
             Regex regex = new Regex(@"^(0|84)([0-9]{9})$");
             return regex.IsMatch(check);
         }
-
-        private bool checkmk(string mk)
-        {
-            var passValidation = new Regex(@"^([0-9]{9})$");
-
-            return passValidation.IsMatch(mk);
-        }
+      
         private void gvNHANVIEN_Click(object sender, EventArgs e)
         {
             id = gvNHANVIEN.GetFocusedRowCellValue("MaTK").ToString();
@@ -228,14 +224,12 @@ namespace QuanLy
                 e.Handled = false;
         }
 
-        private void txtSDT_EditValueChanged(object sender, EventArgs e)
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
-
-        }
-
-        private void txtMatKhau_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
+            if (!Char.IsLetter(e.KeyChar))
+                e.Handled = true;
+            if (e.KeyChar == 8 || e.KeyChar == 32)
+                e.Handled = false;
         }
     }
 }

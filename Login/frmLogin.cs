@@ -110,5 +110,50 @@ namespace Login
             if (dlr == DialogResult.OK)
                 this.Close();
         }
+
+        private void btnLogin_Enter(object sender, EventArgs e)
+        {
+            cls_MatKhau mk = new cls_MatKhau();
+            var checkTK = db.NHANVIENs.FirstOrDefault(p => p.MaTK == txtTK.Text);
+            if (checkTK == null)
+            {
+                RJMessageBox.Show("Tài khoản không tồn tại", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+
+            if (mk.GiaiMa(checkTK.MK) == txtPass.Text)
+            {
+                frmQuanLy ql = new frmQuanLy();
+                if (checkTK.CHUCVU.TenCV.Equals("Quản Lý"))
+                {
+
+                    ql.rbQLNS.Visible = true;
+                    ql.rbQLBDS.Visible = true;
+                    ql.rbQLKH.Visible = true;
+                    this.Hide();
+                    ql.ShowDialog();
+                    this.Show();
+                }
+                else if (checkTK.CHUCVU.TenCV.Equals("Nhân Viên"))
+                {
+                    ql.rbQLHD.Visible = true;
+                    this.Hide();
+                    ql.ShowDialog();
+                    this.Show();
+                }
+                else
+                {
+                    ql.rbQLHD.Visible = true;
+                    ql.rbQLTK.Visible = true;
+                    this.Hide();
+                    ql.ShowDialog();
+                    this.Show();
+                }
+            }
+            else
+            {
+                RJMessageBox.Show("Mật khẩu sai", "Thông báo", MessageBoxButtons.OK);
+            }
+        }
     }
 }

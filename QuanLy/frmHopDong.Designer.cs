@@ -854,7 +854,7 @@
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmHopDong";
-            this.Text = "7";
+            this.Text = "Hợp Đồng";
             this.Load += new System.EventHandler(this.frmHopDong_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManagerCV)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
