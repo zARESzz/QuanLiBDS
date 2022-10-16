@@ -251,20 +251,19 @@ namespace QuanLy
             txtGia.Text = ct.DinhGia.ToString();
             txtDiaChi.Text = bds.DiaChi.ToString();
             cbxNhanVien.SelectedValue = tg.MaTK;
-            cbxKhachHang.SelectedValue = tg.MaKH;
+            cbxKhachHang.SelectedValue = bds.MaKH;
             txtPhi.Text = tg.Phi.ToString();
             txtChiTiet.Text = tg.ChiTiet;
             dtNgayLap.Value = (DateTime)tg.NgayLap;
             dtNgayBD.Value = (DateTime)tg.NgayBD;
             dtNgayKT.Value = (DateTime)tg.NgayKT;
         }
-
         private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
-                var hd = _hd.getItem(id);
                 List<cls_Report_Full> list = new List<cls_Report_Full>();
+                var hd = _hd.getItem(id);
                 cls_Report_Full x = new cls_Report_Full();
                 var nv = db.NHANVIENs.FirstOrDefault(p => p.MaTK == hd.MaTK);
                 x.HoTenNV = nv.HoTenNV;
@@ -272,12 +271,12 @@ namespace QuanLy
                 x.DiaChiNV = nv.DiaChi;
                 var cv = db.CHUCVUs.FirstOrDefault(p => p.MaCV == nv.MaCV);
                 x.TENCV = cv.TenCV;
-                var kh = db.KHACHHANGs.FirstOrDefault(p => p.MaKH == hd.MaKH);
+                var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == hd.MaBDS);
+                x.TenBDS = bds.TenBDS;
+                var kh = db.KHACHHANGs.FirstOrDefault(p => p.MaKH == bds.MaKH);
                 x.TenKH = kh.HoTenKH;
                 x.DiaChiKH = kh.DiaChi;
                 x.SDTKH = kh.SDT;
-                var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == hd.MaBDS);
-                x.TenBDS = bds.TenBDS;
                 var loai = db.LOAIBDS.FirstOrDefault(p => p.MaLoai == bds.MaLoai);
                 var nc = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaBDS == hd.MaBDS && p.MaNC == hd.MaNC);
                 x.DinhGia = nc.DinhGia;
@@ -287,11 +286,11 @@ namespace QuanLy
                 x.Phi = hd.Phi;
                 x.NgayBD = hd.NgayBD;
                 x.NgayKT = hd.NgayKT;
-
                 list.Add(x);
                 rptHopDong rpt = new rptHopDong(list);
                 rpt.ShowPreview();
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
