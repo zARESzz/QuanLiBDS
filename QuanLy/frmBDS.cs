@@ -82,26 +82,14 @@ namespace QuanLy
             cbxNhuCau.DisplayMember = "TenNC";
             cbxNhuCau.ValueMember = "MaNC";
         }
-        private void LamTrong()
-        {
-            txtTen.Text = "";
-            txtDienTich.Text = "";
-            txtDiaChi.Text = "";
-            txtGioiThieu.Text = "";
-            txtGia.Text = "";
-            loadComboBox();
-        }
+
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {         
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
-<<<<<<< HEAD
-            LamTrong();
-=======
             rong();
->>>>>>> 2cd93159daf8a0094d66a9910187dc0a90e21c43
-        }
+         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {

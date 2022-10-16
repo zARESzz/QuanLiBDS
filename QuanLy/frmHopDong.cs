@@ -76,11 +76,7 @@ namespace QuanLy
             cbxNhanVien.DisplayMember = "HoTenNV";
             cbxNhanVien.ValueMember = "MaTK";
         }
-<<<<<<< HEAD
-        private void LamTrong()
-=======
         private void rong()
->>>>>>> 2cd93159daf8a0094d66a9910187dc0a90e21c43
         {
             txtChiTiet.Text = "";
             txtDiaChi.Text = "";
@@ -88,10 +84,7 @@ namespace QuanLy
             txtGia.Text = "";
             txtLoai.Text = "";
             txtPhi.Text = "";
-<<<<<<< HEAD
-=======
             txtTinhTrang.Text = "";
->>>>>>> 2cd93159daf8a0094d66a9910187dc0a90e21c43
             loadComboBox();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -99,11 +92,7 @@ namespace QuanLy
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
-<<<<<<< HEAD
-            LamTrong();
-=======
             rong();
->>>>>>> 2cd93159daf8a0094d66a9910187dc0a90e21c43
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -119,7 +108,6 @@ namespace QuanLy
             {
                 _hd.Delete(id);
                 loadData();
-                LamTrong();
             }
         }
 
@@ -136,7 +124,6 @@ namespace QuanLy
                 _tt = false;
                 ShowHide(true);
                 splitContainer1.Panel1Collapsed = true;
-                LamTrong();
             }catch(Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
@@ -149,7 +136,6 @@ namespace QuanLy
             _tt = false;
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
-            LamTrong();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
