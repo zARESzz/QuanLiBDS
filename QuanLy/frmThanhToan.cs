@@ -58,11 +58,23 @@ namespace QuanLy
             cbxHD.DisplayMember = "TenBDS";
             cbxHD.ValueMember = "MaHD";
         }
+        private void rong()
+        {
+            txtTen.Text = "";
+            txtNhanVien.Text = "";
+            txtDiaChi.Text = "";
+            txtKhachHang.Text = "";
+            txtNhanVien.Text = "";
+            txtNoiDung.Text = "";
+            txtSoTien.Text = "";
+            loadComboBox();
+        }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
+            rong();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -70,6 +82,7 @@ namespace QuanLy
             _tt = false;
             ShowHide(false);
             splitContainer1.Panel1Collapsed = false;
+           
         }
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -80,6 +93,7 @@ namespace QuanLy
                 var ktra = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaBDS == id);
                 if (ktra == null)
                 loadData();
+                
 
             }
         }
@@ -90,14 +104,14 @@ namespace QuanLy
             loadData();
             _tt = false;
             ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            splitContainer1.Panel1Collapsed = true;           
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             _tt = false;
             ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;
+            splitContainer1.Panel1Collapsed = true;            
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -188,5 +202,7 @@ namespace QuanLy
                 txtNhanVien.Text = nv.HoTenNV;
             }    
         }
+
+       
     }
 }

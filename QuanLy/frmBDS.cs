@@ -39,7 +39,15 @@ namespace QuanLy
             loadComboBox();
             splitContainer1.Panel1Collapsed = true;
         }
-
+        private void rong()
+        {
+            txtDiaChi.Text = "";
+            txtDienTich.Text = "";
+            txtGia.Text = "";
+            txtGioiThieu.Text = "";
+            txtTen.Text = "";
+            loadComboBox();
+        }
         void ShowHide(bool kt)
         {
             txtTen.Enabled = !kt;
@@ -84,12 +92,15 @@ namespace QuanLy
             loadComboBox();
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            txtTen.Text = "";
+        {         
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
+<<<<<<< HEAD
             LamTrong();
+=======
+            rong();
+>>>>>>> 2cd93159daf8a0094d66a9910187dc0a90e21c43
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

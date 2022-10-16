@@ -49,8 +49,7 @@ namespace QuanLy
             btnDong.Enabled = kt;
             btnSave.Enabled = !kt;
             btnHuy.Enabled = !kt;
-        }
-
+        }      
         void loadData()
         {
             gcPhieuHen.DataSource = _ph.getListFull();
