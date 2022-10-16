@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using Main;
 using Data;
 using CustomMessageBox;
+using System.Linq.Expressions;
 
 namespace QuanLy
 {
@@ -141,12 +142,19 @@ namespace QuanLy
 
         private void gvPhieuHen_Click(object sender, EventArgs e)
         {
-            id = gvPhieuHen.GetFocusedRowCellValue("MaPH").ToString();
-            var tg = _ph.getItem(id);
-            txtDiaDiem.Text = tg.DIADIEM;
-            dtNgayGio.Value =(DateTime)tg.NGAYGIO;
-            cbxKHTN.SelectedValue = tg.MaTN;
-            cbxNV.SelectedValue = tg.MaTK;
+            try
+            {
+                id = gvPhieuHen.GetFocusedRowCellValue("MaPH").ToString();
+                var tg = _ph.getItem(id);
+                txtDiaDiem.Text = tg.DIADIEM;
+                dtNgayGio.Value = (DateTime)tg.NGAYGIO;
+                cbxKHTN.SelectedValue = tg.MaTN;
+                cbxNV.SelectedValue = tg.MaTK;
+            }
+            catch(Exception ex)
+            {
+                RJMessageBox.Show(ex.Message);
+            }
         }
     }
 }

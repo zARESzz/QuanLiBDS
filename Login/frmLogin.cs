@@ -79,7 +79,9 @@ namespace Login
         private void btnForgotPass_Click(object sender, EventArgs e)
         {
             frmResetPass resetPass = new frmResetPass();
+            this.Hide();
             resetPass.ShowDialog();
+            this.Show();
         }
 
         private void btnForgotPass_MouseMove(object sender, MouseEventArgs e)

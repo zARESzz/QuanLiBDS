@@ -53,7 +53,7 @@ namespace Login
             this.txtPass.BackColor = System.Drawing.Color.LightGray;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(85, 268);
+            this.txtPass.Location = new System.Drawing.Point(85, 274);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(242, 27);

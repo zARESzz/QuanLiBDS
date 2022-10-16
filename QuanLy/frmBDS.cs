@@ -177,12 +177,12 @@ namespace QuanLy
                 else
                 {
                     var ct = _ct.getItem(id);
-                    var ktT = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaNC == cbxNhuCau.SelectedValue.ToString() && p.MaBDS == id);
-                    if (ktT != null)
-                        RJMessageBox.Show("Đã tồn tại", "Thông báo");
-                    else
-                    {
-                        var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == ct.MaBDS);
+                    //var ktT = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaNC == cbxNhuCau.SelectedValue.ToString() && p.MaBDS == id);
+                    //if (ktT != null)
+                    //    RJMessageBox.Show("Đã tồn tại", "Thông báo");
+                    //else
+                    //{
+                    var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == ct.MaBDS);
                         bds.HinhAnh = ImageToBase64(picHinhAnh.Image, picHinhAnh.Image.RawFormat);
                         bds.TenBDS = txtTen.Text;
                         bds.DienTich = long.Parse(txtDienTich.Text);
@@ -200,7 +200,7 @@ namespace QuanLy
                         _ct = new cls_CTNC();
                         loadData();
 
-                    }
+                    //    }
                 }
             }
             catch (Exception ex)
