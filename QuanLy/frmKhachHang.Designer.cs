@@ -203,6 +203,8 @@
             // 
             this.btnExel.Caption = "Excel";
             this.btnExel.Id = 12;
+            this.btnExel.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnExel.ImageOptions.Image")));
+            this.btnExel.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnExel.ImageOptions.LargeImage")));
             this.btnExel.Name = "btnExel";
             this.btnExel.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnExcel_ItemClick);
             // 

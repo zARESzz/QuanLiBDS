@@ -76,11 +76,22 @@ namespace QuanLy
             cbxNhanVien.DisplayMember = "HoTenNV";
             cbxNhanVien.ValueMember = "MaTK";
         }
+        private void LamTrong()
+        {
+            txtChiTiet.Text = "";
+            txtDiaChi.Text = "";
+            txtDienTich.Text = "";
+            txtGia.Text = "";
+            txtLoai.Text = "";
+            txtPhi.Text = "";
+            loadComboBox();
+        }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
+            LamTrong();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -96,6 +107,7 @@ namespace QuanLy
             {
                 _hd.Delete(id);
                 loadData();
+                LamTrong();
             }
         }
 
@@ -103,7 +115,7 @@ namespace QuanLy
         {
             try
             {
-                if (dtNgayBD.Value <= dtNgayLap.Value)
+                if (!(dtNgayBD.Value < dtNgayLap.Value))
                     throw new Exception("Ngày bắt đầu phải lớn hơn hoặc bằng ngày lập!");
                 if (dtNgayKT.Value < dtNgayBD.Value)
                     throw new Exception("Ngày kết thúc phải lớn hơn ngày băt đầu!");
@@ -112,6 +124,7 @@ namespace QuanLy
                 _tt = false;
                 ShowHide(true);
                 splitContainer1.Panel1Collapsed = true;
+                LamTrong();
             }catch(Exception ex)
             {
                 RJMessageBox.Show(ex.Message);
@@ -124,6 +137,7 @@ namespace QuanLy
             _tt = false;
             ShowHide(true);
             splitContainer1.Panel1Collapsed = true;
+            LamTrong();
         }
 
         private void btnDong_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

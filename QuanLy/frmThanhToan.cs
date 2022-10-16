@@ -6,6 +6,7 @@ using CustomMessageBox;
 using Data;
 using System.Globalization;
 using static System.Globalization.CultureInfo;
+using DevExpress.XtraRichEdit.Fields;
 
 namespace QuanLy
 {
@@ -110,9 +111,13 @@ namespace QuanLy
                     throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
                 string ma = cbxHD.SelectedValue.ToString();
                 var hd = db.HOPDONGs.FirstOrDefault(p => p.MaHD == ma);
-                long tong = (long)db.THANHTOANs.Where(p => p.MaHD == ma).Sum(p => p.TongTien);
-                if (tong+long.Parse(txtSoTien.Text)>hd.Phi)
-                    throw new Exception("Số tiền thanh toán lớn hơn phí hợp đồng");
+                var tt = db.THANHTOANs.Where(p => p.MaHD == ma).ToList();
+                if (tt != null)
+                {
+                    long tong = (long)tt.Sum(p => p.TongTien);
+                    if (tong + long.Parse(txtSoTien.Text) > hd.Phi)
+                        throw new Exception("Số tiền thanh toán lớn hơn phí hợp đồng");
+                }
                 if (_tt)
                 {
                     THANHTOAN ttn = new THANHTOAN();
@@ -168,6 +173,8 @@ namespace QuanLy
 
         private void cbxHD_SelectedValueChanged(object sender, EventArgs e)
         {
+            if (cbxHD.SelectedValue == null)
+                return;
             string ma = cbxHD.SelectedValue.ToString();
             var hd = db.HOPDONGs.FirstOrDefault(p => p.MaHD == ma);
             if(hd!=null)

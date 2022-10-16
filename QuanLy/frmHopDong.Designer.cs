@@ -204,7 +204,7 @@
             // 
             this.btnIn.Caption = "In";
             this.btnIn.Id = 6;
-            this.btnIn.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.btnIn.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnIn.ImageOptions.SvgImage")));
             this.btnIn.Name = "btnIn";
             this.btnIn.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnIn_ItemClick);
             // 
@@ -326,6 +326,7 @@
             this.dtNgayBD.Name = "dtNgayBD";
             this.dtNgayBD.Size = new System.Drawing.Size(289, 32);
             this.dtNgayBD.TabIndex = 13;
+            this.dtNgayBD.Value = new System.DateTime(2022, 10, 16, 0, 0, 0, 0);
             // 
             // labelControl11
             // 

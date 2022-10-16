@@ -115,28 +115,39 @@ namespace QuanLy
 
         void SaveData()
         {
-            if (_tt)
-            {
-                PHIEUHEN ph = new PHIEUHEN();
-                data_BDSEntities db = new data_BDSEntities();
-                var list = db.P_MAPH().ToList();
-                foreach (var item in list)
+            try
+            { 
+                if(txtDiaDiem.Text == "")
                 {
-                    ph.MaPH = item;
+                    throw new Exception("Nhập dữ liệu đầy đủ");
                 }
-                ph.MaTN = int.Parse(cbxKHTN.SelectedValue.ToString());
-                ph.MaTK = cbxNV.SelectedValue.ToString();
-                ph.DIADIEM = txtDiaDiem.Text;
-                ph.NGAYGIO = dtNgayGio.Value;
-                _ph.Add(ph);
-            }
-            else
+                if (_tt)
+                {
+                    PHIEUHEN ph = new PHIEUHEN();
+                    data_BDSEntities db = new data_BDSEntities();
+                    var list = db.P_MAPH().ToList();
+                    foreach (var item in list)
+                    {
+                        ph.MaPH = item;
+                    }
+                    ph.MaTN = int.Parse(cbxKHTN.SelectedValue.ToString());
+                    ph.MaTK = cbxNV.SelectedValue.ToString();
+                    ph.DIADIEM = txtDiaDiem.Text;
+                    ph.NGAYGIO = dtNgayGio.Value;
+                    _ph.Add(ph);
+                }
+                else
+                {
+                    var ph = _ph.getItem(id);
+                    ph.DIADIEM = txtDiaDiem.Text;
+                    ph.NGAYGIO = dtNgayGio.Value;
+                    _ph.Updata(ph);
+                }
+            }catch(Exception ex)
             {
-                var ph = _ph.getItem(id);
-                ph.DIADIEM = txtDiaDiem.Text;
-                ph.NGAYGIO = dtNgayGio.Value;
-                _ph.Updata(ph);
+                RJMessageBox.Show(ex.Message);
             }
+           
         }
 
         private void gvPhieuHen_Click(object sender, EventArgs e)
