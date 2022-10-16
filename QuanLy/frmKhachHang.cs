@@ -276,11 +276,11 @@ namespace QuanLy
             if (e.KeyChar == 8)
                 e.Handled = false;
         }
-        private void txtEmail_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtHoTen_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsDigit(e.KeyChar))
+            if (!Char.IsLetter(e.KeyChar))
                 e.Handled = true;
-            if (e.KeyChar == 8)
+            if (e.KeyChar == 8 || e.KeyChar == 32)
                 e.Handled = false;
         }
     }

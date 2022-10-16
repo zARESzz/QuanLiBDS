@@ -34,6 +34,8 @@
     <Reference Include="Castle.Core, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <HintPath>..\packages\Castle.Core.5.0.0\lib\net462\Castle.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.DataAccess.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v22.1, Version=22.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DurableTask.Core, Version=2.11.0.0, Culture=neutral, PublicKeyToken=d53979610a6e89dd, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Azure.DurableTask.Core.2.11.1\lib\net462\DurableTask.Core.dll</HintPath>
     </Reference>
@@ -263,6 +265,7 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="cls_ThanhToan.cs" />
+    <Compile Include="Full\cls_Report_Full.cs" />
     <Compile Include="Full\cls_ThongKe_Full.cs" />
     <Compile Include="Full\cls_CTNC_Full.cs" />
     <Compile Include="Full\cls_HopDong_Full.cs" />

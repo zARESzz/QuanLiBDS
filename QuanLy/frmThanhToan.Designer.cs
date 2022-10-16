@@ -343,7 +343,6 @@
             this.txtSoTien.Properties.MaskSettings.Set("mask", "n3");
             this.txtSoTien.Size = new System.Drawing.Size(289, 34);
             this.txtSoTien.TabIndex = 6;
-            this.txtSoTien.TextChanged += new System.EventHandler(this.txtSoTien_TextChanged);
             // 
             // txtNoiDung
             // 

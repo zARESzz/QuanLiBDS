@@ -4,6 +4,10 @@ using System.Windows.Forms;
 using Main;
 using Data;
 using CustomMessageBox;
+using QuanLy.Reports;
+using Main.Full;
+using DevExpress.XtraReports.UI;
+using System.Collections.Generic;
 
 namespace QuanLy
 {
@@ -241,6 +245,45 @@ namespace QuanLy
             dtNgayLap.Value = (DateTime)tg.NgayLap;
             dtNgayBD.Value = (DateTime)tg.NgayBD;
             dtNgayKT.Value = (DateTime)tg.NgayKT;
+        }
+
+        private void btnIn_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                var hd = _hd.getItem(id);
+                List<cls_Report_Full> list = new List<cls_Report_Full>();
+                cls_Report_Full x = new cls_Report_Full();
+                var nv = db.NHANVIENs.FirstOrDefault(p => p.MaTK == hd.MaTK);
+                x.HoTenNV = nv.HoTenNV;
+                x.SDTNV = nv.SDT;
+                x.DiaChiNV = nv.DiaChi;
+                var cv = db.CHUCVUs.FirstOrDefault(p => p.MaCV == nv.MaCV);
+                x.TENCV = cv.TenCV;
+                var kh = db.KHACHHANGs.FirstOrDefault(p => p.MaKH == hd.MaKH);
+                x.TenKH = kh.HoTenKH;
+                x.DiaChiKH = kh.DiaChi;
+                x.SDTKH = kh.SDT;
+                var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == hd.MaBDS);
+                x.TenBDS = bds.TenBDS;
+                var loai = db.LOAIBDS.FirstOrDefault(p => p.MaLoai == bds.MaLoai);
+                var nc = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaBDS == hd.MaBDS && p.MaNC == hd.MaNC);
+                x.DinhGia = nc.DinhGia;
+                x.TenLoai = loai.TenLoai;
+                x.DiaChi = bds.DiaChi;
+                x.DienTich = bds.DienTich;
+                x.Phi = hd.Phi;
+                x.NgayBD = hd.NgayBD;
+                x.NgayKT = hd.NgayKT;
+
+                list.Add(x);
+                rptHopDong rpt = new rptHopDong(list);
+                rpt.ShowPreview();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+          
         }
     }
 }

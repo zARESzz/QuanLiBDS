@@ -108,6 +108,11 @@ namespace QuanLy
             try {
                 if (txtDiaChi.Text == "" || txtKhachHang.Text == "" || txtNhanVien.Text == "" || txtNoiDung.Text == null || txtSoTien.Text == "")
                     throw new Exception("VUI lÒNG NHẬP ĐẦY ĐỦ");
+                string ma = cbxHD.SelectedValue.ToString();
+                var hd = db.HOPDONGs.FirstOrDefault(p => p.MaHD == ma);
+                long tong = (long)db.THANHTOANs.Where(p => p.MaHD == ma).Sum(p => p.TongTien);
+                if (tong+long.Parse(txtSoTien.Text)>hd.Phi)
+                    throw new Exception("Số tiền thanh toán lớn hơn phí hợp đồng");
                 if (_tt)
                 {
                     THANHTOAN ttn = new THANHTOAN();
@@ -175,22 +180,6 @@ namespace QuanLy
                 var nv = db.NHANVIENs.FirstOrDefault(p => p.MaTK == hd.MaTK);
                 txtNhanVien.Text = nv.HoTenNV;
             }    
-        }
-
-        private void txtSoTien_TextChanged(object sender, EventArgs e)
-        {
-            //try
-            //{
-            //System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-US");
-            ////    decimal value = decimal.Parse(txtSoTien.Text, System.Globalization.NumberStyles.AllowThousands);
-            //txtSoTien.Text = String.Format(culture, "{ 0:0,0.0}");
-            //    txtSoTien.Select(txtSoTien.Text.Length, 0);
-            //}
-            //catch (Exception ex)
-            //{
-            //    RJMessageBox.Show(ex.Message);
-            //}
-           
         }
     }
 }

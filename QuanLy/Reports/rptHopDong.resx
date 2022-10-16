@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="xrTableCell47.Text" xml:space="preserve">
+    <value>ĐIỀU 5: QUYỀN VÀ NGHĨA VỤ CỦA CÁC BÊN
+5.1. Quyền và nghĩa vụ của Bên A:
+a) Quyền:
+- Yêu cầu Bên B cung cấp hồ sơ, thông tin, tài liệu liên quan đến bất động sản.
+- Hưởng hoa hồng, thù lao môi giới theo thỏa thuận trong hợp đồng môi giới mua/bánbất động sản đã ký với Bên B.
+- Được nhận ………….% (……………. phần trăm) trên số tiền đặt cọc khi khách hàng chấp nhận mất cọc hoặc khi khách hàng bị mất cọc do vi phạm cam kết;
+- Thuê tổ chức, cá nhân môi giới khác thực hiện công việc môi giới mua/bán bất động sản trong phạm vi hợp đồng môi giới mua/bán bất động sản với Bên B nhưng phải chịu trách nhiệm trước Bên B về kết quả môi giới.
+b) Nghĩa vụ:
+- Thực hiện công việc như Điều 1 hợp đồng theo đúng quy định của pháp luật;
+- Thường xuyên báo cho bên B biết về tiến độ thực hiện công việc và phối hợp với bên B để giải quyết những vướng mắc phát sinh trong quá trình thực hiện công việc;
+- Chịu mọi chi phí liên quan đến phạm vi công việc mà mình thực hiện.
+5.2. Quyền và nghĩa vụ của Bên B:
+a) Quyền:
+- Không chịu bất kỳ chi phí nào khác cho bên A ngoài phí dịch vụ môi giới nếu giao dịch thành công;
+- Được nhận …………% (……………. phần trăm) trên số tiền đặt cọc khi khách hàng chấp nhận mất cọc hoặc khi khách hàng bị mất cọc do vi phạm cam kết;
+- Được bên A thực hiện miễn phí: Dịch vụ chuyển quyền sở hữu (chi phí giao dịch ngoài và các loại phí, lệ phí nếu có phát sinh do bên B chịu), trung gian thanh toán qua công ty ……….. khi giao dịch môi giới thành công.
+b) Nghĩa vụ:
+- Cung cấp đầy đủ và kịp thời cho bên A những giấy tờ liên quan.
+- Hợp tác với bên A trong quá trình thực hiện hợp đồng này.
+- Ký hợp đồng mua/bán bất động sản trực tiếp với người bán/người mua do bên B giới thiệu. Chịu tất cả các chi phí liên quan đến thủ tục mua bán bất động sản theo quy định của nhà nước hoặc theo thỏa thuận với người mua.
+- Thanh toán phí môi giới cho bên A theo Điều 2 của hợp đồng;
+ĐIỀU 6: VI PHẠM HỢP ĐỒNG
+- Trường hợp Bên B không thanh toán hoặc thanh toán không đủ hoặc không đúng phí môi giới cho Bên B theo thỏa thuận tại Điều 2 của hợp đồng này thì Bên B phải chịu lãi chậm thanh toán trên số tiền và số ngày chậm thanh toán với lãi suất ……. %/tháng. Việc chậm thanh toán hoặc thanh toán không đủ này cũng không vượt quá …….. (…….. ) ngày, nếu quá ……… (………) ngày thì Bên A được quyền đơn phương chấm dứt hợp đồng và Bên B vẫn phải trả phí dịch vụ cho bên A như trong trường hợp bên A môi giới thành công.
+- Trường hợp Bên A không tiến hành thực hiện dịch vụ hoặc thực hiện dịch vụ không đúng như đã thỏa thuận thì Bên B có quyền đơn phương chấm dứt hợp đồng mà không phải trả cho Bên A bất kỳ khoản phí nào đồng thời Bên A phải trả cho Bên B một khoản tiền phạt tương đương với số tiền phí thực hiện dịch vụ như quy định trong Điều 2 của hợp đồng này.
+- Nếu một trong hai bên đơn phương chấm dứt hợp đồng trái với các thỏa thuận trong trong hợp đồng này thì bên đơn phương chấm dứt hợp đồng đó phải chịu một khoản tiền phạt tương đương với số tiền phí dịch vụ như quy định trong Điều 2 của hợp đồng này. 
+ĐIỀU 7: THỎA THUẬN CHUNG
+7.1. Trong quá trình thực hiện dịch vụ môi giới bên B không phải bỏ ra bất cứ khoản chi phí nào. Tất cả các chi phí liên quan đến việc quảng cáo rao bán sản phẩm sẽ do bên A chịu.
+7.2. Giao dịch được coi là thành công khi khách hàng ký hợp đồng mua bán bất động sản (hoặc hợp đồng đặt cọc, hợp đồng góp vốn, giấy thỏa thuận mua bán hoặc ký bất kỳ loại hợp đồng, giấy thỏa thuận nào khác có liên quan đến bất động sản) do bên A thực hiện hoạt động môi giới.
+7.3. Trong thời gian thực hiện dịch vụ, nếu khách hàng do bên A giới thiệu đã đặt cọc nhưng bị mất cọc do vi phạm hợp đồng hoặc chịu mất cọc vì bất kỳ lý do gì thì mỗi bên được hưởng ………. % (…………… phần trăm) trên số tiền đặt cọc đó.
+7.4. Khách hàng của bên A là người được nhân viên bên A hoặc bất kỳ người nào được bên A giới thiệu hoặc khách hàng của bên A giới thiệu khách hàng khác đến bên B để ký hợp đồng, đặt cọc giữ chỗ hay tìm hiểu để sau đó ký hợp đồng mua bán với bên B. Nếu trước khi ký hợp đồng mua bán bất động sản mà khách hàng yêu cầu thay đổi người đứng tên trên hợp đồng thì vẫn được xem là khách hàng của bên A.
+7.5. Giá bán bất động sản theo Điều 2 nêu trên theo thỏa thuận giữa bên A và bên B (Gọi là giá bán ban đầu).
+7.6. Trường hợp bên A giới thiệu khách mua cho bên B và khách mua đã trả giá theo giá bán ban đầu nhưng bên B không mua thì coi như bên A đã thực hiện xong hợp đồng, bên B vẫn phải thanh toán cho bên A:……% (……………… phần trăm) trên giá bán thực tế.
+(Việc không bán bao gồm sự xác nhận không bán bằng văn bản của Bên B hoặc sau ……… (…………..) ngày kể từ ngày người mua xác nhận mua nhưng Bên B không nhận tiền đặt cọc).
+7.7. Trong thời gian thực hiện hợp đồng hoặc sau ngày chấm dứt hợp đồng này nếu khách hàng do bên A giới thiệu hoặc khách hàng đó giới thiệu khách hàng khác đến mua bất động sản thì Bên A vẫn được hưởng phí môi giới như mức phí môi giới đã thỏa thuận tại Điều 2 của hợp đồng này. 
+ĐIỀU 8: GIẢI QUYẾT TRANH CHẤP
+Các bên cam kết cùng nhau thực hiện hợp đồng. Nếu trong quá trình thực hiện có phát sinh vướng mắc các bên sẽ trao đổi trên tinh thần hợp tác, trường hợp hai bên không thỏa thuận được thì việc tranh chấp sẽ được phán quyết bởi tòa án.
+Hợp đồng được lập thành ………. (………..) bản, mỗi bên giữ một bản và có giá trị như nhau.</value>
+  </data>
+  <data name="xrTableCell27.Text" xml:space="preserve">
+    <value>1.1. Bên B đồng ý giao cho Bên A thực hiện dịch vụ môi giới bán/mua bất động sản do Bên B là chủ sở hữu.
+      1.2. Đặc điểm của BĐS và giấy tờ pháp lý về BĐS là đối tượng của dịch vụ này được mô tả như sau:</value>
+  </data>
+</root>
