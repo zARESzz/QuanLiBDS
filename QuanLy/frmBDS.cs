@@ -39,7 +39,15 @@ namespace QuanLy
             loadComboBox();
             splitContainer1.Panel1Collapsed = true;
         }
-
+        private void rong()
+        {
+            txtDiaChi.Text = "";
+            txtDienTich.Text = "";
+            txtGia.Text = "";
+            txtGioiThieu.Text = "";
+            txtTen.Text = "";
+            loadComboBox();
+        }
         void ShowHide(bool kt)
         {
             txtTen.Enabled = !kt;
@@ -75,11 +83,11 @@ namespace QuanLy
             cbxNhuCau.ValueMember = "MaNC";
         }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {
-            txtTen.Text = "";
+        {         
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
+            rong();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

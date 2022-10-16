@@ -76,11 +76,23 @@ namespace QuanLy
             cbxNhanVien.DisplayMember = "HoTenNV";
             cbxNhanVien.ValueMember = "MaTK";
         }
+        private void rong()
+        {
+            txtChiTiet.Text = "";
+            txtDiaChi.Text = "";
+            txtDienTich.Text = "";
+            txtGia.Text = "";
+            txtLoai.Text = "";
+            txtPhi.Text = "";
+            txtTinhTrang.Text = "";
+            loadComboBox();
+        }
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
+            rong();
         }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

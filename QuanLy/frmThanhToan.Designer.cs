@@ -293,6 +293,7 @@
             this.txtTen.Properties.Appearance.Options.UseFont = true;
             this.txtTen.Size = new System.Drawing.Size(240, 34);
             this.txtTen.TabIndex = 2;
+            
             // 
             // txtKhachHang
             // 

@@ -41,6 +41,7 @@ namespace QuanLy
             gcTinhTrang.DataSource = _ttr.getList();
             gvTinhTrang.OptionsBehavior.Editable = false;
         }
+       
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             txtTen.Text = "";
