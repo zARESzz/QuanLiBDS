@@ -1,4 +1,0 @@
-﻿Generated model file: QLBDS.edmx.
-Loading metadata from the database took 00:00:00.5087007.
-Generating the model took 00:00:00.9547548.
-Added the connection string to the App.Config file.
