@@ -1,5 +1,4 @@
-﻿using DevExpress.XtraBars.Docking2010.Views;
-using DevExpress.XtraCharts;
+﻿using DevExpress.XtraCharts;
 using Main;
 using System;
 

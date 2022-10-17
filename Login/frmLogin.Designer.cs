@@ -29,12 +29,15 @@ namespace Login
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.txtTK = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new Main.Custom.CtButton();
             this.btnForgotPass = new Main.Custom.CtButton();
             this.btnSignup = new Main.Custom.CtButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +81,7 @@ namespace Login
             this.btnLogin.TextColor = System.Drawing.Color.White;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Enter);
+            this.btnLogin.Enter += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnForgotPass
             // 
@@ -134,8 +137,15 @@ namespace Login
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "Thông Báo";
+            this.notifyIcon.Visible = true;
+            // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
@@ -168,6 +178,7 @@ namespace Login
         private CtButton btnForgotPass;
         private CtButton btnSignup;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 

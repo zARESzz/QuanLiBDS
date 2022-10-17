@@ -4,9 +4,6 @@ using System.Windows.Forms;
 using Main;
 using CustomMessageBox;
 using Data;
-using System.Globalization;
-using static System.Globalization.CultureInfo;
-using DevExpress.XtraRichEdit.Fields;
 
 namespace QuanLy
 {
@@ -202,7 +199,5 @@ namespace QuanLy
                 txtNhanVien.Text = nv.HoTenNV;
             }    
         }
-
-       
     }
 }

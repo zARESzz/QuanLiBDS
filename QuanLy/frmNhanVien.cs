@@ -125,8 +125,8 @@ namespace QuanLy
                     throw new Exception("Sai Định Dạng SDT");
                 if (txtMatKhau.Text.Length <= 9)
                     throw new Exception("Mật Khẩu phải lớn hơn 9 ký tự");
-
-
+                if(DateTime.Now.Year - dtNgaySinh.Value.Year < 18 || DateTime.Now.Year - dtNgaySinh.Value.Year >= 55)
+                    throw new Exception("Độ tuổi không phù hợp");
                 if (_tt)
                 {
                     NHANVIEN kh = new NHANVIEN();
