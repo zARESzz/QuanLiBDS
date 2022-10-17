@@ -168,7 +168,6 @@ namespace QuanLy
                     txtDienTich.Text = bds.DienTich.ToString();
                     var loai = db.LOAIBDS.FirstOrDefault(p => p.MaLoai == bds.MaLoai);
                     txtLoai.Text = loai.TenLoai.ToString();
-                    //var kh = db.KHACHHANGs.FirstOrDefault(p => p.MaKH == bds.MaKH);
                     cbxKhachHang.SelectedValue = bds.MaKH;
                     cbxKhachHang.Enabled = false;
                     var tt = db.TINHTRANGs.FirstOrDefault(p => p.MaTT == bds.MaTT);
