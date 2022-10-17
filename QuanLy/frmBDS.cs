@@ -39,15 +39,7 @@ namespace QuanLy
             loadComboBox();
             splitContainer1.Panel1Collapsed = true;
         }
-        private void rong()
-        {
-            txtDiaChi.Text = "";
-            txtDienTich.Text = "";
-            txtGia.Text = "";
-            txtGioiThieu.Text = "";
-            txtTen.Text = "";
-            loadComboBox();
-        }
+
         void ShowHide(bool kt)
         {
             txtTen.Enabled = !kt;
@@ -82,14 +74,13 @@ namespace QuanLy
             cbxNhuCau.DisplayMember = "TenNC";
             cbxNhuCau.ValueMember = "MaNC";
         }
-
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
-        {         
+        {
+            txtTen.Text = "";
             ShowHide(false);
             _tt = true;
             splitContainer1.Panel1Collapsed = false;
-            rong();
-         }
+        }
 
         private void btnEdit_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -186,23 +177,30 @@ namespace QuanLy
                 else
                 {
                     var ct = _ct.getItem(id);
+                    //var ktT = db.CHITIETNHUCAUs.FirstOrDefault(p => p.MaNC == cbxNhuCau.SelectedValue.ToString() && p.MaBDS == id);
+                    //if (ktT != null)
+                    //    RJMessageBox.Show("Đã tồn tại", "Thông báo");
+                    //else
+                    //{
                     var bds = db.BATDONGSANs.FirstOrDefault(p => p.MaBDS == ct.MaBDS);
-                    bds.HinhAnh = ImageToBase64(picHinhAnh.Image, picHinhAnh.Image.RawFormat);
-                    bds.TenBDS = txtTen.Text;
-                    bds.DienTich = long.Parse(txtDienTich.Text);
-                    bds.DiaChi = txtDiaChi.Text;
-                    bds.GioiThieu = txtGioiThieu.Text;
-                    bds.MaTT = cbxTinhTrang.SelectedValue.ToString();
-                    bds.MaKH = cbxKhachHang.SelectedValue.ToString();
-                    bds.MaLoai = cbxLoai.SelectedValue.ToString();
-                    _bds.Updata(bds);
-                    _ct.Delete(id);
-                    ct.MaBDS = bds.MaBDS;
-                    ct.MaNC = cbxNhuCau.SelectedValue.ToString();
-                    ct.DinhGia = long.Parse(txtGia.Text);
-                    _ct.Add(ct);
-                    _ct = new cls_CTNC();
-                    loadData();
+                        bds.HinhAnh = ImageToBase64(picHinhAnh.Image, picHinhAnh.Image.RawFormat);
+                        bds.TenBDS = txtTen.Text;
+                        bds.DienTich = long.Parse(txtDienTich.Text);
+                        bds.DiaChi = txtDiaChi.Text;
+                        bds.GioiThieu = txtGioiThieu.Text;
+                        bds.MaTT = cbxTinhTrang.SelectedValue.ToString();
+                        bds.MaKH = cbxKhachHang.SelectedValue.ToString();
+                        bds.MaLoai = cbxLoai.SelectedValue.ToString();
+                        _bds.Updata(bds);
+                        _ct.Delete(id);
+                        ct.MaBDS = bds.MaBDS;
+                        ct.MaNC = cbxNhuCau.SelectedValue.ToString();
+                        ct.DinhGia = long.Parse(txtGia.Text);
+                        _ct.Add(ct);
+                        _ct = new cls_CTNC();
+                        loadData();
+
+                    //    }
                 }
             }
             catch (Exception ex)
