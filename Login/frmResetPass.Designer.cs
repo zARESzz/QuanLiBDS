@@ -37,10 +37,10 @@
             // 
             this.txtName.BackColor = System.Drawing.Color.White;
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtName.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.Location = new System.Drawing.Point(132, 201);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(322, 27);
+            this.txtName.Size = new System.Drawing.Size(322, 28);
             this.txtName.TabIndex = 1;
             // 
             // btnGuiEmail
