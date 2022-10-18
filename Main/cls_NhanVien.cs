@@ -17,6 +17,10 @@ namespace Main
         {
             return db.NHANVIENs.ToList();
         }
+        public List<cls_NhanVien_Full> getListNV()
+        {
+            return getListFull().Where(p=>p.TenCV.Equals("Giám Đốc")).ToList();
+        }
         public List<cls_NhanVien_Full> getListFull()
         {
             var listNV = db.NHANVIENs.ToList();

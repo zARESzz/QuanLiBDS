@@ -9,7 +9,6 @@ using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
 using System.Text.RegularExpressions;
 using CustomMessageBox;
-using DevExpress.DataAccess.Sql;
 
 namespace QuanLy
 {
@@ -57,7 +56,7 @@ namespace QuanLy
       
         void loadData()
         {
-            gcNHANVIEN.DataSource = _nv.getListFull();
+            gcNHANVIEN.DataSource = _nv.getListNV();
             gvNHANVIEN.OptionsBehavior.Editable = false;
             _listNV = _nv.getListFull();
         }
@@ -83,7 +82,7 @@ namespace QuanLy
         {
             if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                _nv.Delete(id);
+               _nv.Delete(id);
                 txtHoTen.Text = "";
                 txtMatKhau.Text = "";
                 txtEmail.Text = "";
@@ -198,13 +197,6 @@ namespace QuanLy
             else
                 chkGioiTinh.Checked = false;
             cbxChucVu.SelectedValue = nv.MaCV;
-            if (nv.CHUCVU.TenCV.Equals("Giám Đốc"))
-            {
-                cbxChucVu.Enabled = false;
-                cbxChucVu.Text = "Giám Đốc";
-            }  
-            else
-                cbxChucVu.Enabled = true;
         }
 
         private void txtMatKhau_MouseMove(object sender, MouseEventArgs e)

@@ -47,11 +47,11 @@ namespace Login
                 }
                 else if (checkTK.CHUCVU.TenCV.Equals("Nhân Viên"))
                 {
+                    notifyIcon.ShowBalloonTip(5000, "Thông báo", "Đây là tài khoản Nhân Viên", ToolTipIcon.Info);
                     ql.rbQLHD.Visible = true;
                     this.Hide();
                     ql.ShowDialog();
                     this.Show();
-                    notifyIcon.ShowBalloonTip(5000, "Thông báo", "Đây là tài khoản Nhân Viên", ToolTipIcon.Info);
                 }
                 else if (checkTK.CHUCVU.TenCV.Equals("Giám Đốc"))
                 {
