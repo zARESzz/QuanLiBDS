@@ -15,6 +15,10 @@ namespace Main
         {
             return db.CHUCVUs.ToList();
         }
+        public List<CHUCVU> getListNV()
+        {
+            return db.CHUCVUs.Where(p=>!p.TenCV.Equals("Giám Đốc")).ToList();
+        }
         public CHUCVU Add(CHUCVU cv)
         {
             try

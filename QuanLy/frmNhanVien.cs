@@ -37,7 +37,7 @@ namespace QuanLy
         }
         void loadComboBox()
         {
-            cbxChucVu.DataSource = _cv.getList();
+            cbxChucVu.DataSource = _cv.getListNV();
             cbxChucVu.DisplayMember = "TenCV";
             cbxChucVu.ValueMember = "MaCV";
         }
