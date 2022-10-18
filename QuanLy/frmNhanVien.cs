@@ -9,7 +9,7 @@ using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
 using System.Text.RegularExpressions;
 using CustomMessageBox;
-using DevExpress.XtraBars.Docking2010.Views.Widget;
+using DevExpress.DataAccess.Sql;
 
 namespace QuanLy
 {
@@ -183,13 +183,13 @@ namespace QuanLy
             Regex regex = new Regex(@"^(0|84)([0-9]{9})$");
             return regex.IsMatch(check);
         }
-      
+
         private void gvNHANVIEN_Click(object sender, EventArgs e)
         {
             id = gvNHANVIEN.GetFocusedRowCellValue("MaTK").ToString();
             var nv = _nv.getItem(id);
             txtHoTen.Text = nv.HoTenNV;
-            txtMatKhau.Text =_mk.GiaiMa(nv.MK);
+            txtMatKhau.Text = _mk.GiaiMa(nv.MK);
             txtDiaChi.Text = nv.DiaChi;
             txtEmail.Text = nv.Email;
             txtSDT.Text = nv.SDT;
@@ -198,6 +198,13 @@ namespace QuanLy
             else
                 chkGioiTinh.Checked = false;
             cbxChucVu.SelectedValue = nv.MaCV;
+            if (nv.CHUCVU.TenCV.Equals("Giám Đốc"))
+            {
+                cbxChucVu.Enabled = false;
+                cbxChucVu.Text = "Giám Đốc";
+            }  
+            else
+                cbxChucVu.Enabled = true;
         }
 
         private void txtMatKhau_MouseMove(object sender, MouseEventArgs e)
