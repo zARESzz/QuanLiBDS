@@ -468,6 +468,7 @@
             // 
             // ribbonPageGroup8
             // 
+            this.ribbonPageGroup8.AllowTextClipping = false;
             this.ribbonPageGroup8.CaptionButtonVisible = DevExpress.Utils.DefaultBoolean.False;
             this.ribbonPageGroup8.ItemLinks.Add(this.btnSP);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
@@ -475,6 +476,7 @@
             // 
             // ribbonPageGroup9
             // 
+            this.ribbonPageGroup9.AllowTextClipping = false;
             this.ribbonPageGroup9.ItemLinks.Add(this.btnKHTN);
             this.ribbonPageGroup9.ItemLinks.Add(this.btnPhieuHen);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";

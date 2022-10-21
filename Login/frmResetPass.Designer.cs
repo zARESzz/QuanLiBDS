@@ -87,6 +87,7 @@
             // 
             // frmResetPass
             // 
+            this.AcceptButton = this.btnGuiEmail;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayoutStore = System.Windows.Forms.ImageLayout.Tile;
@@ -99,7 +100,6 @@
             this.Name = "frmResetPass";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResetPass";
-            this.Load += new System.EventHandler(this.frmResetPass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

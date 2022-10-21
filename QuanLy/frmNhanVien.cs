@@ -9,6 +9,7 @@ using DevExpress.XtraReports.UI;
 using QuanLy.Reports;
 using System.Text.RegularExpressions;
 using CustomMessageBox;
+using DevExpress.PivotGrid.CriteriaVisitors;
 
 namespace QuanLy
 {
@@ -80,15 +81,22 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-               _nv.Delete(id);
-                txtHoTen.Text = "";
-                txtMatKhau.Text = "";
-                txtEmail.Text = "";
-                txtSDT.Text = "";
-                txtDiaChi.Text = "";
-                loadData();
+                if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    _nv.Delete(id);
+                    txtHoTen.Text = "";
+                    txtMatKhau.Text = "";
+                    txtEmail.Text = "";
+                    txtSDT.Text = "";
+                    txtDiaChi.Text = "";
+                    loadData();
+                }
+            }
+            catch(Exception ex)
+            {
+                RJMessageBox.Show("Không thể xóa nhân viên này\n"+ex.Message);
             }
         }
 
@@ -185,6 +193,7 @@ namespace QuanLy
 
         private void gvNHANVIEN_Click(object sender, EventArgs e)
         {
+            
             id = gvNHANVIEN.GetFocusedRowCellValue("MaTK").ToString();
             var nv = _nv.getItem(id);
             txtHoTen.Text = nv.HoTenNV;
@@ -196,7 +205,9 @@ namespace QuanLy
                 chkGioiTinh.Checked = true;
             else
                 chkGioiTinh.Checked = false;
+            if(nv.MaCV!=null)
             cbxChucVu.SelectedValue = nv.MaCV;
+            
         }
 
         private void txtMatKhau_MouseMove(object sender, MouseEventArgs e)

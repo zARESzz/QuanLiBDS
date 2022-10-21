@@ -137,21 +137,21 @@
             this.xrTableCell5.Multiline = true;
             this.xrTableCell5.Name = "xrTableCell5";
             this.xrTableCell5.Text = "SỐ ĐIỆN THOẠI";
-            this.xrTableCell5.Weight = 1.1821579929362696D;
+            this.xrTableCell5.Weight = 0.94700805327152648D;
             // 
             // xrTableCell2
             // 
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.Text = "EMAIL";
-            this.xrTableCell2.Weight = 0.87093937159264878D;
+            this.xrTableCell2.Weight = 1.2350424860549472D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.Text = "ĐỊA CHỈ";
-            this.xrTableCell3.Weight = 1.977991645465208D;
+            this.xrTableCell3.Weight = 1.8490384706676526D;
             // 
             // xrLabel1
             // 
@@ -249,21 +249,21 @@
             this.lblSDT.Multiline = true;
             this.lblSDT.Name = "lblSDT";
             this.lblSDT.Text = "SỐ ĐIỆN THOẠI";
-            this.lblSDT.Weight = 1.1821580623833217D;
+            this.lblSDT.Weight = 0.94700812271857859D;
             // 
             // lblEmail
             // 
             this.lblEmail.Multiline = true;
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Text = "EMAIL";
-            this.lblEmail.Weight = 0.87093937159264889D;
+            this.lblEmail.Weight = 1.2350424860549474D;
             // 
             // lblDiaChi
             // 
             this.lblDiaChi.Multiline = true;
             this.lblDiaChi.Name = "lblDiaChi";
             this.lblDiaChi.Text = "ĐỊA CHỈ";
-            this.lblDiaChi.Weight = 1.9779920621475187D;
+            this.lblDiaChi.Weight = 1.8490388873499632D;
             // 
             // ReportFooter
             // 

@@ -97,11 +97,23 @@ namespace QuanLy
 
         private void btnSave_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            SaveData();
-            loadData();
-            _tt = false;
-            ShowHide(true);
-            splitContainer1.Panel1Collapsed = true;           
+            try
+            {
+                if (dtNgayLap.Value < DateTime.Now)
+                {
+                    throw new Exception("Ngày lập phải lớn hơn hoặc bằng ngày hiện tại!");
+                }
+                SaveData();
+                loadData();
+                _tt = false;
+                ShowHide(true);
+                splitContainer1.Panel1Collapsed = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void btnHuy_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

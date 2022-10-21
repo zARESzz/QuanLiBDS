@@ -257,7 +257,7 @@
             // 
             // dtNgayLap
             // 
-            this.dtNgayLap.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayLap.CustomFormat = "dd/MM/yyyy hh:mm:ss";
             this.dtNgayLap.Font = new System.Drawing.Font("Tahoma", 12F);
             this.dtNgayLap.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayLap.Location = new System.Drawing.Point(688, 176);
@@ -293,7 +293,6 @@
             this.txtTen.Properties.Appearance.Options.UseFont = true;
             this.txtTen.Size = new System.Drawing.Size(240, 34);
             this.txtTen.TabIndex = 2;
-            
             // 
             // txtKhachHang
             // 

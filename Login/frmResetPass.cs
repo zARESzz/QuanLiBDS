@@ -78,45 +78,12 @@ namespace Login
             }
             
         }
-        
-                private void SendPasswordToMail(string sFrom,string SPass,string STo,string sSubject,string sBody)
-        {
-            try
-            {
-                var client = new System.Net.Mail.SmtpClient("smtp.gmail.com", 587)
-                {
-                    Credentials = new System.Net.NetworkCredential(sFrom, SPass),
-                    EnableSsl = true,
-                };
-                var message  = new System.Net.Mail.MailMessage(sFrom, STo, sSubject, sBody);
-                message.IsBodyHtml = true;
-                client.Host = "smtp.gmail.com";
-                client.Send(message);
-                RJMessageBox.Show("Gửi mail thành công");
-                client.Dispose();
-            }
-            catch(Exception ex)
-            {
-                RJMessageBox.Show(ex.Message);
-                return;
-            }
-        }
-        private void ctButton1_Click(object sender, EventArgs e)
-        {
-            this.Close();  
-        }
-
         private void ctButton1_Click_1(object sender, EventArgs e)
         {
             RJMessageBox.Show("Bạn có muốn thoát ra màn hình đăng nhập",
                                            "Thông báo",
                                            MessageBoxButtons.OK);
             this.Close();
-        }
-
-        private void frmResetPass_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

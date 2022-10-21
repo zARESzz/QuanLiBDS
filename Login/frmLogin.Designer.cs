@@ -50,17 +50,19 @@ namespace Login
             this.txtTK.Name = "txtTK";
             this.txtTK.Size = new System.Drawing.Size(242, 27);
             this.txtTK.TabIndex = 0;
+            this.txtTK.Tag = "0";
             // 
             // txtPass
             // 
             this.txtPass.BackColor = System.Drawing.Color.LightGray;
             this.txtPass.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtPass.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(85, 268);
+            this.txtPass.Location = new System.Drawing.Point(85, 272);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(242, 27);
             this.txtPass.TabIndex = 1;
+            this.txtPass.Tag = "1";
             // 
             // btnLogin
             // 
@@ -76,7 +78,8 @@ namespace Login
             this.btnLogin.Location = new System.Drawing.Point(65, 327);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(269, 48);
-            this.btnLogin.TabIndex = 2;
+            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Tag = "5";
             this.btnLogin.Text = "Login";
             this.btnLogin.TextColor = System.Drawing.Color.White;
             this.btnLogin.UseVisualStyleBackColor = false;
@@ -97,6 +100,7 @@ namespace Login
             this.btnForgotPass.Name = "btnForgotPass";
             this.btnForgotPass.Size = new System.Drawing.Size(150, 27);
             this.btnForgotPass.TabIndex = 3;
+            this.btnForgotPass.Tag = "2";
             this.btnForgotPass.Text = "Forgot Password ?";
             this.btnForgotPass.TextColor = System.Drawing.Color.Black;
             this.btnForgotPass.UseVisualStyleBackColor = false;
@@ -118,6 +122,7 @@ namespace Login
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(150, 27);
             this.btnSignup.TabIndex = 4;
+            this.btnSignup.Tag = "3";
             this.btnSignup.Text = "Signup !";
             this.btnSignup.TextColor = System.Drawing.Color.Black;
             this.btnSignup.UseVisualStyleBackColor = false;
@@ -135,6 +140,7 @@ namespace Login
             this.pictureBox1.Size = new System.Drawing.Size(64, 60);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Tag = "5";
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // notifyIcon

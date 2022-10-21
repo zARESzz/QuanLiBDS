@@ -79,14 +79,21 @@ namespace QuanLy
 
         private void btnDele_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            try
             {
-                _kh.Delete(id);
-                txtHoTen.Text = "";
-                txtDiaChi.Text = "";
-                txtEmail.Text = "";
-                txtSDT.Text = "";
-                loadData();
+                if (RJMessageBox.Show("Bạn có chắc chắn muốn xóa?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    _kh.Delete(id);
+                    txtHoTen.Text = "";
+                    txtDiaChi.Text = "";
+                    txtEmail.Text = "";
+                    txtSDT.Text = "";
+                    loadData();
+                }
+            }
+            catch (Exception ex)
+            {
+                RJMessageBox.Show("Hiện tại không thể xóa khách hàng này!");
             }
         }
 
@@ -251,7 +258,7 @@ namespace QuanLy
         {
             try
             {
-                string ssdada = "Server=LAPTOP-QJUA0USI\\SQLEXPRESS;Database=data_BDS;User Id = sa;Password=123@qaz";
+                string ssdada = "Server=LAPTOP-4I0T0PPN\\SQLEXPRESS;Database=data_BDS;User Id = sa;Password=123@qaz";
                 DapperPlusManager.Entity<KHACHHANG>().Table("KHACHHANG");
                 List<KHACHHANG> khachHangs = gcKHACHHANG.DataSource as List<KHACHHANG>;
                 if (khachHangs != null)

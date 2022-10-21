@@ -3,6 +3,7 @@ using Main.Full;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Main
 {
@@ -19,7 +20,7 @@ namespace Main
         }
         public List<cls_NhanVien_Full> getListNV()
         {
-            return getListFull().Where(p=>p.TenCV.Equals("Giám Đốc")).ToList();
+            return getListFull().Where(p=>!p.TenCV.Equals("Giám Đốc")).ToList();
         }
         public List<cls_NhanVien_Full> getListFull()
         {
@@ -39,6 +40,7 @@ namespace Main
                 nvFull.Email = item.Email;
                 nvFull.MaCV =  item.MaCV;
                 var cv = db.CHUCVUs.FirstOrDefault(p => p.MaCV == item.MaCV);
+                if (cv != null)
                 nvFull.TenCV = cv.TenCV;
                 ListFull.Add(nvFull);
             }

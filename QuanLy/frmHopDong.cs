@@ -115,7 +115,11 @@ namespace QuanLy
         {
             try
             {
-                if (!(dtNgayBD.Value < dtNgayLap.Value))
+                if (dtNgayLap.Value < DateTime.Now)
+                {
+                    throw new Exception("Ngày lập phải lớn hơn hoặc bằng ngày hiện tại!");
+                }
+                if (dtNgayBD.Value < dtNgayLap.Value)
                     throw new Exception("Ngày bắt đầu phải lớn hơn hoặc bằng ngày lập!");
                 if (dtNgayKT.Value < dtNgayBD.Value)
                     throw new Exception("Ngày kết thúc phải lớn hơn ngày băt đầu!");
